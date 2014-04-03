@@ -1,4 +1,4 @@
-#FromShp2Dat.py:  OS indipendent code to write .dat file for SSAP 2000 (www.SSAP.eu) from Shapefile polyline
+#fromshp2ssap.py:  OS indipendent code to write .dat file for SSAP 2000 (www.SSAP.eu) from Shapefile polyline
 #Beta Version: 0.3.4 - 2014.03.13 - under test 
 #tested with shapefile edit from arcgis 9.2, 3.2 e qgis 1.8.
 #Autor: Lorenzo Sulli - Autorità di bacino del fiume Arno (Firenze). lorenzo.sulli@gmail.com
