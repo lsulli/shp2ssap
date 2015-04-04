@@ -7,7 +7,7 @@ Procedura per la creazione di file .dat, .geo, .fld, .svr e .mod
 per SSAP 2010 (www.SSAP.eu) partendo da shapefile polyline.
 
 Richiede Python 3x, incompatibile con Python 2x.
-Richiede il modulo shapefile.py 
+Richiede il modulo shapefile.py (https://github.com/GeospatialPython/pyshp)
 
 Necessita di shapefile in input con struttura geometrica 
 e attributi compatibili con le specifiche SSAP (vedi manuale utente SSAP).
