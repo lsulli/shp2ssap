@@ -1,5 +1,5 @@
 fromshp2ssap.py
-https://code.google.com/p/fromshp2ssap/
+https://github.com/lsulli/fromshp2ssap
 Licenza: http://www.gnu.org/licenses/gpl.html
 o \fromshp2ssap\licenza\gpl.txt 
 
