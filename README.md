@@ -61,19 +61,7 @@ senza ulteriori interventi dell'utente.
 La procedura distigue tra condzioni drenate e non drenate,  
 creando rispettivamente file .geo e .mod [nome_input]_c [nome_input]_cu.
 
-E'possibile impostare dei riferimenti di default creando un file default.txt con il seguente testo e copiandolo nella directory in cui risiede fromshp2ssap_Ver_11X_builtXX:
-
-- inizio- (non trascrivere).
-#default path search for input shapefile
-..\Shape_Test\
-#default path search for output SSAP file
-..\FileSSAP_Test\
-#max number of character for error message. Useful to cut "monster" error message
-1100
-# tolerance factor for trimming layers. The tolerance is layer length divide by tolerance factor. Value < 20 not admitted
-20
-- fine - (non trascrivere).
-
+E'possibile impostare dei riferimenti editando il file default.txt.
 
 Versione 1.1.6 built 36 - 2015.08.10
 Autore: Lorenzo Sulli - lorenzo.sulli@gmail.com
