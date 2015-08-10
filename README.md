@@ -63,7 +63,7 @@ creando rispettivamente file .geo e .mod [nome_input]_c [nome_input]_cu.
 
 E'possibile impostare dei riferimenti di default creando un file default.txt con il seguente testo e copiandolo nella directory in cui risiede fromshp2ssap_Ver_11X_builtXX:
 
-- inizio- (non trascrivere)
+- inizio- (non trascrivere).
 #default path search for input shapefile
 ..\Shape_Test\
 #default path search for output SSAP file
@@ -72,7 +72,7 @@ E'possibile impostare dei riferimenti di default creando un file default.txt con
 1100
 # tolerance factor for trimming layers. The tolerance is layer length divide by tolerance factor. Value < 20 not admitted
 20
-- fine - (non trascrivere)
+- fine - (non trascrivere).
 
 
 Versione 1.1.6 built 36 - 2015.08.10
