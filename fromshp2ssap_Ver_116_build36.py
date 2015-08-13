@@ -1,6 +1,7 @@
 #!/usr/bin/env pythonw
 # cambiamenti interfaccia 
 """
+Versione 1.1.6 built 36 - 2015.08.13
 
 TEST FILE - FUNZIONANTE da verificare ulteriormente
 - sembra risolto ERRORE scrittura valori GEO (tutti zero) in presenza di campi  geo rock (vari test ok)
@@ -9,6 +10,12 @@ TEST FILE - FUNZIONANTE da verificare ulteriormente
 - con assenza del campo VAL2 genera errore di sistema?
 - test con valore Cu = 0: ok (1 sola ripetizione)
 - test con campi assenti datgeo, rock, svr: ok (5-6 ripetizioni)
+- test con punti coordinate negative: ok
+- test CU = 0 con opzioen verifica condizioni non drenate: ok
+- test con strati ad alta pendenza per verifica controllo sequenza alto-basso:ok.
+        Tende a tagliare lo strato più basso sulla Y invece che sulla X?
+- test controllo sequenza campi: ok
+
 
 
 fromshp2ssap.py
@@ -47,7 +54,7 @@ Il file .mod potrà essere aperto direttamente da SSAP
 senza ulteriori interventi dell'utente.
 La procedura distigue tra condzioni drenate e non drenate,  
 creando rispettivamente file .geo e .mod [nome_input]_c [nome_input]_cu.
-Versione 1.1.6 built 36 - 2015.08.10
+
 Autore: Lorenzo Sulli - lorenzo.sulli@gmail.com
 L'uso della procedura fromshp2ssap.py e' di esclusiva responsabilità dell'utente, 
 In accordo con la licenza l'autore non e' responsabile per eventuali risultati errati o effetti dannosi 
