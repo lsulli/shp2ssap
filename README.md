@@ -46,12 +46,14 @@ Per gli strati con campo SSAP uguale è necessario un insieme di valori USER_ID 
 
 Le polyline con SSAP = "dat" e SSAP = "svr" possono essere aggiunte anche intercalate a polyline già esistenti (aggiunta di strati a piacere), deve comunque essere rispettata la sequenza crescente e continua dall'alto al basso.
 
+Implementata procedura di triming degli strati che eccedono l'ascissa della superficie topografica o sono leggermente inferiori ad essa.
+
 Per SSAP = "fld" è ammesso un solo strato con USER_ID = 0
 
 Il file .geo è generato in base ai valori dei campi dedicati (C, CU etc.)
 Se presente un valore SIGCI>0 viene generato un file geo per strati rocciosi
 
-Sono implementate funzioni di contollo della struttura degli shapefile di input (coordinate negative, numero di strati etc.).
+Sono implementate funzioni di contollo della struttura degli shapefile di input (coordinate negative, numero di strati etc., sequenza corretta ID strati ).
 
 A procedura conclusa positivamente saranno creati i file SSAP 
 .dat, .geo,  e .mod., i file .fld e .svr saranno presenti se richiesti
