@@ -3,11 +3,12 @@ https://github.com/lsulli/fromshp2ssap
 Licenza: http://www.gnu.org/licenses/gpl.html
 o \fromshp2ssap\licenza\gpl.txt 
 
-Procedura per la creazione di file .dat, .geo, .fld, .svr e .mod
-per SSAP 2010 (www.SSAP.eu) partendo da shapefile polyline.
+Procedura per la creazione di file .dat, .geo, .fld, .svr e .mod per SSAP 2010 (www.SSAP.eu) partendo da shapefile polyline.
+Lo shapefile descrive il modello geometrico (ovvero i dati per il file .dat), comprensivo di falda (dati per il file .fld) se richiesto, ai segmenti che descrivono il modello geometrico sono associati gli attributi per la creazione del file .geo. Possono essere inseriti segmenti che descrivono i carichi (dati per file .svr).
 
 Richiede Python 3x, incompatibile con Python 2x.
-Richiede il modulo shapefile.py ultima versione 1.2.3 (https://github.com/GeospatialPython/pyshp) modulo che può essere copiato in .\Python3X\Lib o in una directory .\moduli_py presente nella directory di residenza del presente file .py
+Richiede il modulo shapefile.py ultima versione 1.2.3 (https://github.com/GeospatialPython/pyshp) modulo che può essere copiato in .\Python3X\Lib o in una directory ".\moduli_py" creata ex novo nella directory di residenza del presente file .py. 
+Non è richiesta l'installazione di software GIS specifici, qualsiasi strumento GIS che permette la modifica degli shapefile è ammesso. Testato con ArcGis 9.2, 10.0, Arcview 3.2 e Qgis 2.8. In ogni caso prestare particolare attenzione al settaggio delle unità di misura.
 
 Necessita di shapefile in input con struttura geometrica 
 e attributi compatibili con le specifiche SSAP (vedi manuale utente SSAP).
@@ -42,7 +43,7 @@ In particolare è richiesta una struttura dati del tipo seguente,
 Nel campo SSAP deve essere indicato a quale file ssap è riferita la polyline.
 Valori ammessi per il campo SSAP: .dat, .fld e .svr. 
 
-Per gli strati con campo SSAP uguale è necessario un insieme di valori USER_ID crescenti dall'alto al basso  e continuo da 1 a n (come da specifiche SSAP).
+Per gli strati con campo SSAP uguale è necessario un insieme di valori USER_ID crescenti dall'alto al basso  e continuo da 1 a 20 (come da specifiche SSAP).
 
 Le polyline con SSAP = "dat" e SSAP = "svr" possono essere aggiunte anche intercalate a polyline già esistenti (aggiunta di strati a piacere), deve comunque essere rispettata la sequenza crescente e continua dall'alto al basso.
 
@@ -50,20 +51,20 @@ Implementata procedura di triming degli strati che eccedono l'ascissa della supe
 
 Per SSAP = "fld" è ammesso un solo strato con USER_ID = 0
 
-Il file .geo è generato in base ai valori dei campi dedicati (C, CU etc.)
-Se presente un valore SIGCI>0 viene generato un file geo per strati rocciosi
+Il file .geo è generato in base ai valori dei campi dedicati (PHI, C, CU etc.)
+Se presente un valore SIGCI>0 viene generato un file geo per strati rocciosi e vengono ignorati i valori dei campi per le terre.
 
-Sono implementate funzioni di contollo della struttura degli shapefile di input (coordinate negative, numero di strati etc., sequenza corretta ID strati ).
+Sono implementate funzioni di contollo della struttura degli shapefile di input (coordinate negative, numero di strati, sequenza corretta ID strati ).
 
 A procedura conclusa positivamente saranno creati i file SSAP 
 .dat, .geo,  e .mod., i file .fld e .svr saranno presenti se richiesti
 Il file .mod potrà essere aperto direttamente da SSAP 
 senza ulteriori interventi dell'utente.
 
-La procedura distigue tra condzioni drenate e non drenate,  
+La procedura distigue tra condzioni drenate e non drenate valide per l'intero modello,  
 creando rispettivamente file .geo e .mod [nome_input]_c [nome_input]_cu.
 
-E'possibile impostare dei riferimenti editando il file default.txt.
+E'possibile variare alcuni riferimenti di default editando il file default.txt.
 
 Versione 1.1.6 built 36 - 2015.08.10
 Autore: Lorenzo Sulli - lorenzo.sulli@gmail.com
