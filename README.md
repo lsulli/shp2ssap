@@ -11,7 +11,7 @@ Richiede il modulo shapefile.py ultima versione 1.2.3 (https://github.com/Geospa
 Non è richiesta l'installazione di software GIS specifici, qualsiasi strumento GIS che permette la modifica degli shapefile è ammesso. Testato con ArcGis 9.2, 10.0, Arcview 3.2 e Qgis 2.8. In ogni caso prestare particolare attenzione al settaggio delle unità di misura.
 
 Necessita di shapefile in input con struttura geometrica 
-e attributi compatibili con le specifiche SSAP (vedi manuale utente SSAP).
+e attributi compatibili con le specifiche SSAP (vedi manuale utente SSAP e shapefile modello scaricabile dalla sezione release).
 
 In particolare è richiesta una struttura dati del tipo seguente, 
 (non è necessario rispettare ordine dei campi ma è necessario rispettare rigidamente il nome del campo):
