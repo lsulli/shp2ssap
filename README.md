@@ -47,22 +47,21 @@ Per gli strati con campo SSAP uguale è necessario un insieme di valori USER_ID 
 
 Le polyline con SSAP = "dat" e SSAP = "svr" possono essere aggiunte anche intercalate a polyline già esistenti (aggiunta di strati a piacere), deve comunque essere rispettata la sequenza crescente e continua dall'alto al basso del campo USER_ID: quindi nel caso dell'inserimento di un nuovo strato tra due esistenti deve essere aggiornato il campo USER_ID .
 
-Implementata procedura di triming degli strati che eccedono l'ascissa della superficie topografica o sono leggermente inferiori ad essa.
-
 Per SSAP = "fld" è ammesso un solo strato con USER_ID = 0
 
-Il file .geo è generato in base ai valori dei campi dedicati (PHI, C, CU etc.)
+Il file .geo è generato in base ai valori dei campi dedicati (PHI, C, CU etc.), possono essere presenti contemporaneamente valori di C e Cu > 0, l'utente può scegliere se imporre condizioni drenate e non drenate valide per l'intero modello,  
+creando rispettivamente file .geo e .mod [nome_input]_c [nome_input]_cu.
+
 Se presente un valore SIGCI>0 viene generato un file geo per strati rocciosi e vengono ignorati i valori dei campi per le terre.
 
-Sono implementate funzioni di contollo della struttura degli shapefile di input (coordinate negative, numero di strati, sequenza corretta ID strati ).
+Sono implementate funzioni di contollo della struttura degli shapefile di input (coordinate negative, numero di strati, sequenza corretta ID strati ) che interrompe la procedura e genera un avviso d'errore.
+
+Implementata procedura di triming degli strati che eccedono i valori minimo e massimo dell'ascissa della superficie topografica o sono leggermente inferiori ad essa, utile per editare gli strati senza preoccuparsi della precisione dei punti di inizio e fine. 
 
 A procedura conclusa positivamente saranno creati i file SSAP 
 .dat, .geo,  e .mod., i file .fld e .svr saranno presenti se richiesti
 Il file .mod potrà essere aperto direttamente da SSAP 
 senza ulteriori interventi dell'utente.
-
-La procedura distigue tra condzioni drenate e non drenate valide per l'intero modello,  
-creando rispettivamente file .geo e .mod [nome_input]_c [nome_input]_cu.
 
 E'possibile variare alcuni riferimenti di default editando il file default.txt.
 
