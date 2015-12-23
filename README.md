@@ -30,7 +30,7 @@ In particolare è richiesta una struttura dati del tipo seguente,
 
 (Peso di volume saturo- KN/mc): ['GAMMASAT', 'N', 5, 2]
 
-(Resistenza Compressione Uniassiale Roccia Intatta adimensionale): ['SIGCI', 'N', 5, 2]
+(Resistenza Compressione Uniassiale Roccia Intatta - adimensionale): ['SIGCI', 'N', 5, 2]
 
 (Geological Strenght Index - adimensionale):['GSI','N', 5, 2]
 
@@ -45,7 +45,7 @@ Valori ammessi per il campo SSAP: .dat, .fld e .svr.
 
 Per gli strati con campo SSAP uguale è necessario un insieme di valori USER_ID crescenti dall'alto al basso  e continuo da 1 a 20 (come da specifiche SSAP).
 
-Le polyline con SSAP = "dat" e SSAP = "svr" possono essere aggiunte anche intercalate a polyline già esistenti (aggiunta di strati a piacere), deve comunque essere rispettata la sequenza crescente e continua dall'alto al basso.
+Le polyline con SSAP = "dat" e SSAP = "svr" possono essere aggiunte anche intercalate a polyline già esistenti (aggiunta di strati a piacere), deve comunque essere rispettata la sequenza crescente e continua dall'alto al basso del campo USER_ID: quindi nel caso dell'inserimento di un nuovo strato tra due esistenti deve essere aggiornato il campo USER_ID .
 
 Implementata procedura di triming degli strati che eccedono l'ascissa della superficie topografica o sono leggermente inferiori ad essa.
 
