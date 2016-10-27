@@ -1,14 +1,21 @@
-fromshp2ssap.py ver 1.1.6 build 36 - Pre-release 
-https://github.com/lsulli/fromshp2ssap
+Shp2SSAP.exe ver 1.1.7 build 180 - Release 
+https://github.com/lsulli/shp2ssap
 Licenza: http://www.gnu.org/licenses/gpl.html
-o \fromshp2ssap\licenza\gpl.txt 
+o \fromshp2ssap\licenza\gpl.txt
 
-Procedura per la creazione di file .dat, .geo, .fld, .svr e .mod per SSAP 2010 (www.SSAP.eu) partendo da shapefile polyline.
-Lo shapefile descrive il modello geometrico (ovvero i dati per il file .dat), comprensivo di falda (dati per il file .fld) se richiesto, ai segmenti che descrivono il modello geometrico sono associati gli attributi per la creazione del file .geo. Possono essere inseriti segmenti che descrivono i carichi (dati per file .svr).
+Le procedure fondamentali utilizzano il modulo shapefile.py (credit. https://github.com/GeospatialPython/pyshp)
 
-Richiede Python 3x, incompatibile con Python 2x.
-Richiede il modulo shapefile.py ultima versione 1.2.3 (https://github.com/GeospatialPython/pyshp) modulo che può essere copiato in .\Python3X\Lib o in una directory ".\moduli_py" creata ex novo nella directory di residenza del presente file .py. 
-Non è richiesta l'installazione di software GIS specifici, qualsiasi strumento GIS che permette la modifica degli shapefile è ammesso. Testato con ArcGis 9.2, 10.0, Arcview 3.2 e Qgis 2.8. In ogni caso prestare particolare attenzione al settaggio delle unità di misura.
+Eseguibile per windows per la creazione di file .dat, .geo, .fld, .svr, .sin e .mod per SSAP 2010 (www.SSAP.eu) partendo da shapefile polyline.
+
+Lo shapefile descrive il modello geometrico (ovvero i dati per il file .dat), comprensivo di falda (dati per il file .fld) se richiesto, ai segmenti che descrivono il modello geometrico sono associati gli attributi per la creazione del file .geo. Possono essere inseriti segmenti che descrivono i carichi (dati per file .svr) e polyline ch edescrivono una superficie di verifica singola (per file .sin).
+
+Requisiti:
+Windows 32 o 64 bit.
+Il file eseguibile non richiede librerie preinstallate (tutti i moduli e le librerie di python sono comprese nel file eseguibile) nè è richiesta l'installazione di software GIS specifici, qualsiasi strumento GIS che permette la modifica degli shapefile è ammesso. Testato con ArcGis 9.2, 10.0, Arcview 3.2 e Qgis 3.1x.
+
+
+
+In ogni caso prestare particolare attenzione al settaggio delle unità di misura.
 
 Necessita di shapefile in input con struttura geometrica 
 e attributi compatibili con le specifiche SSAP (vedi manuale utente SSAP e shapefile modello scaricabile dalla sezione release).
