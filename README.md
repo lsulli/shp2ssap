@@ -1,12 +1,23 @@
 Shp2SSAP.exe ver 1.1.7 build 180 
 
+AUTORE
+
+Lorenzo Sulli -lorenzo.sulli@gmail.com
+
+INDIRIZZO DOWNLOAD
+
 https://github.com/lsulli/shp2ssap
-Licenza: http://www.gnu.org/licenses/gpl.html
+
+LICENZA
+
+http://www.gnu.org/licenses/gpl.html
 o \fromshp2ssap\licenza\gpl.txt
 
 Le procedure fondamentali utilizzano il modulo shapefile.py (credit. https://github.com/GeospatialPython/pyshp)
 
-Eseguibile per windows per la creazione di file .dat, .geo, .fld, .svr, .sin e .mod per SSAP 2010 (www.SSAP.eu) partendo da shapefile polyline.
+FUNZIONALITA' PRINCIPALI
+
+Eseguibile per windows per la creazione di file .dat, .geo, .fld, .svr, .sin e .mod per SSAP 2010 (www.SSAP.eu) partendo da shapefile polyline. Integrato tool dedicato per creare uno shapefile monostrato (già strutturato per la creazione di file per SSAP) partendo da un elenco di coordinate cartesiane xy descriventi il profilo morfologico del terreno.
 
 Lo shapefile descrive il modello geometrico (ovvero i dati per il file .dat), comprensivo di falda (dati per il file .fld) se impostat, ai segmenti che descrivono il modello geometrico sono associati gli attributi per la creazione del file .geo. Possono essere inseriti segmenti che descrivono i carichi (dati per file .svr) e polyline ch edescrivono una superficie di verifica singola (per file .sin).
 
