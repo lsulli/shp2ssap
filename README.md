@@ -7,13 +7,14 @@ Le procedure fondamentali utilizzano il modulo shapefile.py (credit. https://git
 
 Eseguibile per windows per la creazione di file .dat, .geo, .fld, .svr, .sin e .mod per SSAP 2010 (www.SSAP.eu) partendo da shapefile polyline.
 
-Lo shapefile descrive il modello geometrico (ovvero i dati per il file .dat), comprensivo di falda (dati per il file .fld) se richiesto, ai segmenti che descrivono il modello geometrico sono associati gli attributi per la creazione del file .geo. Possono essere inseriti segmenti che descrivono i carichi (dati per file .svr) e polyline ch edescrivono una superficie di verifica singola (per file .sin).
+Lo shapefile descrive il modello geometrico (ovvero i dati per il file .dat), comprensivo di falda (dati per il file .fld) se impostat, ai segmenti che descrivono il modello geometrico sono associati gli attributi per la creazione del file .geo. Possono essere inseriti segmenti che descrivono i carichi (dati per file .svr) e polyline ch edescrivono una superficie di verifica singola (per file .sin).
 
-Requisiti:
+REQUISITI SISTEMA
 Windows 32 o 64 bit.
 Il file eseguibile non richiede librerie preinstallate (tutti i moduli e le librerie di python sono comprese nel file eseguibile) nè è richiesta l'installazione di software GIS specifici, qualsiasi strumento GIS che permette la modifica degli shapefile è ammesso. Testato con ArcGis 9.2, 10.0, Arcview 3.2 e Qgis 3.1x.
 
-
+INSTALLAZIONE
+Il file Shp2SSAP.exe è un file compresso auto-estraente che può essere installato in qualsiasi directory. Non vengono modificate le chiavi di registro nè creati file all'esterno della directory di installazione. 
 
 In ogni caso prestare particolare attenzione al settaggio delle unità di misura.
 
