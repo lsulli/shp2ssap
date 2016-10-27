@@ -36,7 +36,7 @@ Una volta installato avviare il file Shp2SSAP.exe.
 
 ATTENZIONE: l'antivirus al primo avvio può eseguire un controllo dell'eseguibile che può richiedere alcuni secondi.
 
-Si aprirà un interfaccia GUI (Graphic User Interface) dal quale sarà possibile aprire un file shapefile polyline esistente (input) e indicare i file SSAP di output
+Si aprirà un interfaccia GUI (Graphic User Interface) dal quale sarà possibile aprire un file shapefile polyline esistente (input) e indicare i file SSAP di output. Con il tasto "Verifica Preliminare Shape" è possibile eseguire un controllo dello shapefile di input senza generare file SSAP, verranno indicati eventuali errori rispetto alle specifiche SSAP o indicate informazioni generali se il file risulta corretto. Il tasto "Converti" esegue la conversione da shapefile a file per SSAP, nel caso di errori nel file di input questi vengono comunicati (come per la verifica preliminare) e la conversione non è eseguita, se lo shapefile rispetta le specifiche SSAP verranno generati file SSAP.
 
 
 In ogni caso prestare particolare attenzione al settaggio delle unità di misura.
