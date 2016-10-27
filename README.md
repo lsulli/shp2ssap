@@ -17,19 +17,26 @@ Le procedure fondamentali utilizzano il modulo shapefile.py (credit. https://git
 
 FUNZIONALITA' PRINCIPALI
 
-Eseguibile per windows per la creazione di file .dat, .geo, .fld, .svr, .sin e .mod per SSAP 2010 (www.SSAP.eu) partendo da shapefile polyline. Integrato tool dedicato per creare uno shapefile monostrato (già strutturato per la creazione di file per SSAP) partendo da un elenco di coordinate cartesiane xy descriventi il profilo morfologico del terreno.
+Eseguibile per windows per la creazione di file .dat, .geo, .fld, .svr, .sin e .mod per SSAP 2010 (www.SSAP.eu) partendo da shapefile polyline. Dall'eseguibile Shp2SSAP.exe è attivabile un tool specifico (xy2shp_forSSAP.exe) per creare uno shapefile monostrato (già strutturato per la creazione di file per SSAP) partendo da un elenco di coordinate cartesiane xy descriventi il profilo morfologico del terreno.
 
-Lo shapefile descrive il modello geometrico (ovvero i dati per il file .dat), comprensivo di falda (dati per il file .fld) se impostat, ai segmenti che descrivono il modello geometrico sono associati gli attributi per la creazione del file .geo. Possono essere inseriti segmenti che descrivono i carichi (dati per file .svr) e polyline ch edescrivono una superficie di verifica singola (per file .sin).
+Lo shapefile descrive il modello geometrico (ovvero i dati per il file .dat), comprensivo di falda (dati per il file .fld) se indicato, ai segmenti che descrivono il modello geometrico sono associati gli attributi per la creazione del file .geo. Editando lo Shapefile in ambiente GIS Possono essere inseriti segmenti che descrivono i carichi (dati per file .svr) e polyline ch edescrivono una superficie di verifica singola (per file .sin).
 
 REQUISITI SISTEMA
 
-Windows 32 o 64 bit.
+Windows 32 o 64 bit (testato con Windows XP, Windows 7, Windows 8x).
 Il file eseguibile non richiede librerie preinstallate (tutti i moduli e le librerie di python sono comprese nel file eseguibile) nè è richiesta l'installazione di software GIS specifici, qualsiasi strumento GIS che permette la modifica degli shapefile è ammesso. Testato con ArcGis 9.2, 10.0, Arcview 3.2 e Qgis 3.1x.
 
 INSTALLAZIONE
 
-Il file Shp2SSAP.exe è un file compresso auto-estraente che può essere installato in qualsiasi directory. Non vengono modificate le chiavi di registro nè creati file all'esterno della directory di installazione. 
+Il file Shp2SSAP_setup.exe è un file compresso auto-estraente che può essere installato in qualsiasi directory. Non vengono modificate le chiavi di registro nè creati file all'esterno della directory di installazione. Vengono copiati nella directory scelta vari file e subdirectory, si consiglia di non spostare nessun file dalle directory d'installazione, in ogni caso i file Shp2SSAP.exe e xy2Shp_forSSAP.exe deveono risiedere nella stessa directory per la corretta funzionalità dell'applicazione.
 
+ISTRUZIONI D'USO
+
+Una volta installato avviare il file Shp2SSAP.exe.
+
+ATTENZIONE: l'antivirus al primo avvio può eseguire un controllo dell'eseguibile che può richiedere alcuni secondi.
+
+Si aprirà un interfaccia GUI (Graphic User Interface) dal quale sarà possibile aprire un file shapefile polyline esistente (input) e indicare i file SSAP di output
 
 
 In ogni caso prestare particolare attenzione al settaggio delle unità di misura.
