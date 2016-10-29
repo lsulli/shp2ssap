@@ -34,7 +34,7 @@ INSTALLAZIONE
 
 Il file Shp2SSAP_setup.exe è un file compresso auto-estraente con procedura guidata. Non vengono modificate le chiavi di registro nè creati file all'esterno della directory di installazione. Vengono copiati nella directory scelta vari file e subdirectory, si consiglia di non spostare nessun file dalle directory d'installazione, in ogni caso i file Shp2SSAP.exe e xy2Shp_forSSAP.exe deveono risiedere nella stessa directory per la corretta funzionalità dell'applicazione.
 
-GUIDA RAPIDA
+GUIDA All'USO
 
 Una volta installato avviare il file Shp2SSAP.exe.
 
@@ -42,17 +42,25 @@ Una volta installato avviare il file Shp2SSAP.exe.
 
 Si aprirà un interfaccia GUI (Graphic User Interface) dal quale sarà possibile aprire un file shapefile polyline esistente e indicare i file SSAP di output.
 
-    Gli shapefile secondo i requisiti richiesti possono essere creati tramite il tool xy2Shp_forSSAP.exe. e quindi modificati ed integrati in ambiente GIS
+Gli shapefile secondo i requisiti richiesti possono essere creati tramite il tool xy2Shp_forSSAP.exe e quindi modificati ed integrati in ambiente GIS. Potranno quindi essere aggiunti gli strati per .dat, carichi per .svr, la falda per .fld e una superficie per la verifica singola (.sin) indicando il relativo attributo nel campo "SSAP". I valori dei parametri geotecnici per terre e rocce dovranno essere aggiunti nei campi dedicati (PHI, C, ....vedi oltre per i dettagli). La condizione drenata / non drenata deve essere impostata nel campo "D_UND". I carichi sono specificati nel campo "VAL1". Leggere con attenzione i dettagli nel paragrafo "CARATTERISTICHE DELLO SHAPEFILE MODELLO PENDIO".
+
+    ATTENZIONE: Una volta editato lo shapefile è indispensabile chiudere la sezioen di editing. 
+    Talvolta è necessario chiudere l'applicativo GIS o esportare lo shapefil emodificato come copia, 
+    la conversione dello shapefile in file SSAP può generare errori nei file di output quando 
+    gli shapefile sono letti contemporaneamente da due applicativi.
+    
 
 Con il tasto "Verifica Preliminare Shape" è possibile eseguire un controllo dello shapefile di input senza generare file SSAP, verranno indicati eventuali errori rispetto alle specifiche SSAP o indicate informazioni generali se il file risulta corretto. Il tasto "Converti" esegue la conversione da shapefile a file per SSAP, nel caso di errori nel file di input questi vengono comunicati (come per la verifica preliminare) e la conversione è interrotta, se lo shapefile rispetta le specifiche SSAP verranno generati file SSAP .mod, .dat, .geo. I file .fld, .svr e .sin saranno presenti se presenti le relative polyline nello shapefile. 
     
-    In fase di generazione die file SSAP possono essere attivate opzioni per il controllo avanzato delle sequenza verticale degli strati e per forzare l'estensione degli strati ai limiti della superficie topografica.
+    In fase di generazione die file SSAP possono essere attivate opzioni per il controllo avanzato 
+    delle sequenza verticale degli strati e per forzare l'estensione degli strati ai limiti 
+    della superficie topografica.
     
 Il tasto "Crea Shape da XY" permette di avviare il tool xy2Shp_forSSAP.exe per creare uno shapefile polyline della superficie topografica da un elenco di coordinate xy (in SSAP strato unico con ID = 1), le coordinate dovranno avere valori e ordinamento secondo gli standard del file .dat per SSAP. Lo Shapefile avrà tutte le caratteristiche per generare con Shp2SSAP.exe un modello di pendio monostrato per SSAP.
 
     ATTENZIONE: La struttura tipo del file XY ammessa è quella tipica generata dagli strumenti GIS per la creazione di profili da DTM. Le coordinate dovranno essere separate dai caratteri TAB, punto e virgola o barra verticale.
 
-    Sono presenti opzioni per aggiungere una falda parallela alla superficie, impostare i parametri geotecnici per le terre. Per una back analysis speditiva in condzioni residue può essere approssimato l'angolo d'attrito interno alla pendenza media del pendio e imposto zero alla coesione dreanata (ovvero all'angolo di riposo di materiali granulari non coesivi).
+Sono presenti opzioni per aggiungere una falda parallela alla superficie, impostare i parametri geotecnici per le terre. Per una back analysis speditiva in condIzioni residue può essere approssimato l'angolo d'attrito interno alla pendenza media del pendio e imposto zero alla coesione dreanata (ovvero all'angolo di riposo di materiali granulari non coesivi).
 
 CARATTERISTICHE DELLO SHAPEFILE MODELLO PENDIO
 
