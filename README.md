@@ -34,7 +34,7 @@ INSTALLAZIONE
 
 Il file Shp2SSAP_setup.exe è un file compresso auto-estraente con procedura guidata. Non vengono modificate le chiavi di registro nè creati file all'esterno della directory di installazione. Vengono copiati nella directory scelta vari file e subdirectory, si consiglia di non spostare nessun file dalle directory d'installazione, in ogni caso i file Shp2SSAP.exe e xy2Shp_forSSAP.exe deveono risiedere nella stessa directory per la corretta funzionalità dell'applicazione.
 
-ISTRUZIONI D'USO
+GUIDA RAPIDA
 
 Una volta installato avviare il file Shp2SSAP.exe.
 
@@ -42,20 +42,21 @@ Una volta installato avviare il file Shp2SSAP.exe.
 
 Si aprirà un interfaccia GUI (Graphic User Interface) dal quale sarà possibile aprire un file shapefile polyline esistente e indicare i file SSAP di output.
 
-    Shape di esempio sono disponibili nell'apposita directory e nuovi shape possono essere creati tramite il tool           xy2Shp_forSSAP.exe. 
+    Gli shapefile secondo i requisiti richiesti possono essere creati tramite il tool xy2Shp_forSSAP.exe. e quindi modificati ed integrati in ambiente GIS
 
 Con il tasto "Verifica Preliminare Shape" è possibile eseguire un controllo dello shapefile di input senza generare file SSAP, verranno indicati eventuali errori rispetto alle specifiche SSAP o indicate informazioni generali se il file risulta corretto. Il tasto "Converti" esegue la conversione da shapefile a file per SSAP, nel caso di errori nel file di input questi vengono comunicati (come per la verifica preliminare) e la conversione è interrotta, se lo shapefile rispetta le specifiche SSAP verranno generati file SSAP .mod, .dat, .geo. I file .fld, .svr e .sin saranno presenti se presenti le relative polyline nello shapefile. 
+    
+    In fase di generazione die file SSAP possono essere attivate opzioni per il controllo avanzato delle sequenza verticale degli strati e per forzare l'estensione degli strati ai limiti della superficie topografica.
+    
+Il tasto "Crea Shape da XY" permette di avviare il tool xy2Shp_forSSAP.exe per creare uno shapefile polyline della superficie topografica da un elenco di coordinate xy (in SSAP strato unico con ID = 1), le coordinate dovranno avere valori e ordinamento secondo gli standard del file .dat per SSAP. Lo Shapefile avrà tutte le caratteristiche per generare con Shp2SSAP.exe un modello di pendio monostrato per SSAP.
 
-Il tasto "Crea Shape da XY" permette di avviare il tool  xy2Shp_forSSAP.exe per creare uno shapefile polyline della superficie topografica da un elenco di coordinate xy, le coordinate dovranno avere valori e ordinamento secondo gli standard del file .dat per SSAP. Lo Shapefile avrà tutte le caratteristiche per generare con Shp2SSAP.exe un modello di pendio monostrato per SSAP. Può essere aggiunta una falda parallela alla superficie ed impostare i parametri geotecnici per le terre.
+    ATTENZIONE: La struttura tipo del file XY ammessa è quella tipica generata dagli strumenti GIS per la creazione di profili da DTM. Le coordinate dovranno essere separate dai caratteri TAB, punto e virgola o barra verticale.
+
+    Sono presenti opzioni per aggiungere una falda parallela alla superficie, impostare i parametri geotecnici per le terre. Per una back analysis speditiva in condzioni residue può essere approssimato l'angolo d'attrito interno alla pendenza media del pendio e imposto zero alla coesione dreanata (ovvero all'angolo di riposo di materiali granulari non coesivi).
 
 CARATTERISTICHE DELLO SHAPEFILE MODELLO PENDIO
 
-
-
-
-
-
-In ogni caso prestare particolare attenzione al settaggio delle unità di misura.
+Prestare particolare attenzione al settaggio delle unità di misura (ovviamente metri)
 
 Necessita di shapefile in input con struttura geometrica 
 e attributi compatibili con le specifiche SSAP (vedi manuale utente SSAP e shapefile modello scaricabile dalla sezione release).
