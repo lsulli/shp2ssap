@@ -11,20 +11,24 @@ https://github.com/lsulli/shp2ssap
 LICENZA
 
 http://www.gnu.org/licenses/gpl.html
-o \fromshp2ssap\licenza\gpl.txt
 
 Le procedure fondamentali utilizzano il modulo shapefile.py (credit. https://github.com/GeospatialPython/pyshp)
 
-FUNZIONALITA' PRINCIPALI
-
-Eseguibile per windows per la creazione di file .dat, .geo, .fld, .svr, .sin e .mod per SSAP 2010 (www.SSAP.eu) partendo da un unico shapefile polyline. Dall'eseguibile Shp2SSAP.exe è attivabile un tool specifico (xy2shp_forSSAP.exe) per creare uno shapefile monostrato (già strutturato per la creazione di file per SSAP) partendo da un elenco di coordinate cartesiane xy descriventi il profilo morfologico del terreno.
-
-Lo shapefile descrive il modello geometrico (ovvero i dati per il file .dat), comprensivo di falda (dati per il file .fld) se indicato, alle polyline che descrivono il modello geometrico sono associati gli attributi per la creazione del file .geo. Editando lo Shapefile in ambiente GIS Possono essere inseriti polyline che descrivono i carichi (dati per file .svr) e polyline che descrivono una superficie di verifica singola (per file .sin).
+Per il software SSAP2010 vedi termini id licenza riportati in www.SSAP.eu. Autore Lorenzo Borselli.
 
 REQUISITI SISTEMA
 
 Windows 32 o 64 bit (testato con Windows XP, Windows 7, Windows 8x, windows 10).
 Il file eseguibile non richiede librerie preinstallate (tutti i moduli e le librerie di python sono comprese nel file eseguibile) nè è richiesta l'installazione di software GIS specifici, qualsiasi strumento GIS che permette la modifica degli shapefile è ammesso. Testato con ArcGis 9.2, 10.0, Arcview 3.2 e Qgis 2.1x.
+Non è strettamente necessario che sia installato SSAP2010 ma è ovviamente vivamente consigliato per la verifica dei file creati.
+    
+    ATTENZIONE: per il corretto uso di questo applicativo è necessario conoscere le nozioni fondamentali di SSAP2010 in particolare i criteri di costruzione dei file .dat e .sin.
+
+FUNZIONALITA' PRINCIPALI
+
+Eseguibile per windows per la creazione di file .dat, .geo, .fld, .svr, .sin e .mod per SSAP2010 (www.SSAP.eu) partendo da un unico shapefile polyline. Dall'eseguibile Shp2SSAP.exe è attivabile un tool specifico (xy2shp_forSSAP.exe) per creare uno shapefile monostrato (già strutturato per la creazione di file per SSAP) partendo da un elenco di coordinate cartesiane xy descriventi il profilo morfologico del terreno.
+
+Lo shapefile descrive il modello geometrico (ovvero i dati per il file .dat), comprensivo di falda (dati per il file .fld) se indicato, alle polyline che descrivono il modello geometrico sono associati gli attributi per la creazione del file .geo. Editando lo Shapefile in ambiente GIS Possono essere inseriti polyline che descrivono i carichi (dati per file .svr) e polyline che descrivono una superficie di verifica singola (per file .sin).
 
 INSTALLAZIONE
 
@@ -36,7 +40,9 @@ Una volta installato avviare il file Shp2SSAP.exe.
 
     ATTENZIONE: l'antivirus al primo avvio può eseguire un controllo dell'eseguibile che può richiedere alcuni secondi.
 
-Si aprirà un interfaccia GUI (Graphic User Interface) dal quale sarà possibile aprire un file shapefile polyline esistente (input) e indicare i file SSAP di output. Con il tasto "Verifica Preliminare Shape" è possibile eseguire un controllo dello shapefile di input senza generare file SSAP, verranno indicati eventuali errori rispetto alle specifiche SSAP o indicate informazioni generali se il file risulta corretto. Il tasto "Converti" esegue la conversione da shapefile a file per SSAP, nel caso di errori nel file di input questi vengono comunicati (come per la verifica preliminare) e la conversione è interrotta, se lo shapefile rispetta le specifiche SSAP verranno generati file SSAP .mod, .dat, .geo. I file .fld, .svr e .sin saranno presenti se presenti le relative polyline nello shapefile.
+Si aprirà un interfaccia GUI (Graphic User Interface) dal quale sarà possibile aprire un file shapefile polyline esistente (input) e indicare i file SSAP di output. Con il tasto "Verifica Preliminare Shape" è possibile eseguire un controllo dello shapefile di input senza generare file SSAP, verranno indicati eventuali errori rispetto alle specifiche SSAP o indicate informazioni generali se il file risulta corretto. Il tasto "Converti" esegue la conversione da shapefile a file per SSAP, nel caso di errori nel file di input questi vengono comunicati (come per la verifica preliminare) e la conversione è interrotta, se lo shapefile rispetta le specifiche SSAP verranno generati file SSAP .mod, .dat, .geo. I file .fld, .svr e .sin saranno presenti se presenti le relative polyline nello shapefile. 
+
+Il tasto "Crea Shape da XY" permette di creare uno shapefile monostrato da un elenco di coordinate xy, le coordinate dovranno avere valori e ordinamento secondo gli standard del file .dat per SSAP. Lo Shaopcon tutti i requisiti 
 
 
 
