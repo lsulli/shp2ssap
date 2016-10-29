@@ -1,4 +1,4 @@
-Shp2SSAP.exe ver 1.1.7 build 180 
+Shp2SSAP.exe ver 1.1.7 build 173
 
 AUTORE
 
@@ -23,20 +23,22 @@ Lo shapefile descrive il modello geometrico (ovvero i dati per il file .dat), co
 
 REQUISITI SISTEMA
 
-Windows 32 o 64 bit (testato con Windows XP, Windows 7, Windows 8x).
-Il file eseguibile non richiede librerie preinstallate (tutti i moduli e le librerie di python sono comprese nel file eseguibile) nè è richiesta l'installazione di software GIS specifici, qualsiasi strumento GIS che permette la modifica degli shapefile è ammesso. Testato con ArcGis 9.2, 10.0, Arcview 3.2 e Qgis 3.1x.
+Windows 32 o 64 bit (testato con Windows XP, Windows 7, Windows 8x, windows 10).
+Il file eseguibile non richiede librerie preinstallate (tutti i moduli e le librerie di python sono comprese nel file eseguibile) nè è richiesta l'installazione di software GIS specifici, qualsiasi strumento GIS che permette la modifica degli shapefile è ammesso. Testato con ArcGis 9.2, 10.0, Arcview 3.2 e Qgis 2.1x.
 
 INSTALLAZIONE
 
-Il file Shp2SSAP_setup.exe è un file compresso auto-estraente che può essere installato in qualsiasi directory. Non vengono modificate le chiavi di registro nè creati file all'esterno della directory di installazione. Vengono copiati nella directory scelta vari file e subdirectory, si consiglia di non spostare nessun file dalle directory d'installazione, in ogni caso i file Shp2SSAP.exe e xy2Shp_forSSAP.exe deveono risiedere nella stessa directory per la corretta funzionalità dell'applicazione.
+Il file Shp2SSAP_setup.exe è un file compresso auto-estraente con procedura guidata. Non vengono modificate le chiavi di registro nè creati file all'esterno della directory di installazione. Vengono copiati nella directory scelta vari file e subdirectory, si consiglia di non spostare nessun file dalle directory d'installazione, in ogni caso i file Shp2SSAP.exe e xy2Shp_forSSAP.exe deveono risiedere nella stessa directory per la corretta funzionalità dell'applicazione.
 
 ISTRUZIONI D'USO
 
 Una volta installato avviare il file Shp2SSAP.exe.
 
-ATTENZIONE: l'antivirus al primo avvio può eseguire un controllo dell'eseguibile che può richiedere alcuni secondi.
+    ATTENZIONE: l'antivirus al primo avvio può eseguire un controllo dell'eseguibile che può richiedere alcuni secondi.
 
-Si aprirà un interfaccia GUI (Graphic User Interface) dal quale sarà possibile aprire un file shapefile polyline esistente (input) e indicare i file SSAP di output. Con il tasto "Verifica Preliminare Shape" è possibile eseguire un controllo dello shapefile di input senza generare file SSAP, verranno indicati eventuali errori rispetto alle specifiche SSAP o indicate informazioni generali se il file risulta corretto. Il tasto "Converti" esegue la conversione da shapefile a file per SSAP, nel caso di errori nel file di input questi vengono comunicati (come per la verifica preliminare) e la conversione non è eseguita, se lo shapefile rispetta le specifiche SSAP verranno generati file SSAP .mod, .dat, .geo; i file .fld, .svr e .sin saranno presenti se presenti le relative polyline nello shapefile.
+Si aprirà un interfaccia GUI (Graphic User Interface) dal quale sarà possibile aprire un file shapefile polyline esistente (input) e indicare i file SSAP di output. Con il tasto "Verifica Preliminare Shape" è possibile eseguire un controllo dello shapefile di input senza generare file SSAP, verranno indicati eventuali errori rispetto alle specifiche SSAP o indicate informazioni generali se il file risulta corretto. Il tasto "Converti" esegue la conversione da shapefile a file per SSAP, nel caso di errori nel file di input questi vengono comunicati (come per la verifica preliminare) e la conversione è interrotta, se lo shapefile rispetta le specifiche SSAP verranno generati file SSAP .mod, .dat, .geo. I file .fld, .svr e .sin saranno presenti se presenti le relative polyline nello shapefile.
+
+
 
 
 In ogni caso prestare particolare attenzione al settaggio delle unità di misura.
