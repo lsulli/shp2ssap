@@ -1,5 +1,8 @@
 Shp2SSAP.exe ver 1.1.7 build 173
 
+Applicazione per la creazione shapefile di modello pendio e convertilo in file per SSAP2010
+
+
 AUTORE
 
 Lorenzo Sulli - lorenzo.sulli@gmail.com
