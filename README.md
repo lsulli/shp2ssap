@@ -21,17 +21,15 @@ Per il software SSAP2010 vedi termini di licenza riportati in www.SSAP.eu. (Auto
 
 REQUISITI SISTEMA
 
-Windows 32 o 64 bit (testato con Windows XP, Windows 7, Windows 8x, windows 10).
-Il file eseguibile non richiede librerie preinstallate (tutti i moduli e le librerie di python sono comprese nel file eseguibile) nè è richiesta l'installazione di software GIS specifici, qualsiasi strumento GIS che permette la modifica degli shapefile è ammesso. Testato con ArcGis 9.2, 10.0, Arcview 3.2 e Qgis 2.1x.
+Applicativo sviluppato con Python 3x a 32 bit, S.O. Windows 32 o 64 bit (testato con Windows XP, Windows 7, Windows 8x, windows 10). Il file eseguibile non richiede librerie preinstallate (tutti i moduli e le librerie di python sono comprese nel file eseguibile) nè è richiesta l'installazione di software GIS specifici, qualsiasi strumento GIS che permette la modifica degli shapefile è ammesso. Testato con ArcGis 9.2, 10.0, Arcview 3.2 e Qgis 2.1x.
 Non è strettamente necessario che sia installato SSAP2010 ma è ovviamente vivamente consigliato per la verifica dei file creati.
     
-    ATTENZIONE: per il corretto uso di questo applicativo è necessario conoscere le nozioni fondamentali di SSAP2010 in particolare i criteri di costruzione dei file .dat e .sin.
+    ATTENZIONE: per il corretto uso di questo applicativo è necessario conoscere le nozioni fondamentali 
+    di SSAP2010, in particolare i criteri di costruzione dei file .dat.
 
 FUNZIONALITA' PRINCIPALI
 
-Eseguibile per windows per la creazione di file .dat, .geo, .fld, .svr, .sin e .mod per SSAP2010 (www.SSAP.eu) partendo da un unico shapefile polyline. Dall'eseguibile Shp2SSAP.exe è attivabile un tool specifico (xy2shp_forSSAP.exe) per creare uno shapefile monostrato (già strutturato per la creazione di file per SSAP) partendo da un elenco di coordinate cartesiane xy descriventi il profilo morfologico del terreno.
-
-Lo shapefile descrive il modello geometrico (ovvero i dati per il file .dat), comprensivo di falda (dati per il file .fld) se indicato, alle polyline che descrivono il modello geometrico sono associati gli attributi per la creazione del file .geo. Editando lo Shapefile in ambiente GIS Possono essere inseriti polyline che descrivono i carichi (dati per file .svr) e polyline che descrivono una superficie di verifica singola (per file .sin).
+Eseguibile per windows per la creazione di file .dat, .geo, .fld, .svr, .sin e .mod per SSAP2010 (www.SSAP.eu) partendo da un unico shapefile polyline. Dall'eseguibile Shp2SSAP.exe è attivabile un tool specifico (xy2shp_forSSAP.exe) per creare uno shapefile monostrato (già strutturato per la creazione di file per SSAP) partendo da un elenco di coordinate cartesiane xy descriventi il profilo morfologico del terreno. Lo shapefile descrive il modello geometrico (ovvero i dati per il file .dat), comprensivo di falda (dati per il file .fld) se indicato, alle polyline che descrivono il modello geometrico possono essere associati gli attributi per la creazione del file .geo. Editando lo Shapefile in ambiente GIS Possono essere modificati gli attributi per il file .geo, aggiunte altre polyline  che descrivono altri strati, carichi (dati per file .svr) e una superficie di verifica singola (per file .sin).
 
 INSTALLAZIONE
 
@@ -41,29 +39,32 @@ GUIDA All'USO
 
 Una volta installato avviare il file Shp2SSAP.exe.
 
-    ATTENZIONE: l'antivirus al primo avvio può eseguire un controllo dell'eseguibile che può richiedere alcuni secondi.
+    ATTENZIONE: l'antivirus al primo avvio può eseguire un controllo dell'eseguibile.
+    Il controllo può richiedere alcuni secondi e viene eseguito di norma solo la primo avvio.
 
-Si aprirà un interfaccia GUI (Graphic User Interface) dal quale sarà possibile aprire un file shapefile polyline esistente e indicare i file SSAP di output.
+Si aprirà un interfaccia GUI (Graphic User Interface) dal quale sarà possibile aprire un file shapefile polyline esistente e indicare i file SSAP di output. Vengono lette le directory indicate nel file default.txt.
 
-Gli shapefile secondo i requisiti richiesti possono essere creati tramite il tool xy2Shp_forSSAP.exe e quindi modificati ed integrati in ambiente GIS. Potranno quindi essere aggiunti gli strati per .dat, carichi per .svr, la falda per .fld e una superficie per la verifica singola (.sin) indicando il relativo attributo nel campo "SSAP". I valori dei parametri geotecnici per terre e rocce dovranno essere aggiunti nei campi dedicati (PHI, C, ....vedi oltre per i dettagli). La condizione drenata / non drenata deve essere impostata nel campo "D_UND". I carichi sono specificati nel campo "VAL1". Leggere con attenzione i dettagli nel paragrafo "CARATTERISTICHE DELLO SHAPEFILE MODELLO PENDIO".
+Gli shapefile secondo i requisiti richiesti possono essere creati tramite il tool xy2Shp_forSSAP.exe e quindi modificati ed integrati in ambiente GIS.  Potranno quindi essere aggiunti gli strati per .dat, carichi per .svr, la falda per .fld e una superficie per la verifica singola (.sin). La diversa tipologia di strato è identificata dall'attributo nel campo "SSAP". I valori dei parametri geotecnici per terre e rocce dovranno essere aggiunti nei campi dedicati (PHI, C, ....vedi oltre per i dettagli). La condizione drenata / non drenata deve essere impostata nel campo "D_UND". Se "SSAP = svr" i carichi devono essere specificati nel campo "VAL1". Particolare attenzione deve essere posta all'assegnazione dell'indice (campo "SSAP_ID") che deve rispettare i requisiti per SSAP, ovvero essere univoco, continuo e crescente dall'alto verso il basso. 
+Leggere con attenzione i dettagli nel paragrafo "CARATTERISTICHE DELLO SHAPEFILE MODELLO PENDIO".
 
     ATTENZIONE: Una volta editato lo shapefile è indispensabile chiudere la sezioen di editing. 
-    Talvolta è necessario chiudere l'applicativo GIS o esportare lo shapefil emodificato come copia, 
+    Talvolta è necessario chiudere l'applicativo GIS o esportare lo shapefile modificato come copia, 
     la conversione dello shapefile in file SSAP può generare errori nei file di output quando 
-    gli shapefile sono letti contemporaneamente da due applicativi.
+    gli shapefile sono letti contemporaneamente da due applicativi, casistica che si presenta talvolta 
+    con Qgis e più raramente con ArcGIS.
     
 
-Con il tasto "Verifica Preliminare Shape" è possibile eseguire un controllo dello shapefile di input senza generare file SSAP, verranno indicati eventuali errori rispetto alle specifiche SSAP o indicate informazioni generali se il file risulta corretto. Il tasto "Converti" esegue la conversione da shapefile a file per SSAP, nel caso di errori nel file di input questi vengono comunicati (come per la verifica preliminare) e la conversione è interrotta, se lo shapefile rispetta le specifiche SSAP verranno generati file SSAP .mod, .dat, .geo. I file .fld, .svr e .sin saranno presenti se presenti le relative polyline nello shapefile. 
-    
-    In fase di generazione die file SSAP possono essere attivate opzioni per il controllo avanzato 
-    delle sequenza verticale degli strati e per forzare l'estensione degli strati ai limiti 
-    della superficie topografica.
+Con il tasto "Verifica Preliminare Shape" è possibile eseguire un controllo dello shapefile di input senza generare file SSAP, verranno indicati eventuali errori rispetto alle specifiche SSAP o indicate informazioni generali se il file risulta corretto. Il tasto "Converti" esegue la conversione da shapefile a file per SSAP, nel caso di errori nel file di input questi vengono comunicati (come per la verifica preliminare) e la conversione è interrotta, se lo shapefile rispetta le specifiche SSAP verranno generati sempre file SSAP .mod, .dat, .geo. I file .fld, .svr e .sin sono preseneti se sono inserite le relative polyline nello shapefile. In fase di generazione die file SSAP possono essere attivate opzioni per il controllo avanzato     delle sequenza verticale degli strati e per forzare l'estensione degli strati ai limiti della superficie topografica.
     
 Il tasto "Crea Shape da XY" permette di avviare il tool xy2Shp_forSSAP.exe per creare uno shapefile polyline della superficie topografica da un elenco di coordinate xy (in SSAP strato unico con ID = 1), le coordinate dovranno avere valori e ordinamento secondo gli standard del file .dat per SSAP. Lo Shapefile avrà tutte le caratteristiche per generare con Shp2SSAP.exe un modello di pendio monostrato per SSAP.
 
-    ATTENZIONE: La struttura tipo del file XY ammessa è quella tipica generata dagli strumenti GIS per la creazione di profili da DTM. Le coordinate dovranno essere separate dai caratteri TAB, punto e virgola o barra verticale.
+    ATTENZIONE: La struttura tipo del file XY ammessa è quella tipica generata dagli strumenti GIS 
+    per la creazione di profili da DTM. Il file deve essere un file ascii, di default è prevista un estensione txt. 
+    Le due colonne di coordinate dovranno essere separate dai caratteri TAB, punto e virgola 
+    o barra verticale. Per il decimale è ammesso sia il punto che la virgola. 
+    Vengono automaticamente saltate le righe con caratteri non numerici. 
 
-Sono presenti opzioni per aggiungere una falda parallela alla superficie, impostare i parametri geotecnici per le terre. Per una back analysis speditiva in condIzioni residue può essere approssimato l'angolo d'attrito interno alla pendenza media del pendio e imposto zero alla coesione dreanata (ovvero all'angolo di riposo di materiali granulari non coesivi).
+Nel tool xy2Shp_forSSAP.exe sono presenti opzioni per aggiungere una falda parallela alla superficie e impostare i parametri geotecnici per le terre. Per una back analysis speditiva in condIzioni residue può essere approssimato l'angolo d'attrito interno alla pendenza media del pendio e imposto zero alla coesione dreanata (ovvero all'angolo di riposo di materiali granulari non coesivi).
 
 CARATTERISTICHE DELLO SHAPEFILE MODELLO PENDIO
 
