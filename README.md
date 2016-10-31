@@ -80,9 +80,9 @@ Sono ammessi solo shapefile del tipo polyline "semplice" singol part. Nel caso v
 
 La struttura degli attributi dello shapefile è la seguente. Non è richiesto un ordine prestabilito, è obbligatorio l'uso dei nomi di campo e del tipo e lunghezza minima indicata. 
 
-Indice dello strato: ['USER_ID', 'N', 2, 0] (campo richiesto)
+['USER_ID', 'N', 2, 0] - Indice dello strato (campo richiesto)
 
-Tipo file SSAP: ['SSAP', 'C', 3] valori ammessi dat, geo, fld, svr, sin (campo richiesto)
+['SSAP', 'C', 3] Tipo file SSAP. Valori ammessi dat, geo, fld, svr, sin (campo richiesto)
 
 Valore Angolo d'attrito - gradi : ['PHI', 'N', 2, 0] (campo richiesto)
 
