@@ -1,7 +1,6 @@
 Shp2SSAP.exe ver 1.1.7 build 173
 
-Applicazione per la creazione shapefile di modello pendio e convertilo in file per SSAP2010
-
+Applicazione per creare shapefile di modello pendio da elenco coordinate e convertire in file per SSAP2010 (www.ssap.eu).
 
 AUTORE
 
@@ -29,7 +28,9 @@ Non è strettamente necessario che sia installato SSAP2010 ma è ovviamente viva
 
 FUNZIONALITA' PRINCIPALI
 
-Eseguibile per windows per la creazione di file .dat, .geo, .fld, .svr, .sin e .mod per SSAP2010 (www.SSAP.eu) partendo da un unico shapefile polyline. Dall'eseguibile Shp2SSAP.exe è attivabile un tool specifico (xy2shp_forSSAP.exe) per creare uno shapefile monostrato (già strutturato per la creazione di file per SSAP) partendo da un elenco di coordinate cartesiane xy descriventi il profilo morfologico del terreno. Lo shapefile descrive il modello geometrico (ovvero i dati per il file .dat), comprensivo di falda (dati per il file .fld) se indicato, alle polyline che descrivono il modello geometrico possono essere associati gli attributi per la creazione del file .geo. Editando lo Shapefile in ambiente GIS Possono essere modificati gli attributi per il file .geo, aggiunte altre polyline  che descrivono altri strati, carichi (dati per file .svr) e una superficie di verifica singola (per file .sin).
+Eseguibile per windows per la creazione di file .dat, .geo, .fld, .svr, .sin e .mod per SSAP2010 (www.SSAP.eu) partendo da un unico shapefile polyline. Sfruttando le funzionalità GIS è possibile gestire in forma integrata l'editing della geometria per i file .dat, .fld e .sin e i dati delle informazioni per il file .geo. 
+
+Dall'eseguibile Shp2SSAP.exe è attivabile un tool specifico (xy2shp_forSSAP.exe) per creare uno shapefile monostrato (già strutturato per la creazione di file per SSAP) partendo da un elenco di coordinate cartesiane xy descriventi il profilo morfologico del terreno. Lo shapefile descrive il modello geometrico (ovvero i dati per il file .dat), comprensivo di falda (dati per il file .fld) se impostato dall'utente, alle polyline che descrivono il modello geometrico sono associati gli attributi per la creazione del file .geo. Editando lo Shapefile in ambiente GIS Possono essere modificati gli attributi per il file .geo, aggiunte altre polyline che descrivono altri strati, carichi (dati per file .svr) e una superficie di verifica singola (per file .sin).
 
 INSTALLAZIONE
 
