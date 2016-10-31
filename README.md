@@ -80,33 +80,33 @@ Sono ammessi solo shapefile del tipo polyline "semplice" singol part. Nel caso v
 
 La struttura degli attributi dello shapefile è la seguente. Non è richiesto un ordine prestabilito, è obbligatorio l'uso dei nomi di campo e del tipo e lunghezza minima indicata. 
 
-['USER_ID', 'N', 2, 0] - Indice dello strato (campo richiesto)
+['USER_ID', 'N', 2, 0] Indice dello strato (campo richiesto)
 
 ['SSAP', 'C', 3] Tipo file SSAP. Valori ammessi dat, geo, fld, svr, sin (campo richiesto)
 
-Valore Angolo d'attrito - gradi : ['PHI', 'N', 2, 0] (campo richiesto)
+['PHI', 'N', 2, 0] Valore Angolo d'attrito - gradi (campo richiesto)
 
-(Coesione efficace - kpa): ['C', 'N', 5, 2] (campo richiesto)
+['C', 'N', 5, 2] Coesione efficace - kpa (campo richiesto)
 
-(Coesione non drenata - kpa ): ['CU', 'N', 5, 2] (campo richiesto)
+['CU', 'N', 5, 2] Coesione non drenata - kpa (campo richiesto)
 
-(Peso di volume naturale - KN/mc): ['GAMMA', 'N', 5, 2] (campo richiesto)
+['GAMMA', 'N', 5, 2] Peso di volume naturale - KN/mc (campo richiesto)
 
-(Peso di volume saturo - KN/mc): ['GAMMASAT', 'N', 5, 2] (campo richiesto)
+['GAMMASAT', 'N', 5, 2] Peso di volume saturo - KN/mc  (campo richiesto)
 
-Campo booleano per escludere strato: ['EXCLUDE', 'N', 1, 0] valori ammessi: 1 escludi (valore predefinito), <> 1 converti (campo richiesto)
+['EXCLUDE', 'N', 1, 0] Campo booleano per escludere strato. Valori ammessi: 1 escludi (valore predefinito), <> 1 converti (campo richiesto)
 
-Campo scelta verifica condizioni drenate/non drenate: ['DR_UNDR', 'C', 1, 0] valori ammessi:  D o <> U drenato (valore predefinito), U non drenato (Undrained) (campo richiesto)
+['DR_UNDR', 'C', 1, 0] Campo scelta verifica condizioni drenate/non drenate. Valori ammessi:  D o <> U drenato (valore predefinito), U non drenato (Undrained) (campo richiesto)
 
-(Resistenza Compressione Uniassiale Roccia Intatta - adimensionale): ['SIGCI', 'N', 5, 2] (campo opzionale)
+['SIGCI', 'N', 5, 2] Resistenza Compressione Uniassiale Roccia Intatta - adimensionale  (campo opzionale)
 
-(Geological Strenght Index - adimensionale):['GSI','N', 5, 2] (campo opzionale)
+['GSI','N', 5, 2] Geological Strenght Index - adimensionale (campo opzionale)
 
-(Indice litologico ammasso - adimensionale):['MI','N', 5, 2] (campo opzionale)
+['MI','N', 5, 2] Indice litologico ammasso - adimensionale (campo opzionale)
 
-(Fattore di disturbo ammasso - adimensionale):['D','N', 5, 2] (campo opzionale)
+['D','N', 5, 2] Fattore di disturbo ammasso - adimensionale (campo opzionale)
 
-(Valore caratteristico file .svr - Kpa):['VAl1','N', 5, 2] (campo opzionale)
+['VAl1','N', 5, 2] Valore caratteristico file .svr - Kpa (campo opzionale)
 
 Nel campo SSAP deve essere indicato a quale file ssap è riferita la polyline.
 
