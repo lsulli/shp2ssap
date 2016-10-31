@@ -76,64 +76,59 @@ Nel tool xy2Shp_forSSAP.exe sono presenti opzioni per aggiungere una falda paral
 
 CARATTERISTICHE DELLO SHAPEFILE MODELLO PENDIO
 
-Sono ammessi solo Shapefile del tipo polyline "semplice" singol part, l'applicativo non è testato con polylineZ o con oggetti multipart.
-In particolare è richiesta una struttura dati del tipo seguente, 
-(non è necessario rispettare ordine dei campi ma è necessario rispettare rigidamente il nome del campo):
+Sono ammessi solo shapefile del tipo polyline "semplice" singol part. Nel caso venga caricato uno shapefile di geometria differente verrà generato un errore. La geometria deve rispettare rigidamente le specifiche SSAP per i file .dat.
 
-(User id) :['USER_ID', 'N', 2, 0]
+La struttura degli attributi dello shapefile è la seguente. Non è richiesto un ordine prestabilito, è obbligatorio l'uso dei nomi di campo e del tipo e lunghezza minima indicata. 
 
-(Tipo file SSAP): ['SSAP', 'C', 3]
+User id :['USER_ID', 'N', 2, 0] (campo richiesto)
 
-(Valore Angolo d'attrito - gradi ): ['PHI', 'N', 2, 0]
+Tipo file SSAP: ['SSAP', 'C', 3] - valori ammessi dat, geo, fld, svr, sin (campo richiesto)
 
-(Coesione efficace - kpa): ['C', 'N', 5, 2]
+Valore Angolo d'attrito - gradi : ['PHI', 'N', 2, 0] (campo richiesto)
 
-(Coesione non drenata - kpa ): ['CU', 'N', 5, 2]
+(Coesione efficace - kpa): ['C', 'N', 5, 2] (campo richiesto)
 
-(Peso di volume insaturo - KN/mc): ['GAMMA', 'N', 5, 2]
+(Coesione non drenata - kpa ): ['CU', 'N', 5, 2] (campo richiesto)
 
-(Peso di volume saturo- KN/mc): ['GAMMASAT', 'N', 5, 2]
+(Peso di volume naturale - KN/mc): ['GAMMA', 'N', 5, 2] (campo richiesto)
 
-(Resistenza Compressione Uniassiale Roccia Intatta - adimensionale): ['SIGCI', 'N', 5, 2]
+(Peso di volume saturo - KN/mc): ['GAMMASAT', 'N', 5, 2] (campo richiesto)
 
-(Geological Strenght Index - adimensionale):['GSI','N', 5, 2]
+Campo booleano per escludere strato: ['EXCLUDE', 'N', 1, 0] - valori ammessi: 1 escludi (valore predefinito), <> 1 converti (campo richiesto)
 
-(Indice litologico ammasso - adimensionale):['MI','N', 5, 2]
+Campo scelta verifica condizioni drenate/non drenate: ['DR_UNDR', 'C', 1, 0] - valori ammessi:  D o <> U drenato (valore predefinito), U non drenato (Undrained) (campo richiesto)
 
-(Fattore di disturbo ammasso - adimensionale):['D','N', 5, 2]
+(Resistenza Compressione Uniassiale Roccia Intatta - adimensionale): ['SIGCI', 'N', 5, 2] (campo opzionale)
 
-(Valore caratteristico file .svr - Kpa):['VAl1','N', 5, 2]
+(Geological Strenght Index - adimensionale):['GSI','N', 5, 2] (campo opzionale)
+
+(Indice litologico ammasso - adimensionale):['MI','N', 5, 2] (campo opzionale)
+
+(Fattore di disturbo ammasso - adimensionale):['D','N', 5, 2] (campo opzionale)
+
+(Valore caratteristico file .svr - Kpa):['VAl1','N', 5, 2] (campo opzionale)
 
 Nel campo SSAP deve essere indicato a quale file ssap è riferita la polyline.
-Valori ammessi per il campo SSAP: .dat, .fld e .svr. 
 
-Per gli strati con campo SSAP uguale è necessario un insieme di valori USER_ID crescenti dall'alto al basso  e continuo da 1 a 20 (come da specifiche SSAP).
+Per gli strati con campo SSAP uguale è necessario un insieme di valori USER_ID crescenti dall'alto al basso e continuo da 1 a 20 (come da specifiche SSAP). 
 
-Le polyline con SSAP = "dat" e SSAP = "svr" possono essere aggiunte anche intercalate a polyline già esistenti (aggiunta di strati a piacere), deve comunque essere rispettata la sequenza crescente e continua dall'alto al basso del campo USER_ID: quindi nel caso dell'inserimento di un nuovo strato tra due esistenti deve essere aggiornato il campo USER_ID .
+Le polyline con SSAP = "dat" e SSAP = "svr" possono essere aggiunte anche intercalate a polyline già esistenti (aggiunta di strati a piacere), deve comunque essere rispettata la sequenza crescente e continua dall'alto al basso del campo USER_ID: quindi nel caso dell'inserimento di un nuovo strato tra due esistenti deve essere aggiornato il campo USER_ID. Per queste polyline non sono ammessi valori di USER_ID = 0
 
-Per SSAP = "fld" è ammesso un solo strato con USER_ID = 0
+Per SSAP = "fld" (falda) è ammesso un solo strato con USER_ID = 0
+Per SSAP = "sin" (superficie singola di verifivca) è ammesso un solo strato con USER_ID = 0
 
-Il file .geo è generato in base ai valori dei campi dedicati (PHI, C, CU etc.), possono essere presenti contemporaneamente valori di C e Cu > 0, l'utente può scegliere se imporre condizioni drenate e non drenate valide per l'intero modello,  
-creando rispettivamente file .geo e .mod [nome_input]_c [nome_input]_cu.
+Il file .geo è generato in base ai valori dei campi dedicati (PHI, C, CU etc.), possono essere presenti contemporaneamente valori di C e Cu > 0, l'utente può scegliere se imporre condizioni drenate e non drenate valide per il singolo strato impostando D (dreained) o U (undrained) nel cmapo "D_UND" i file per SSAP verranno creati di conseguenza.
 
-Se presente un valore SIGCI>0 viene generato un file geo per strati rocciosi e vengono ignorati i valori dei campi per le terre.
+Il campo EXCLUDE permette di escludere singoli strati (ad esempio SSAP = svr o SSAP = fld) che non verranno considerati nella conversione nei file per SSAP.
 
-Sono implementate funzioni di contollo della struttura degli shapefile di input (coordinate negative, numero di strati, sequenza corretta ID strati ) che interrompe la procedura e genera un avviso d'errore.
+Se presente un valore SIGCI > 0 viene generato un file .geo per strati rocciosi e vengono ignorati i valori dei campi per le terre.
+
+Sono implementate funzioni di controllo della struttura degli shapefile di input (coordinate negative, numero di strati, sequenza corretta ID strati, etc.) che interrompe la procedura e genera un avviso d'errore che esplicita la tipologia d'errore intercettata.
 
 Implementata procedura di triming degli strati che eccedono i valori minimo e massimo dell'ascissa della superficie topografica o sono leggermente inferiori ad essa, utile per editare gli strati senza preoccuparsi della precisione dei punti di inizio e fine. 
 
-A procedura conclusa positivamente saranno creati i file SSAP 
-.dat, .geo,  e .mod., i file .fld e .svr saranno presenti se richiesti
-Il file .mod potrà essere aperto direttamente da SSAP 
-senza ulteriori interventi dell'utente.
-
 E'possibile variare alcuni riferimenti di default editando il file default.txt.
 
-Versione 1.1.6 built 36 - 2015.08.10
-Autore: Lorenzo Sulli - lorenzo.sulli@gmail.com
-L'uso della procedura fromshp2ssap.py è di esclusiva responsabilità dell'utente, 
-In accordo con la licenza l'autore non è responsabile per eventuali risultati errati o effetti dannosi 
-su hardware o software dell'utente
 
 Si ringrazia l'autore del modulo shapefile.py, alla base di tutte le funzionalità del presente script.
 Crediti e riferimenti: jlawhead<at>geospatialpython.com. http://code.google.com/p/pyshp/
