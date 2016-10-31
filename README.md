@@ -80,9 +80,9 @@ Sono ammessi solo shapefile del tipo polyline "semplice" singol part. Nel caso v
 
 La struttura degli attributi dello shapefile è la seguente. Non è richiesto un ordine prestabilito, è obbligatorio l'uso dei nomi di campo e del tipo e lunghezza minima indicata. 
 
-User id :['USER_ID', 'N', 2, 0] (campo richiesto)
+Indice dello strato: ['USER_ID', 'N', 2, 0] (campo richiesto)
 
-Tipo file SSAP: ['SSAP', 'C', 3] - valori ammessi dat, geo, fld, svr, sin (campo richiesto)
+Tipo file SSAP: ['SSAP', 'C', 3] valori ammessi dat, geo, fld, svr, sin (campo richiesto)
 
 Valore Angolo d'attrito - gradi : ['PHI', 'N', 2, 0] (campo richiesto)
 
@@ -94,9 +94,9 @@ Valore Angolo d'attrito - gradi : ['PHI', 'N', 2, 0] (campo richiesto)
 
 (Peso di volume saturo - KN/mc): ['GAMMASAT', 'N', 5, 2] (campo richiesto)
 
-Campo booleano per escludere strato: ['EXCLUDE', 'N', 1, 0] - valori ammessi: 1 escludi (valore predefinito), <> 1 converti (campo richiesto)
+Campo booleano per escludere strato: ['EXCLUDE', 'N', 1, 0] valori ammessi: 1 escludi (valore predefinito), <> 1 converti (campo richiesto)
 
-Campo scelta verifica condizioni drenate/non drenate: ['DR_UNDR', 'C', 1, 0] - valori ammessi:  D o <> U drenato (valore predefinito), U non drenato (Undrained) (campo richiesto)
+Campo scelta verifica condizioni drenate/non drenate: ['DR_UNDR', 'C', 1, 0] valori ammessi:  D o <> U drenato (valore predefinito), U non drenato (Undrained) (campo richiesto)
 
 (Resistenza Compressione Uniassiale Roccia Intatta - adimensionale): ['SIGCI', 'N', 5, 2] (campo opzionale)
 
@@ -110,7 +110,7 @@ Campo scelta verifica condizioni drenate/non drenate: ['DR_UNDR', 'C', 1, 0] - v
 
 Nel campo SSAP deve essere indicato a quale file ssap è riferita la polyline.
 
-Per gli strati con campo SSAP uguale è necessario un insieme di valori USER_ID crescenti dall'alto al basso e continuo da 1 a 20 (come da specifiche SSAP). 
+Per gli strati con campo SSAP = dat e SSAP = svr è obbligatorio un insieme di valori USER_ID crescenti dall'alto al basso e continuo da 1 a 20 (come da specifiche SSAP).
 
 Le polyline con SSAP = "dat" e SSAP = "svr" possono essere aggiunte anche intercalate a polyline già esistenti (aggiunta di strati a piacere), deve comunque essere rispettata la sequenza crescente e continua dall'alto al basso del campo USER_ID: quindi nel caso dell'inserimento di un nuovo strato tra due esistenti deve essere aggiornato il campo USER_ID. Per queste polyline non sono ammessi valori di USER_ID = 0
 
@@ -121,15 +121,18 @@ Il file .geo è generato in base ai valori dei campi dedicati (PHI, C, CU etc.),
 
 Il campo EXCLUDE permette di escludere singoli strati (ad esempio SSAP = svr o SSAP = fld) che non verranno considerati nella conversione nei file per SSAP.
 
+    ATTENZIONE: nel caso siano escluse singole polyline SSAP = dat o SSAP = svr è necessario 
+    editare e cambiare i valori del campo USER_ID per ripristinare la sequenza continua e crescente 
+    1 - n dall'alto verso il basso
+
 Se presente un valore SIGCI > 0 viene generato un file .geo per strati rocciosi e vengono ignorati i valori dei campi per le terre.
 
 Sono implementate funzioni di controllo della struttura degli shapefile di input (coordinate negative, numero di strati, sequenza corretta ID strati, etc.) che interrompe la procedura e genera un avviso d'errore che esplicita la tipologia d'errore intercettata.
 
-Implementata procedura di triming degli strati che eccedono i valori minimo e massimo dell'ascissa della superficie topografica o sono leggermente inferiori ad essa, utile per editare gli strati senza preoccuparsi della precisione dei punti di inizio e fine. 
+    ATTENZIONE: nel caso di modelli di pendio complessi, in particolare quando sono presenti lenti, 
+    la procedura di controllo della sequenza verticale genera falsi errori, nel caso deve essere esclusa.
 
-E'possibile variare alcuni riferimenti di default editando il file default.txt.
+In fase doi conversione è implementata procedura di triming degli strati che eccedono i valori di ascissa minimo e massimo dell'ascissa della superficie topografica o sono leggermente inferiori ad essa, utile per editare gli strati senza preoccuparsi della precisione dei punti di inizio e fine. E'possibile variare la tolleranza della procedura di triming editando il file default.txt.
 
 
-Si ringrazia l'autore del modulo shapefile.py, alla base di tutte le funzionalità del presente script.
-Crediti e riferimenti: jlawhead<at>geospatialpython.com. http://code.google.com/p/pyshp/
 """
