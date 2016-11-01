@@ -1,4 +1,4 @@
-Shp2SSAP.exe ver 1.1.7 build 173
+Shp2SSAP.exe ver 1.1.7 build 174
 
 Applicazione per creare shapefile di modello pendio da elenco coordinate e convertire in file per SSAP2010 (www.ssap.eu).
 
