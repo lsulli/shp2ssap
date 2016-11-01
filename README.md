@@ -53,19 +53,24 @@ Gli shapefile secondo i requisiti richiesti possono essere creati tramite il too
     è perfettamente compatibile, se il modello del pendio utilizza coordinate cartesiane assolute per le ascisse 
     lo shapefile del modello pendio sarà proiettato in basso a sinistra rispetto all'Italia.
 
-Una volta aperto lo shapefile in ambiente GIS potranno essere aggiunti gli strati per .dat, carichi per .svr, la falda per .fld e una superficie per la verifica singola (.sin). La diversa tipologia di strato è identificata dall'attributo nel campo "SSAP". I valori dei parametri geotecnici per terre e rocce dovranno essere aggiunti nei campi dedicati (PHI, C, ....vedi oltre per i dettagli). La condizione drenata / non drenata deve essere impostata nel campo "D_UND". Se "SSAP = svr" i carichi devono essere specificati nel campo "VAL1". Particolare attenzione deve essere posta all'assegnazione dell'indice (campo "SSAP_ID") che deve rispettare i requisiti per SSAP, ovvero essere univoco, continuo e crescente dall'alto verso il basso. 
+Una volta aperto lo shapefile in ambiente GIS potranno essere aggiunti gli strati per .dat, carichi per .svr, la falda per .fld e una superficie per la verifica singola (.sin). 
+
+    ATTENZIONE: la geometria della polyline .sin è particolarmente critica per le compatibilità 
+    richieste da SSAP, deve quindi essere editata con criterio.
+    
+La diversa tipologia di strato è identificata dall'attributo nel campo "SSAP". I valori dei parametri geotecnici per terre e rocce dovranno essere aggiunti nei campi dedicati (PHI, C, ....vedi oltre per i dettagli). La condizione drenata / non drenata deve essere impostata nel campo "D_UND". Se "SSAP = svr" i carichi devono essere specificati nel campo "VAL1". Particolare attenzione deve essere posta all'assegnazione dell'indice (campo "SSAP_ID") che deve rispettare i requisiti per SSAP, ovvero essere univoco, continuo e crescente dall'alto verso il basso. 
 Leggere con attenzione i dettagli nel paragrafo "CARATTERISTICHE DELLO SHAPEFILE MODELLO PENDIO".
 Nella cartella Shapefile_Modello_Pendio sono disponibili shapefile di alcuni modelli di pendio completi.
 
-    ATTENZIONE: Una volta editato lo shapefile è indispensabile chiudere la sezioen di editing. 
+    ATTENZIONE: Una volta editato lo shapefile è indispensabile chiudere la sezione di editing. 
     Talvolta è necessario chiudere l'applicativo GIS o esportare lo shapefile modificato come copia, 
     la conversione dello shapefile in file SSAP può generare errori nei file di output quando 
-    gli shapefile sono letti contemporaneamente da due applicativi, casistica che si presenta talvolta 
+    gli shapefile sono letti contemporaneamente da due applicativi, casistica che si presenta frequentemente 
     con Qgis e più raramente con ArcGIS.    
 
 Con il tasto "Verifica Preliminare Shape" è possibile eseguire un controllo dello shapefile di input senza generare file SSAP, verranno indicati eventuali errori rispetto alle specifiche SSAP o indicate informazioni generali se il file risulta corretto. Il tasto "Converti" esegue la conversione da shapefile a file per SSAP, nel caso di errori nel file di input questi vengono comunicati (come per la verifica preliminare) e la conversione è interrotta, se lo shapefile rispetta le specifiche SSAP verranno generati sempre file SSAP .mod, .dat, .geo. I file .fld, .svr e .sin sono preseneti se sono inserite le relative polyline nello shapefile. In fase di generazione die file SSAP possono essere attivate opzioni per il controllo avanzato     delle sequenza verticale degli strati e per forzare l'estensione degli strati ai limiti della superficie topografica.
     
-Il tasto "Crea Shape da XY" permette di avviare il tool xy2Shp_forSSAP.exe per creare uno shapefile polyline della superficie topografica da un elenco di coordinate xy (in SSAP strato unico con ID = 1), le coordinate dovranno avere valori e ordinamento secondo gli standard del file .dat per SSAP. Lo Shapefile avrà tutte le caratteristiche per generare con Shp2SSAP.exe un modello di pendio monostrato per SSAP.
+Il tasto "Crea Shape da XY" permette di avviare il tool xy2Shp_forSSAP.exe per creare uno shapefile polyline della superficie topografica da un elenco di coordinate xy (in SSAP strato unico con SSAP_ID = 1), le coordinate dovranno avere valori e ordinamento secondo gli standard del file .dat per SSAP. Lo Shapefile avrà tutte le caratteristiche per generare con Shp2SSAP.exe un modello di pendio monostrato per SSAP.
 
     ATTENZIONE: La struttura tipo del file XY ammessa è quella tipica generata dagli strumenti GIS 
     per la creazione di profili da DTM. Il file deve essere un file ascii, (.txt per default). 
@@ -81,7 +86,9 @@ Sono ammessi solo shapefile del tipo polyline "semplice" singol part. Nel caso v
 
 La struttura degli attributi dello shapefile è la seguente. Non è richiesto un ordine prestabilito, è obbligatorio l'uso dei nomi di campo e del tipo e lunghezza minima indicata. 
 
-['USER_ID', 'N', 2, 0] Indice dello strato (campo richiesto)
+    ATTENZIONE: non sono ammessi valori nulli, la loro presenza genererà un errore in fase di conversione.
+
+['SSAP_ID', 'N', 2, 0] Indice dello strato (campo richiesto)
 
 ['SSAP', 'C', 3] Tipo file SSAP. Valori ammessi dat, geo, fld, svr, sin (campo richiesto)
 
@@ -107,16 +114,16 @@ La struttura degli attributi dello shapefile è la seguente. Non è richiesto un
 
 ['D','N', 5, 2] Fattore di disturbo ammasso - adimensionale (campo opzionale)
 
-['VAl1','N', 5, 2] Valore caratteristico file .svr - Kpa (campo opzionale)
+['VAl1','N', 10, 2] Valore caratteristico file .svr - Kpa (campo opzionale)
 
 Nel campo SSAP deve essere indicato a quale file ssap è riferita la polyline.
 
 Per gli strati con campo SSAP = dat e SSAP = svr è obbligatorio un insieme di valori USER_ID crescenti dall'alto al basso e continuo da 1 a 20 (come da specifiche SSAP).
 
-Le polyline con SSAP = "dat" e SSAP = "svr" possono essere aggiunte anche intercalate a polyline già esistenti (aggiunta di strati a piacere), deve comunque essere rispettata la sequenza crescente e continua dall'alto al basso del campo USER_ID: quindi nel caso dell'inserimento di un nuovo strato tra due esistenti deve essere aggiornato il campo USER_ID. Per queste polyline non sono ammessi valori di USER_ID = 0
+Le polyline con SSAP = "dat" e SSAP = "svr" possono essere aggiunte anche intercalate a polyline già esistenti (aggiunta di strati a piacere), deve comunque essere rispettata la sequenza crescente e continua dall'alto al basso del campo SSAP_ID: quindi nel caso dell'inserimento di un nuovo strato tra due esistenti deve essere aggiornato il campo SSAP_ID. Per queste polyline non sono ammessi valori di SSAP_ID = 0
 
-Per SSAP = "fld" (falda) è ammesso un solo strato con USER_ID = 0
-Per SSAP = "sin" (superficie singola di verifivca) è ammesso un solo strato con USER_ID = 0
+Per SSAP = "fld" (falda) è ammesso un solo strato con SSAP_ID = 0
+Per SSAP = "sin" (superficie singola di verifivca) è ammesso un solo strato con SSAP_ID > 0
 
 Il file .geo è generato in base ai valori dei campi dedicati (PHI, C, CU etc.), possono essere presenti contemporaneamente valori di C e Cu > 0, l'utente può scegliere se imporre condizioni drenate e non drenate valide per il singolo strato impostando D (dreained) o U (undrained) nel cmapo "D_UND" i file per SSAP verranno creati di conseguenza.
 
