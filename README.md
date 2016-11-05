@@ -78,8 +78,8 @@ Con il tasto *Verifica Preliminare Shape* è possibile eseguire un controllo del
 
 Sono implementate funzioni di controllo della struttura degli shapefile di input (coordinate negative, numero di strati, sequenza corretta ID strati, etc.) che interrompe la procedura e genera un avviso d'errore che esplicita la tipologia d'errore intercettata.
 
-    ATTENZIONE: nel caso di modelli di pendio complessi o in presenza di lenti, la procedura di controllo 
-    della sequenza verticale può generare falsi errori, nel caso deve essere esclusa.
+    ATTENZIONE: nel caso di modelli di pendio complessi o in presenza di lenti, l'opzione 
+    "verifica ordinamento verticale strati" può generare falsi errori, nel caso deve essere disattivata.
 
 In fase doi conversione è implementata procedura di triming degli strati che eccedono i valori di ascissa minimo e massimo dell'ascissa della superficie topografica o sono leggermente inferiori ad essa, utile per editare gli strati senza preoccuparsi della precisione dei punti di inizio e fine. E'possibile variare la tolleranza della procedura di triming editando il file default.txt.
   
@@ -148,9 +148,9 @@ Per **SSAP** = "sin" (superficie singola di verifivca) è ammesso un solo strato
 
 Il file .geo è generato in base ai valori dei campi dedicati (PHI, C, CU etc.), possono essere presenti contemporaneamente valori di C e Cu > 0, l'utente può scegliere se imporre condizioni drenate e non drenate valide per il singolo strato impostando D (dreained) o U (undrained) nel campo **DR_UNDR** i file per SSAP2010 verranno creati di conseguenza.
 
-Il campo **EXCLUDE** permette di escludere singoli strati (ad esempio **SSAP** = svr, fld o sin) che non verranno considerati nella conversione nei file per SSAP2010.
+Il campo **EXCLUDE** permette di escludere singoli strati (ad esempio **SSAP** = "svr", "fld" o "sin") che non verranno considerati nella conversione nei file per SSAP2010.
 
-    ATTENZIONE: nel caso siano escluse singole polyline **SSAP** = dat o **SSAP** = svr è necessario 
+    ATTENZIONE: nel caso siano escluse singole polyline SSAP = "dat" o SSAP = "svr" è necessario 
     editare e cambiare i valori del campo USER_ID per ripristinare la sequenza continua e crescente 
     1 - n dall'alto verso il basso
 
