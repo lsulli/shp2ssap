@@ -1,16 +1,16 @@
-Shp2SSAP.exe ver 1.1.7 build 174
+##**Shp2SSAP.exe ver 1.1.7 build 174**##
 
 Applicazione per creare shapefile polyline di un modello del pendio partendo da un elenco coordinate e convertire lo shapefile in file per SSAP2010 (www.ssap.eu).
 
-AUTORE
+**AUTORE**
 
 Lorenzo Sulli - lorenzo.sulli@gmail.com
 
-INDIRIZZO DOWNLOAD
+**INDIRIZZO DOWNLOAD**
 
 https://github.com/lsulli/shp2ssap
 
-LICENZA
+**LICENZA**
 
 http://www.gnu.org/licenses/gpl.html
 
@@ -18,7 +18,7 @@ Le procedure fondamentali utilizzano il modulo shapefile.py (credit. https://git
 
 Per il software SSAP2010 vedi termini di licenza riportati in www.SSAP.eu. (Autore Lorenzo Borselli)
 
-REQUISITI SISTEMA
+**REQUISITI SISTEMA**
 
 Applicativo sviluppato con Python 3x a 32 bit, S.O. Windows 32 o 64 bit (richiesti con Windows 7 o superiore, Windows 8x, windows 10). Il file eseguibile non richiede librerie preinstallate (tutti i moduli e le librerie di python sono comprese nel file eseguibile) nè è richiesta l'installazione di software GIS specifici, qualsiasi strumento GIS che permette la modifica degli shapefile è ammesso. Testato con ArcGis 9.2, 10.0, Arcview 3.2 e Qgis 2.1x.
 Non è strettamente necessario che sia installato SSAP2010 ma è vivamente consigliato per la verifica dei file creati.
@@ -26,19 +26,19 @@ Non è strettamente necessario che sia installato SSAP2010 ma è vivamente consi
     ATTENZIONE: per il corretto uso di questo applicativo è necessario conoscere le nozioni fondamentali 
     di SSAP2010, in particolare i criteri di costruzione dei file .dat.
 
-FUNZIONALITA' PRINCIPALI
+**FUNZIONALITA' PRINCIPALI**
 
 Eseguibile per windows per la creazione di file .dat, .geo, .fld, .svr, .sin e .mod per SSAP2010 (www.SSAP.eu) partendo da un unico shapefile polyline. Sfruttando le funzionalità GIS è possibile gestire in forma integrata l'editing della geometria per i file .dat, .fld e .sin e i dati delle informazioni per il file .geo. 
 
 Dall'eseguibile Shp2SSAP.exe è attivabile un tool specifico (xy2shp_forSSAP.exe) per creare uno shapefile monostrato (già strutturato per la creazione di file per SSAP) partendo da un elenco di coordinate cartesiane xy descriventi il profilo morfologico del terreno. Lo shapefile descrive il modello geometrico (ovvero i dati per il file .dat), comprensivo di falda (dati per il file .fld) se impostato dall'utente, alle polyline che descrivono il modello geometrico sono associati gli attributi per la creazione del file .geo. Editando lo Shapefile in ambiente GIS Possono essere modificati gli attributi per il file .geo, aggiunte altre polyline che descrivono altri strati, carichi (dati per file .svr) e una superficie di verifica singola (per file .sin).
 
-INSTALLAZIONE
+**INSTALLAZIONE**
 
 Il file Shp2SSAP_setup.exe è un file compresso auto-estraente con procedura guidata. Non vengono modificate le chiavi di registro nè creati file all'esterno della directory di installazione. Vengono copiati nella directory scelta vari file e subdirectory, si consiglia di non spostare nessun file dalle directory d'installazione, in ogni caso i file Shp2SSAP.exe e xy2Shp_forSSAP.exe deveono risiedere nella stessa directory per la corretta funzionalità dell'applicazione.
 
-GUIDA All'USO
+**GUIDA All'USO**
 
-Una volta installato avviare il file Shp2SSAP.exe.
+Una volta installato individuare la directory d'installazione e avviare il file Shp2SSAP.exe; il collegamento sul desktop deve essere creato dall'utente.
 
     ATTENZIONE: l'antivirus al primo avvio può eseguire un controllo dell'eseguibile.
     Il controllo può richiedere alcuni secondi e viene eseguito di norma solo la primo avvio.
@@ -80,11 +80,14 @@ Il tasto "Crea Shape da XY" permette di avviare il tool xy2Shp_forSSAP.exe per c
 
 Nel tool xy2Shp_forSSAP.exe sono presenti opzioni per aggiungere una falda parallela alla superficie e impostare i parametri geotecnici per le terre. Per una back analysis speditiva in condIzioni residue può essere approssimato l'angolo d'attrito interno alla pendenza media del pendio e imposto zero alla coesione dreanata (ovvero all'angolo di riposo di materiali granulari non coesivi).
 
-CARATTERISTICHE DELLO SHAPEFILE MODELLO PENDIO
+**CARATTERISTICHE DELLO SHAPEFILE MODELLO PENDIO**
 
-Sono ammessi solo shapefile del tipo polyline "semplice" singol part. Nel caso venga caricato uno shapefile di geometria differente verrà generato un errore. La geometria deve rispettare rigidamente le specifiche SSAP per i file .dat.
+Sono ammessi solo shapefile del tipo polyline "singol part". Nel caso venga caricato uno shapefile di geometria differente verrà generato un errore. 
 
-La struttura degli attributi dello shapefile è la seguente. Non è richiesto un ordine prestabilito, è obbligatorio l'uso dei nomi di campo e del tipo e lunghezza minima indicata. 
+    ATTENZIONE: La geometria deve rispettare rigidamente le specifiche SSAP per i file .dat 
+    così come specificato nel manuale SSAP 4.7.2 al capitolo 3.3.
+
+La struttura degli attributi dello shapefile è riportata sotto seguente. Non è richiesto un ordine prestabilito dei campi, è invece obbligatorio l'uso dei nomi di campo e del tipo e lunghezza minima indicata. 
 
     ATTENZIONE: non sono ammessi valori nulli, la loro presenza genererà un errore in fase di conversione.
 
@@ -92,7 +95,7 @@ La struttura degli attributi dello shapefile è la seguente. Non è richiesto un
 
 ['SSAP', 'C', 3] Tipo file SSAP. Valori ammessi dat, geo, fld, svr, sin (campo richiesto)
 
-['PHI', 'N', 2, 0] Valore Angolo d'attrito - gradi (campo richiesto)
+['PHI', 'N', 4, 2] Valore Angolo d'attrito - gradi (campo richiesto)
 
 ['C', 'N', 5, 2] Coesione efficace - kpa (campo richiesto)
 
@@ -106,7 +109,7 @@ La struttura degli attributi dello shapefile è la seguente. Non è richiesto un
 
 ['DR_UNDR', 'C', 1, 0] Campo scelta verifica condizioni drenate/non drenate. Valori ammessi:  D o <> U drenato (valore predefinito), U non drenato (Undrained) (campo richiesto)
 
-['SIGCI', 'N', 5, 2] Resistenza Compressione Uniassiale Roccia Intatta - adimensionale  (campo opzionale)
+['SIGCI', 'N', 5, 2] Resistenza Compressione Uniassiale Roccia Intatta  - Mpa (campo opzionale)
 
 ['GSI','N', 5, 2] Geological Strenght Index - adimensionale (campo opzionale)
 
@@ -118,14 +121,14 @@ La struttura degli attributi dello shapefile è la seguente. Non è richiesto un
 
 Nel campo SSAP deve essere indicato a quale file ssap è riferita la polyline.
 
-Per gli strati con campo SSAP = dat e SSAP = svr è obbligatorio un insieme di valori USER_ID crescenti dall'alto al basso e continuo da 1 a 20 (come da specifiche SSAP).
+Per gli strati con campo SSAP = "dat" e SSAP = "svr" è obbligatorio un insieme di valori USER_ID crescenti dall'alto al basso e continuo da 1 a n (n = 20 per SSAP = "dat" e n = 10 per SSAP = "svr" n). Per queste polyline non sono ammessi valori di SSAP_ID = 0
 
-Le polyline con SSAP = "dat" e SSAP = "svr" possono essere aggiunte anche intercalate a polyline già esistenti (aggiunta di strati a piacere), deve comunque essere rispettata la sequenza crescente e continua dall'alto al basso del campo SSAP_ID: quindi nel caso dell'inserimento di un nuovo strato tra due esistenti deve essere aggiornato il campo SSAP_ID. Per queste polyline non sono ammessi valori di SSAP_ID = 0
+Le polyline con SSAP = "dat" e SSAP = "svr" possono essere aggiunte anche intercalate a polyline già esistenti (aggiunta di strati a piacere), deve comunque essere rispettata la sequenza crescente e continua dall'alto al basso del campo SSAP_ID: quindi nel caso dell'inserimento di un nuovo strato tra due esistenti deve essere aggiornato il campo SSAP_ID. 
 
-Per SSAP = "fld" (falda) è ammesso un solo strato con SSAP_ID = 0
+Per SSAP = "fld" (falda) è ammesso un solo strato con SSAP_ID = 0: questo valore identifica univocamente la falda.
 Per SSAP = "sin" (superficie singola di verifivca) è ammesso un solo strato con SSAP_ID > 0
 
-Il file .geo è generato in base ai valori dei campi dedicati (PHI, C, CU etc.), possono essere presenti contemporaneamente valori di C e Cu > 0, l'utente può scegliere se imporre condizioni drenate e non drenate valide per il singolo strato impostando D (dreained) o U (undrained) nel cmapo "D_UND" i file per SSAP verranno creati di conseguenza.
+Il file .geo è generato in base ai valori dei campi dedicati (PHI, C, CU etc.), possono essere presenti contemporaneamente valori di C e Cu > 0, l'utente può scegliere se imporre condizioni drenate e non drenate valide per il singolo strato impostando D (dreained) o U (undrained) nel campo "D_UND" i file per SSAP verranno creati di conseguenza.
 
 Il campo EXCLUDE permette di escludere singoli strati (ad esempio SSAP = svr o SSAP = fld) che non verranno considerati nella conversione nei file per SSAP.
 
@@ -133,12 +136,12 @@ Il campo EXCLUDE permette di escludere singoli strati (ad esempio SSAP = svr o S
     editare e cambiare i valori del campo USER_ID per ripristinare la sequenza continua e crescente 
     1 - n dall'alto verso il basso
 
-Se presente un valore SIGCI > 0 viene generato un file .geo per strati rocciosi e vengono ignorati i valori dei campi per le terre.
+Se presente un valore SIGCI > 0 viene generato un file .geo per strati rocciosi e vengono ignorati i valori dei campi per le terre che SSAP richiede siano impostati a zero.
 
 Sono implementate funzioni di controllo della struttura degli shapefile di input (coordinate negative, numero di strati, sequenza corretta ID strati, etc.) che interrompe la procedura e genera un avviso d'errore che esplicita la tipologia d'errore intercettata.
 
     ATTENZIONE: nel caso di modelli di pendio complessi, in particolare quando sono presenti lenti, 
-    la procedura di controllo della sequenza verticale genera falsi errori, nel caso deve essere esclusa.
+    la procedura di controllo della sequenza verticale può generare falsi errori, nel caso deve essere esclusa.
 
 In fase doi conversione è implementata procedura di triming degli strati che eccedono i valori di ascissa minimo e massimo dell'ascissa della superficie topografica o sono leggermente inferiori ad essa, utile per editare gli strati senza preoccuparsi della precisione dei punti di inizio e fine. E'possibile variare la tolleranza della procedura di triming editando il file default.txt.
 
