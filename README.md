@@ -63,7 +63,9 @@ Una volta aperto lo shapefile in ambiente GIS potranno essere aggiunti gli strat
     richieste da SSAP, deve quindi essere editata con criterio.
     
 La diversa tipologia di strato è identificata dall'attributo nel campo **SSAP**. I valori dei parametri geotecnici per terre e rocce dovranno essere aggiunti nei campi dedicati (PHI, C, ....vedi oltre per i dettagli). La condizione drenata / non drenata deve essere impostata nel campo **DR_UNDR**. Se **SSAP** = svr i carichi devono essere specificati nel campo **VAL**. Particolare attenzione deve essere posta all'assegnazione dell'indice (campo **SSAP_ID**) che deve rispettare i requisiti per SSAP2010, ovvero essere univoco, continuo e crescente dall'alto verso il basso. 
+
 Leggere con attenzione i dettagli nel paragrafo "CARATTERISTICHE DELLO SHAPEFILE MODELLO PENDIO".
+
 Nella cartella **Shapefile_ModelliPendio** sono disponibili shapefile di alcuni modelli di pendio completi.
 
     ATTENZIONE: Una volta editato lo shapefile è indispensabile chiudere la sezione di editing. 
@@ -76,8 +78,8 @@ Con il tasto *Verifica Preliminare Shape* è possibile eseguire un controllo del
 
 Sono implementate funzioni di controllo della struttura degli shapefile di input (coordinate negative, numero di strati, sequenza corretta ID strati, etc.) che interrompe la procedura e genera un avviso d'errore che esplicita la tipologia d'errore intercettata.
 
-    ATTENZIONE: nel caso di modelli di pendio complessi, ma anche per modelli semplici quando sono presenti 
-    lenti, la procedura di controllo della sequenza verticale può generare falsi errori, nel caso deve essere esclusa.
+    ATTENZIONE: nel caso di modelli di pendio complessi o in presenza di lenti, la procedura di controllo 
+    della sequenza verticale può generare falsi errori, nel caso deve essere esclusa.
 
 In fase doi conversione è implementata procedura di triming degli strati che eccedono i valori di ascissa minimo e massimo dell'ascissa della superficie topografica o sono leggermente inferiori ad essa, utile per editare gli strati senza preoccuparsi della precisione dei punti di inizio e fine. E'possibile variare la tolleranza della procedura di triming editando il file default.txt.
   
