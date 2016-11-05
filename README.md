@@ -1,6 +1,6 @@
 Shp2SSAP.exe ver 1.1.7 build 174
 
-Applicazione per creare shapefile di modello pendio da elenco coordinate e convertire in file per SSAP2010 (www.ssap.eu).
+Applicazione per creare shapefile polyline di un modello del pendio partendo da un elenco coordinate e convertire lo shapefile in file per SSAP2010 (www.ssap.eu).
 
 AUTORE
 
@@ -20,8 +20,8 @@ Per il software SSAP2010 vedi termini di licenza riportati in www.SSAP.eu. (Auto
 
 REQUISITI SISTEMA
 
-Applicativo sviluppato con Python 3x a 32 bit, S.O. Windows 32 o 64 bit (testato con Windows XP, Windows 7, Windows 8x, windows 10). Il file eseguibile non richiede librerie preinstallate (tutti i moduli e le librerie di python sono comprese nel file eseguibile) nè è richiesta l'installazione di software GIS specifici, qualsiasi strumento GIS che permette la modifica degli shapefile è ammesso. Testato con ArcGis 9.2, 10.0, Arcview 3.2 e Qgis 2.1x.
-Non è strettamente necessario che sia installato SSAP2010 ma è ovviamente vivamente consigliato per la verifica dei file creati.
+Applicativo sviluppato con Python 3x a 32 bit, S.O. Windows 32 o 64 bit (richiesti con Windows 7 o superiore, Windows 8x, windows 10). Il file eseguibile non richiede librerie preinstallate (tutti i moduli e le librerie di python sono comprese nel file eseguibile) nè è richiesta l'installazione di software GIS specifici, qualsiasi strumento GIS che permette la modifica degli shapefile è ammesso. Testato con ArcGis 9.2, 10.0, Arcview 3.2 e Qgis 2.1x.
+Non è strettamente necessario che sia installato SSAP2010 ma è vivamente consigliato per la verifica dei file creati.
     
     ATTENZIONE: per il corretto uso di questo applicativo è necessario conoscere le nozioni fondamentali 
     di SSAP2010, in particolare i criteri di costruzione dei file .dat.
