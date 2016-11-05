@@ -10,6 +10,10 @@ Lorenzo Sulli - lorenzo.sulli@gmail.com
 
 https://github.com/lsulli/shp2ssap
 
+**UPGRADE**
+
+Versione 1.1: aggiunto e integrato tool xy2shp_forSSAP.exe
+
 **LICENZA**
 
 http://www.gnu.org/licenses/gpl.html
