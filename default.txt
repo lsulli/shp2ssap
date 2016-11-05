@@ -1,8 +1,0 @@
-#dafault path search for input shapefile
-..\Shape_Test\
-#default path search for output SSAP file
-..\FileSSAP_Test\
-#max number of character for error message. Useful to cut "monster" error message
-1100
-# tolerance factor for trimming layers. The tolerance is layer length divide by tolerance factor. Value < 20 not admitted
-20
