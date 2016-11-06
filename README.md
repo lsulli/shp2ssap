@@ -1,4 +1,4 @@
-##**Shp2SSAP.exe ver 1.1.7 build 174**##
+##**Shp2SSAP.exe ver 1.1.7 build 175**##
 
 Applicazione per creare shapefile polyline di un modello del pendio partendo da un elenco coordinate e convertire lo shapefile in file per SSAP2010 (www.ssap.eu).
 
@@ -20,7 +20,7 @@ http://www.gnu.org/licenses/gpl.html
 
 Le procedure fondamentali utilizzano il modulo shapefile.py (credit. https://github.com/GeospatialPython/pyshp)
 
-Per il software SSAP2010 vedi termini di licenza riportati in www.SSAP.eu. (Autore Lorenzo Borselli)
+Per il software SSAP2010 vedi termini di licenza riportati in www.ssap.eu. (Autore Lorenzo Borselli)
 
 **REQUISITI SISTEMA**
 
