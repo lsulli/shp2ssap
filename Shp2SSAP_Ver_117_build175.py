@@ -1,7 +1,7 @@
 #!/usr/bin/env pythonw
 
 """
-Shp2SSAP.exe ver 1.1.7 build 175
+Shp2SSAP_Ver_117_build175.py file sorgente per Shp2SSAP.exe ver 1.1.7 build 175
 
 Applicazione per creare shapefile di modello pendio da elenco coordinate e convertire in file per SSAP2010 (www.ssap.eu).
 
