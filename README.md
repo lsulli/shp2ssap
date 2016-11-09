@@ -86,10 +86,12 @@ In fase doi conversione è implementata procedura di triming degli strati che ec
 Il tasto *Crea Shape da XY* permette di avviare il tool **xy2Shp_forSSAP.exe** per creare uno shapefile polyline della superficie topografica da un elenco di coordinate xy (in SSAP2010 strato unico con **SSAP_ID** = 1), le coordinate dovranno avere valori e ordinamento secondo gli standard del file .dat per SSAP. Lo Shapefile avrà tutte le caratteristiche per generare con Shp2SSAP.exe un modello di pendio monostrato per SSAP. Nella cartella **ProfiliXY_Input** è riportato un profilo d'esempio.
 
     ATTENZIONE: La struttura tipo del file XY ammessa è quella tipica generata dagli strumenti GIS 
-    per la creazione di profili da DTM. Il file deve essere un file ascii (.txt per default). 
+    per la creazione di profili da DTM. Il file deve essere un file ascii (.txt per default) 
+    con solo due colonne (valori x e valori Y) quindi senza la colonna indice.
     Le due colonne di coordinate dovranno essere separate dai caratteri TAB, punto e virgola 
-    o barra verticale. Per il decimale è ammesso sia il punto che la virgola. 
-    Vengono automaticamente saltate le righe con caratteri non numerici. 
+    o barra verticale, spazio e virgola non sono ammessi come separatori di colonna.
+    Per il decimale è ammesso sia il punto che la virgola. 
+    Vengono automaticamente saltate le righe con caratteri non numerici quindi è ammesso l'header del file.
     
 Nel tool xy2Shp_forSSAP.exe sono presenti opzioni per aggiungere una falda parallela alla superficie e impostare i parametri geotecnici per le terre. Per una back analysis speditiva in condIzioni residue può essere approssimato l'angolo d'attrito interno alla pendenza media del pendio e imposto zero alla coesione dreanata (ovvero all'angolo di riposo di materiali granulari non coesivi).
 
