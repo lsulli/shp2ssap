@@ -1,6 +1,7 @@
-##**Shp2SSAP.exe ver 1.1.7 build 175**##
+##**Shp2SSAP.exe ver 1.1.7**##
 
-Applicazione per convertire shapefile polyline di un modello del pendio in file per SSAP2010 (www.ssap.eu). Nell’applicazione è integrato strumento di creazione di uno shapefile di un pendio monostrato partendo da un elenco di coordinate della superficie topografica.
+Applicativo Applicativo per la gestione del modello del pendio SSAP2010 (www.ssap.eu) in ambiente GIS. 
+Permette di convertire shapefile polyline di un modello del pendio in file per SSAP2010. Nell’applicazione è integrato strumento di creazione di uno shapefile di un pendio monostrato partendo da un elenco di coordinate della superficie topografica.
 
 **AUTORE**
 
