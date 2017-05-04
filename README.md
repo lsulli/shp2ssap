@@ -42,12 +42,15 @@ Direttamente dall'interfaccia dell'eseguibile Shp2SSAP.exe è attivabile un tool
 
 Il file **Shp2SSAP_setup.exe** è un file compresso auto-estraente con procedura guidata. Non vengono modificate le chiavi di registro nè creati file all'esterno della directory di installazione. Vengono copiati nella directory scelta vari file e subdirectory. Si consiglia di non spostare nessun file dalle directory d'installazione, in ogni caso i file **Shp2SSAP.exe** e **xy2Shp_forSSAP.exe** devono risiedere nella stessa directory per la corretta funzionalità dell'applicazione.
 
-**GUIDA All'USO**
+ **GUIDA All'USO**
 
 Una volta completata l'installazione individuare la directory d'installazione e avviare il file **Shp2SSAP.exe**; il collegamento sul desktop deve essere creato dall'utente.
 
     ATTENZIONE: l'antivirus al primo avvio può eseguire un controllo dell'eseguibile.
     Il controllo può richiedere alcuni secondi e viene eseguito di norma solo al primo avvio.
+    
+    ATTENZIONE: per configurazioni di sistema con privilegi di accesso diversificati (amministratore, power user, user, etc.) è 
+    possibile che l'esecuzione dell'applicativo richieda l'accesso come amministratore.
 
 Si aprirà un interfaccia GUI (Graphic User Interface) dal quale sarà possibile aprire un file shapefile polyline esistente (tasto *Input Shapefile*) e indicare i file SSAP2010 di output (tasto *Output SSAP files*). Di default vengono lette le directory indicate nel file *default.txt* che può essere modificato a piacimento.
 
