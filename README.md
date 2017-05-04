@@ -70,11 +70,9 @@ Leggere con attenzione i dettagli nel paragrafo "CARATTERISTICHE DELLO SHAPEFILE
 
 Nella cartella **Shapefile_ModelliPendio** sono disponibili shapefile di alcuni modelli di pendio completi.
 
-    ATTENZIONE: Una volta editato lo shapefile è indispensabile chiudere la sezione di editing. 
-    Talvolta è necessario chiudere l'applicativo GIS o esportare lo shapefile modificato come copia, 
-    la conversione dello shapefile in file SSAP può generare errori nei file di output quando 
-    gli shapefile sono letti contemporaneamente da due applicativi, casistica che si presenta frequentemente 
-    con Qgis e più raramente con ArcGIS.    
+    ATTENZIONE: Una volta editato lo shapefile è necessario salvare o chiudere la sezione di editing. 
+    Il sistema genera una copia temporanea del file in editing: è possibile usare come input sempre il medesimo
+    shapefile mentre si modifica, come nel caso di verifiche con tentativi ed errori.
 
 Con il tasto *Verifica Preliminare Shape* è possibile eseguire un controllo dello shapefile di input senza generare file SSAP2010, verranno indicati eventuali errori rispetto alle specifiche SSAP2010 o indicate informazioni generali se il file risulta corretto. Il tasto *Converti* esegue la conversione da shapefile a file per SSA2010, nel caso di errori nel file di input questi vengono comunicati (come per la verifica preliminare) e la conversione è interrotta, se lo shapefile rispetta le specifiche SSAP2010 verranno generati sempre file .mod, .dat, .geo. I file .fld, .svr e .sin sono presenti se sono inserite le relative polyline nello shapefile. 
 
