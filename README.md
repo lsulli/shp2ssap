@@ -30,7 +30,7 @@ Per il software SSAP2010 vedi termini di licenza riportati in www.ssap.eu. (Auto
 
 **REQUISITI SISTEMA**
 
-Applicativo sviluppato con Python 3x a 32 bit, S.O. Windows 32 o 64 bit (richiesti con Windows 7 o superiore, Windows 8x, windows 10, non è stato testato per Windows Vista, incompatibil econ Windows xp). Il file eseguibile non richiede librerie preinstallate (tutti i moduli e le librerie di python sono comprese nel file eseguibile) nè è richiesta l'installazione di software GIS specifici, qualsiasi strumento GIS che permette la modifica degli shapefile è ammesso. Testato con ArcGis 9.2, 10.0, Arcview 3.2 e Qgis 2.1x.
+Applicativo sviluppato con Python 3x a 32 bit, S.O. Windows 32 o 64 bit (richiesti con Windows 7 o superiore, Windows 8x, windows 10, da testare con Windows Vista ed XP). Il file eseguibile non richiede librerie preinstallate (tutti i moduli e le librerie di python sono comprese nel file eseguibile) nè è richiesta l'installazione di software GIS specifici, qualsiasi strumento GIS che permette la modifica degli shapefile è ammesso. Testato con ArcGis 9.2, 10.0, Arcview 3.2 e Qgis 2.1.x.
 Non è strettamente necessario che sia installato SSAP2010 ma è vivamente consigliato per la verifica dei file creati.
     
     ATTENZIONE: per il corretto uso di questo applicativo è necessario conoscere le nozioni fondamentali 
@@ -52,7 +52,7 @@ Il file **Shp2SSAP.zip** è un semplice archivio compresso con gli stessi file g
 Una volta completata l'installazione individuare la directory d'installazione e avviare il file **Shp2SSAP.exe**; il collegamento sul desktop deve essere creato dall'utente.
 
     ATTENZIONE: l'antivirus al primo avvio può eseguire un controllo dell'eseguibile.
-    Il controllo può richiedere alcuni secondi e viene eseguito di norma solo al primo avvio.
+    Il controllo può richiedere alcuni secondi e viene eseguito di norma una sola volta.
     
     ATTENZIONE: per configurazioni di sistema con privilegi di accesso diversificati 
     (amministratore, power user, user, etc.) è possibile che l'esecuzione dell'applicativo 
@@ -60,7 +60,7 @@ Una volta completata l'installazione individuare la directory d'installazione e 
 
 Si aprirà un interfaccia GUI (Graphic User Interface) dal quale sarà possibile aprire un file shapefile polyline esistente (tasto *Input Shapefile*) e indicare i file SSAP2010 di output (tasto *Output SSAP files*). Di default vengono lette le directory indicate nel file *default.txt* che può essere modificato a piacimento.
 
-Gli shapefile secondo i requisiti richiesti possono essere creati tramite il tool **xy2Shp_forSSAP.exe** avviabile direttamente dall'interfaccia di Shp2SSAP (tasto *Crea Shape da XY*) e quindi modificati ed integrati in ambiente GIS.  
+Gli shapefile secondo i requisiti richiesti possono essere creati tramite il tool **xy2Shp_forSSAP.exe** avviabile direttamente dall'interfaccia di **Shp2SSAP.exe** (tasto *Crea Shape da XY*) e quindi modificati ed integrati in ambiente GIS.  
 
     ATTENZIONE: Nel caso venga aperta una sezione ex-novo in ambiente GIS fare molta attenzione ad impostare 
     unità di misura metriche. Il sistema di coordinate scelto può deve essere anch'esso metrico. 
@@ -73,7 +73,7 @@ Una volta aperto lo shapefile in ambiente GIS potranno essere aggiunti gli strat
     ATTENZIONE: la geometria della polyline .sin è particolarmente critica per le compatibilità 
     richieste da SSAP, deve quindi essere editata con criterio.
     
-La diversa tipologia di strato è identificata dall'attributo nel campo **SSAP**. I valori dei parametri geotecnici per terre e rocce dovranno essere aggiunti nei campi dedicati (PHI, C, ....vedi oltre per i dettagli). La condizione drenata / non drenata deve essere impostata nel campo **DR_UNDR**. Se **SSAP** = svr i carichi devono essere specificati nel campo **VAL**. Particolare attenzione deve essere posta all'assegnazione dell'indice (campo **SSAP_ID**) che deve rispettare i requisiti per SSAP2010, ovvero essere univoco, continuo e crescente dall'alto verso il basso. 
+La diversa tipologia di strato è identificata dall'attributo nel campo **SSAP**. I valori dei parametri geotecnici per terre e rocce dovranno essere aggiunti nei campi dedicati (PHI, C, ....vedi oltre per i dettagli). La condizione drenata / non drenata deve essere impostata nel campo **DR_UNDR**. Se **SSAP** = svr i carichi devono essere specificati nel campo **VAL**. Particolare attenzione deve essere posta all'assegnazione dell'indice (campo **SSAP_ID**) per le polyline con **SSAP** = dat e **SSAP** = svr, l'indice deve rispettare i requisiti per SSAP2010, ovvero essere univoco, continuo e crescente dall'alto verso il basso. 
 
 Leggere con attenzione i dettagli nel paragrafo "CARATTERISTICHE DELLO SHAPEFILE MODELLO PENDIO".
 
@@ -100,13 +100,13 @@ Il tasto *Crea Shape da XY* permette di avviare il tool **xy2Shp_forSSAP.exe** p
     ATTENZIONE: La struttura tipo del file XY ammessa è quella tipica generata dagli strumenti GIS 
     per la creazione di profili da DTM. Il file deve essere un file ascii (.txt per default) 
     con solo due colonne (valori x e valori Y) quindi senza la colonna indice.
-    Le due colonne di coordinate dovranno essere separate dai caratteri TAB, punto e virgola 
-    o barra verticale, spazio e virgola non sono ammessi come separatori di colonna.
+    Le due colonne di coordinate dovranno essere separate dai caratteri TAB, punto e virgola, 
+    barra verticale o spazio singolo, la virgola non è ammessa come separatore di colonna.
     Per il decimale è ammesso sia il punto che la virgola. 
     Vengono automaticamente saltate le righe con caratteri non numerici quindi è ammesso l'header del file o 
     i descrittori di campo.
     
-Nel tool xy2Shp_forSSAP.exe sono presenti opzioni per aggiungere una falda parallela alla superficie e impostare i parametri geotecnici per le terre. Per una back analysis speditiva in condizioni residue può essere approssimato l'angolo d'attrito interno alla pendenza media del pendio e imposto zero alla coesione dreanata (ovvero approssimato l'angolo d'attrito all'angolo di riposo di materiali granulari non coesivi).
+Nel tool xy2Shp_forSSAP.exe sono presenti opzioni per aggiungere una falda parallela alla superficie e impostare i parametri geotecnici per le terre. Per una back analysis speditiva in condizioni residue può essere approssimato l'angolo d'attrito interno alla pendenza media del pendio e imposto zero alla coesione dreanata (ovvero approssimare l'angolo d'attrito all'angolo di riposo di materiali granulari non coesivi).
 
     SUGGERIMENTO: Non vi sono limitazioni alla generazione di una singola polyline a partire 
     da un elenco coordinate, pertanto  è possibile, rispettando rigidamente le specifiche SSAP,
@@ -118,11 +118,11 @@ Nel tool xy2Shp_forSSAP.exe sono presenti opzioni per aggiungere una falda paral
 Sono ammessi solo shapefile del tipo polyline "singol part". Nel caso venga caricato uno shapefile di geometria differente verrà generato un errore. 
 
     ATTENZIONE: La geometria deve rispettare rigidamente le specifiche SSAP per i file .dat 
-    così come specificato nel manuale SSAP 4.7.2 al capitolo 3.3.
+    così come specificato nel manuale SSAP 4.8.4 al capitolo 3.3.
 
 La struttura degli attributi dello shapefile è riportata sotto. Non è richiesto un ordine prestabilito dei campi, è invece obbligatorio l'uso dei nomi di campo e del tipo e lunghezza minima indicata. 
 
-    ATTENZIONE: non sono ammessi valori nulli, la loro presenza genererà un errore in fase di conversione.
+    ATTENZIONE: non sono ammessi valori nulli, la loro presenza potrà genererare un errore in fase di conversione.
 
 ['SSAP_ID', 'N', 2, 0] Indice dello strato (campo richiesto)
 
@@ -156,7 +156,7 @@ Nel campo SSAP deve essere indicato a quale file ssap è riferita la polyline.
 
 Per gli strati con campo **SSAP** = "dat" e **SSAP** = "svr" è obbligatorio un insieme di valori **SSAP_ID** crescenti dall'alto al basso e continuo da 1 a n (n = 20 per **SSAP** = "dat" e n = 10 per **SSAP** = "svr" n). Per queste polyline **non** sono ammessi valori di **SSAP_ID** = 0
 
-Le polyline con **SSAP** = "dat" e **SSAP** = "svr" possono essere aggiunte anche intercalate a polyline dello stesso tipo già esistenti (aggiunta di strati a piacere), deve comunque essere rispettata la sequenza crescente e continua dall'alto al basso del campo **SSAP_ID**: quindi nel caso dell'inserimento di un nuovo strato tra due esistenti deve essere aggiornato il campo **SSAP_ID**. 
+Le polyline con **SSAP** = "dat" e **SSAP** = "svr" possono essere aggiunte anche intercalate a polyline dello stesso tipo già esistenti (aggiunta di strati a piacere), deve comunque essere rispettata la sequenza geometrica crescente e continua dall'alto al basso del campo **SSAP_ID**: quindi nel caso dell'inserimento di un nuovo strato tra due esistenti deve essere aggiornato il campo **SSAP_ID**. 
 
 Per **SSAP** = "fld" (falda) è ammesso un solo strato con **SSAP_ID** = 0: questo valore identifica univocamente la falda.
 Per **SSAP** = "sin" (superficie singola di verifivca) è ammesso un solo strato con **SSAP_ID** > 0
