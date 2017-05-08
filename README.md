@@ -51,7 +51,7 @@ Una volta completata l'installazione individuare la directory d'installazione e 
     Il controllo può richiedere alcuni secondi e viene eseguito di norma solo al primo avvio.
     
     ATTENZIONE: per configurazioni di sistema con privilegi di accesso diversificati 
-    (amministratore, power user, user, etc.) è     possibile che l'esecuzione dell'applicativo 
+    (amministratore, power user, user, etc.) è possibile che l'esecuzione dell'applicativo 
     richieda l'accesso come amministratore.
 
 Si aprirà un interfaccia GUI (Graphic User Interface) dal quale sarà possibile aprire un file shapefile polyline esistente (tasto *Input Shapefile*) e indicare i file SSAP2010 di output (tasto *Output SSAP files*). Di default vengono lette le directory indicate nel file *default.txt* che può essere modificato a piacimento.
@@ -77,7 +77,7 @@ Nella cartella **Shapefile_ModelliPendio** sono disponibili shapefile di alcuni 
 
     ATTENZIONE: Una volta editato lo shapefile è necessario salvare o chiudere la sezione di editing. 
     Il sistema genera una copia temporanea del file in editing: è possibile usare come input sempre il medesimo
-    shapefile mentre si modifica, come nel caso di verifiche con tentativi ed errori.
+    shapefile mentre si modifica, come nel caso di verifiche a tentativi ed errori.
 
 Con il tasto *Verifica Preliminare Shape* è possibile eseguire un controllo dello shapefile di input senza generare file SSAP2010, verranno indicati eventuali errori rispetto alle specifiche SSAP2010 o indicate informazioni generali se il file risulta corretto. Il tasto *Converti* esegue la conversione da shapefile a file per SSA2010, nel caso di errori nel file di input questi vengono comunicati (come per la verifica preliminare) e la conversione è interrotta, se lo shapefile rispetta le specifiche SSAP2010 verranno generati sempre file .mod, .dat, .geo. I file .fld, .svr e .sin sono presenti se sono inserite le relative polyline nello shapefile. 
 
@@ -96,9 +96,10 @@ Il tasto *Crea Shape da XY* permette di avviare il tool **xy2Shp_forSSAP.exe** p
     Le due colonne di coordinate dovranno essere separate dai caratteri TAB, punto e virgola 
     o barra verticale, spazio e virgola non sono ammessi come separatori di colonna.
     Per il decimale è ammesso sia il punto che la virgola. 
-    Vengono automaticamente saltate le righe con caratteri non numerici quindi è ammesso l'header del file.
+    Vengono automaticamente saltate le righe con caratteri non numerici quindi è ammesso l'header del file o 
+    i descrittori di campo.
     
-Nel tool xy2Shp_forSSAP.exe sono presenti opzioni per aggiungere una falda parallela alla superficie e impostare i parametri geotecnici per le terre. Per una back analysis speditiva in condIzioni residue può essere approssimato l'angolo d'attrito interno alla pendenza media del pendio e imposto zero alla coesione dreanata (ovvero all'angolo di riposo di materiali granulari non coesivi).
+Nel tool xy2Shp_forSSAP.exe sono presenti opzioni per aggiungere una falda parallela alla superficie e impostare i parametri geotecnici per le terre. Per una back analysis speditiva in condizioni residue può essere approssimato l'angolo d'attrito interno alla pendenza media del pendio e imposto zero alla coesione dreanata (ovvero approssimato l'angolo d'attrito all'angolo di riposo di materiali granulari non coesivi).
 
     SUGGERIMENTO: Non vi sono limitazioni alla generazione di una singola polyline a partire 
     da un elenco coordinate, pertanto  è possibile, rispettando rigidamente le specifiche SSAP,
