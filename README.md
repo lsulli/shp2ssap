@@ -6,7 +6,10 @@ Permette di convertire shapefile polyline di un modello del pendio in file per S
 
 **AUTORE**
 
-Lorenzo Sulli - lorenzo.sulli@gmail.com
+Lorenzo Sulli 
+Autorità di bacino distrettuale Appennino settentrionale
+l.sulli@adbarno.it
+lorenzo.sulli@gmail.com
 
 **INDIRIZZO DOWNLOAD**
 
