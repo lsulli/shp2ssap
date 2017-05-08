@@ -175,9 +175,12 @@ Se presente un valore **SIGCI** > 0 viene generato un file .geo per strati rocci
 
 **BUG FIX**
 
-L'applicativo è stato testato a lungo anche con modelli di pendio anche molto complessi e simulando diverse combinazioni di errori che vengono intercettati dal sistema di controllo. Tuttavia la facilità con cui è possibile creare strati di geometria complessa è fonte potenziale di errori non gestiti che dipendono principalmente dal mancato rispetto dei criteri di editing del SSAP.
+L'applicativo è stato testato a lungo anche con modelli di pendio molto complessi e simulando diverse combinazioni di errori che vengono intercettati dal sistema di controllo. Tuttavia la facilità con cui è possibile creare strati di geometria complessa è fonte potenziale di errori non gestiti che dipendono principalmente dal mancato rispetto dei criteri di editing del SSAP.
 Nel caso siano generati errori imprevisti direttamente da **Shp2SSAP.exe** o da **xy2Shp_forSSAP.exe** vi prego di segnalarlo via mail (lorenzo.sulli@gmail.com) allegando lo shapefile che ha generato l'errore.
-Nel caso siano generati errori da **SSAP2010**, in particolare in fase di lettura del modello, dopo aver controllato che non vi siano stati errori di editing, vi chiedo di segnalarlo via mail (lorenzo.sulli@gmail.com) allegando sia lo shapefile che il modello SSAP che ha generato l'errore.
+Nel caso siano generati errori da **SSAP2010**, in particolare in fase di lettura del modello, dopo aver controllato che non vi siano stati errori di editing, vi chiedo di segnalarlo via mail allegando sia lo shapefile che il modello SSAP che ha generato l'errore.
 
 
 Grazie per la collaborazione e buon lavoro.
+
+
+Ultima modifica: **2017.05.08"
