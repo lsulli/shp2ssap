@@ -12,6 +12,8 @@ Lorenzo Sulli - lorenzo.sulli@gmail.com
 
 https://github.com/lsulli/shp2ssap
 
+Guida: https://github.com/lsulli/shp2ssap/blob/master/Guida_Shp2SSAP_1_1_7.pdf
+
 **UPGRADE**
 
 Versione 1.1: aggiunto e integrato tool xy2shp_forSSAP.exe
