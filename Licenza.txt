@@ -3,7 +3,7 @@ Shp2SSAP.exe
  e xy2Shp_forSSAP.exe
 https://github.com/lsulli/shp2ssap
 
-Autore: Lorenzo Sulli- Copyright (C) 2016
+Autore: Lorenzo Sulli- Copyright (C) 2017
 
 
 
