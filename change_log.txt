@@ -6,9 +6,7 @@
   Shp2SSAP_Setup.exe
   Aggiunta directory con file python sorgenti
   Aggiunto file change_log.txt
-  Aggiunto semplicissimo script di python per QGis per aprire direttamente da Python Console 
-  in Qgis l'applicativo Shp2SSAP.exe
-
+  
 2017.05.08
   Shp2SSAP ver. 1.1.7 build 201
   - Cambiato il metodo di conversione dei file, ora genera una copia temporanea dello shapefile da convertire, 
