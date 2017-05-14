@@ -1,0 +1,15 @@
+2017.05.14
+Modifiche file installazione
+Risolto errore nella fase di installazione che settava di default una cartella diversa da C:\Shp2SSAP
+
+2017.05.11
+xy2shp_forSSAP.exe ver. 0.9.3 build 21
+- Variato l'ordine dei campi dello shapefile creato, in moda da avere prima il campo SSAP e po il campo indice SSAP-ID e facilitare la gestione in editing della coppia di chiavi SSAP/SSAP-ID
+
+Modifiche file installazione
+Aggiunta directory con file python sorgenti
+Aggiunto file change_log.txt
+
+2017.05.08
+Shp2SSAP ver. 1.1.7 build 201
+- Cambiato il metodo di conversione dei file, ora genera una copia temporanea dello shapefile da convertire, viene simulato un accesso simultaneo al file originale per evitare conflitti tra software GIS e Shp2SSAP.exe
