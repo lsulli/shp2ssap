@@ -14,6 +14,8 @@ l.sulli@adbarno.it - lorenzo.sulli@gmail.com
 
 https://github.com/lsulli/shp2ssap
 
+File installazione: https://github.com/lsulli/shp2ssap/blob/master/Shp2SSAP_setup.exe
+
 Guida: https://github.com/lsulli/shp2ssap/blob/master/Guida_Shp2SSAP_1_1_7.pdf
 
 **UPGRADE**
