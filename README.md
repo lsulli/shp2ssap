@@ -188,4 +188,4 @@ Nel caso siano generati errori da **SSAP2010**, in particolare in fase di lettur
 Grazie per la collaborazione e buon lavoro.
 
 
-Ultima modifica: **2017.05.08**
+Ultima modifica: **2017.05.15**
