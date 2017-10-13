@@ -125,7 +125,9 @@ Sono ammessi solo shapefile del tipo polyline "singol part". Nel caso venga cari
 
 La struttura degli attributi dello shapefile è riportata sotto. Non è richiesto un ordine prestabilito dei campi, è invece obbligatorio l'uso dei nomi di campo e del tipo e lunghezza minima indicata. 
 
-    ATTENZIONE: non sono ammessi valori nulli, la loro presenza potrà genererare un errore in fase di conversione.
+    ATTENZIONE: non sono ammessi valori nulli, possono essere generati errori in fase di conversione.
+    In alcuni casi si tratta di errori non gestiti che quindi sono 'asintomatici' ma non permettono
+    la conclusione del processo.
 
 ['SSAP_ID', 'N', 2, 0] Indice dello strato (campo richiesto)
 
@@ -153,18 +155,21 @@ La struttura degli attributi dello shapefile è riportata sotto. Non è richiest
 
 ['D','N', 5, 2] Fattore di disturbo ammasso - adimensionale (campo opzionale)
 
-['VAl1','N', 10, 2] Valore caratteristico file .svr - Kpa (campo opzionale)
+['VAl1','N', 10, 2] Valore caratteristico file .svr - in Kpa (campo opzionale)
 
-Nel campo SSAP deve essere indicato a quale file ssap è riferita la polyline.
+Nel dettaglio:
 
-Per gli strati con campo **SSAP** = "dat" e **SSAP** = "svr" è obbligatorio un insieme di valori **SSAP_ID** crescenti dall'alto al basso e continuo da 1 a n (n = 20 per **SSAP** = "dat" e n = 10 per **SSAP** = "svr" n). Per queste polyline **non** sono ammessi valori di **SSAP_ID** = 0
+- Nel campo **SSAP** deve essere indicato a quale file ssap è riferita la polyline.
 
-Le polyline con **SSAP** = "dat" e **SSAP** = "svr" possono essere aggiunte anche intercalate a polyline dello stesso tipo già esistenti (aggiunta di strati a piacere), deve comunque essere rispettata la sequenza geometrica crescente e continua dall'alto al basso del campo **SSAP_ID**: quindi nel caso dell'inserimento di un nuovo strato tra due esistenti deve essere aggiornato il campo **SSAP_ID**. 
+- Per gli strati con campo **SSAP** = "dat" e **SSAP** = "svr" è obbligatorio un insieme di valori **SSAP_ID** crescenti dall'alto al basso e continuo da 1 a n (n = 20 per **SSAP** = "dat" e n = 10 per **SSAP** = "svr" n). Per queste polyline **non** sono ammessi valori di **SSAP_ID** = 0, valore riservato alle polyline con **SSAP** = "fld".
 
-Per **SSAP** = "fld" (falda) è ammesso un solo strato con **SSAP_ID** = 0: questo valore identifica univocamente la falda.
-Per **SSAP** = "sin" (superficie singola di verifivca) è ammesso un solo strato con **SSAP_ID** > 0
+- Le polyline con **SSAP** = "dat" e **SSAP** = "svr" possono essere aggiunte anche intercalate a polyline dello stesso tipo già esistenti (aggiunta di strati a piacere), deve comunque essere rispettata la sequenza geometrica crescente e continua dall'alto al basso del campo **SSAP_ID**: quindi nel caso dell'inserimento di un nuovo strato tra due esistenti deve essere editatto e aggiornato il campo **SSAP_ID**. 
 
-Il file .geo è generato in base ai valori dei campi dedicati (PHI, C, CU etc.), possono essere presenti contemporaneamente valori di C e Cu > 0, l'utente può scegliere se imporre condizioni drenate e non drenate valide per il singolo strato impostando D (dreained) o U (undrained) nel campo **DR_UNDR** i file per SSAP2010 verranno creati di conseguenza.
+- Per **SSAP** = "fld" (falda) è ammesso un solo strato con **SSAP_ID** = 0: questo valore identifica univocamente la falda.
+
+- Per **SSAP** = "sin" (superficie singola di verifica) è ammesso un solo strato con **SSAP_ID** > 0
+
+- Il file **.geo** è generato in base ai valori dei campi dedicati (PHI, C, CU etc.), possono essere presenti contemporaneamente valori di C e Cu > 0, l'utente può scegliere se imporre condizioni drenate e non drenate valide per il singolo strato impostando D (dreained) o U (undrained) nel campo **DR_UNDR**, i file per SSAP2010 verranno creati di conseguenza.
 
 Il campo **EXCLUDE** permette di escludere singoli strati (ad esempio **SSAP** = "svr", "fld" o "sin") che non verranno considerati nella conversione nei file per SSAP2010.
 
@@ -189,4 +194,4 @@ Nel caso siano generati errori da **SSAP2010**, in particolare in fase di lettur
 Grazie per la collaborazione e buon lavoro.
 
 
-Ultima modifica: **2017.05.15**
+Ultima modifica: **2017.10.13**
