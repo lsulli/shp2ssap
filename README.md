@@ -67,8 +67,9 @@ Gli shapefile secondo i requisiti richiesti possono essere creati tramite il too
     ATTENZIONE: Nel caso venga aperta una sezione ex-novo in ambiente GIS fare molta attenzione ad impostare 
     unità di misura metriche. Il sistema di coordinate scelto deve essere anch'esso metrico. 
     L'uso del sistema EPSG 3003 (Monte Mario Italy 1) o di altri sistemi metrici validi per l'Italia 
-    è perfettamente compatibile, in questo caso se il modello del pendio utilizza coordinate cartesiane assolute per le ascisse 
-    lo shapefile del modello pendio sarà proiettato in basso a sinistra rispetto all'Italia.
+    è perfettamente compatibile, in questo caso, se il modello del pendio utilizza coordinate cartesiane 
+    assolute per le ascisse, lo shapefile del modello pendio sarà proiettato in basso a sinistra 
+    rispetto all'Italia.
 
 Una volta aperto lo shapefile in ambiente GIS potranno essere aggiunti gli strati per .dat, carichi per .svr, la falda per .fld e una superficie per la verifica singola (.sin). 
 
