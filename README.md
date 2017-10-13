@@ -65,9 +65,9 @@ Si aprirà un interfaccia GUI (Graphic User Interface) dal quale sarà possibile
 Gli shapefile secondo i requisiti richiesti possono essere creati tramite il tool **xy2Shp_forSSAP.exe** avviabile direttamente dall'interfaccia di **Shp2SSAP.exe** (tasto *Crea Shape da XY*) e quindi modificati ed integrati in ambiente GIS.  
 
     ATTENZIONE: Nel caso venga aperta una sezione ex-novo in ambiente GIS fare molta attenzione ad impostare 
-    unità di misura metriche. Il sistema di coordinate scelto può deve essere anch'esso metrico. 
+    unità di misura metriche. Il sistema di coordinate scelto deve essere anch'esso metrico. 
     L'uso del sistema EPSG 3003 (Monte Mario Italy 1) o di altri sistemi metrici validi per l'Italia 
-    è perfettamente compatibile, se il modello del pendio utilizza coordinate cartesiane assolute per le ascisse 
+    è perfettamente compatibile, in questo caso se il modello del pendio utilizza coordinate cartesiane assolute per le ascisse 
     lo shapefile del modello pendio sarà proiettato in basso a sinistra rispetto all'Italia.
 
 Una volta aperto lo shapefile in ambiente GIS potranno essere aggiunti gli strati per .dat, carichi per .svr, la falda per .fld e una superficie per la verifica singola (.sin). 
@@ -101,7 +101,7 @@ Il tasto *Crea Shape da XY* permette di avviare il tool **xy2Shp_forSSAP.exe** p
 
     ATTENZIONE: La struttura tipo del file XY ammessa è quella tipica generata dagli strumenti GIS 
     per la creazione di profili da DTM. Il file deve essere un file ascii (.txt per default) 
-    con solo due colonne (valori x e valori Y) quindi senza la colonna indice.
+    con solo due colonne (valori x e valori Y), senza la colonna indice e senza header numerici.
     Le due colonne di coordinate dovranno essere separate dai caratteri TAB, punto e virgola, 
     barra verticale o spazio singolo, la virgola non è ammessa come separatore di colonna.
     Per il decimale è ammesso sia il punto che la virgola. 
