@@ -38,6 +38,11 @@ Non è strettamente necessario che sia installato SSAP2010 ma è vivamente consi
     ATTENZIONE: per il corretto uso di questo applicativo è necessario conoscere le nozioni fondamentali 
     di SSAP2010, in particolare i criteri di costruzione dei file .dat.
 
+
+** SCHEMA FLUSSO DI LAVORO **
+
+![Screenshot]()
+
 **FUNZIONALITA' PRINCIPALI**
 
 Eseguibile per windows per la creazione di file .dat, .geo, .fld, .svr, .sin e .mod per SSAP2010 (www.SSAP.eu) partendo da un unico shapefile polyline. Sfruttando le funzionalità GIS è possibile gestire in forma integrata l'editing della geometria per i file .dat, .fld, .svr  e .sin e i dati delle informazioni per il file .geo e .svr. 
