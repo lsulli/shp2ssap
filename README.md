@@ -41,7 +41,7 @@ Non è strettamente necessario che sia installato SSAP2010 ma è vivamente consi
 
 ** SCHEMA FLUSSO DI LAVORO **
 
-![Screenshot]()
+![Screenshot](Schema_Lavoro_Shp2SSAP.pdf)
 
 **FUNZIONALITA' PRINCIPALI**
 
