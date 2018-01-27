@@ -38,16 +38,13 @@ Non è strettamente necessario che sia installato SSAP2010 ma è vivamente consi
     ATTENZIONE: per il corretto uso di questo applicativo è necessario conoscere le nozioni fondamentali 
     di SSAP2010, in particolare i criteri di costruzione dei file .dat.
 
-
-** SCHEMA FLUSSO DI LAVORO **
-
-![Screenshot](Schema_Lavoro_Shp2SSAP.png)
-
 **FUNZIONALITA' PRINCIPALI**
 
 Eseguibile per windows per la creazione di file .dat, .geo, .fld, .svr, .sin e .mod per SSAP2010 (www.SSAP.eu) partendo da un unico shapefile polyline. Sfruttando le funzionalità GIS è possibile gestire in forma integrata l'editing della geometria per i file .dat, .fld, .svr  e .sin e i dati delle informazioni per il file .geo e .svr. 
 
 Direttamente dall'interfaccia dell'eseguibile Shp2SSAP.exe è attivabile un tool specifico (xy2shp_forSSAP.exe) per creare uno shapefile monostrato (già strutturato per la creazione di file per SSAP) partendo da un elenco di coordinate cartesiane xy descriventi il profilo morfologico del terreno. Lo shapefile descrive il modello geometrico (ovvero i dati per il file .dat), comprensivo di falda (dati per il file .fld) se impostato dall'utente, alle polyline che descrivono il modello geometrico sono associati gli attributi per la creazione del file .geo. Editando lo Shapefile in ambiente GIS Possono essere modificati gli attributi per il file .geo, aggiunte altre polyline che descrivono altri strati, carichi (dati per file .svr) e una superficie di verifica singola (per file .sin).
+
+![Screenshot](Schema_Lavoro_Shp2SSAP.png)
 
 **INSTALLAZIONE**
 
