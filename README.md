@@ -2,7 +2,7 @@
 
 Applicativo per la gestione del modello del pendio SSAP2010 (www.ssap.eu) in ambiente GIS. 
 
-Permette di convertire shapefile polyline di un modello del pendio in file per SSAP2010. Nell’applicazione è integrato strumento di creazione di uno shapefile di un pendio monostrato partendo da un elenco di coordinate della superficie topografica.
+Permette di convertire shapefile polyline di un modello del pendio in file per SSAP2010 (testato per versioni 4x). Nell’applicazione è integrato strumento di creazione di uno shapefile di un pendio monostrato partendo da un elenco di coordinate della superficie topografica.
 
 **AUTORE**
 
@@ -123,7 +123,7 @@ Nel tool xy2Shp_forSSAP.exe sono presenti opzioni per aggiungere una falda paral
 Sono ammessi solo shapefile del tipo polyline "singol part". Nel caso venga caricato uno shapefile di geometria differente verrà generato un errore. 
 
     ATTENZIONE: La geometria deve rispettare rigidamente le specifiche SSAP per i file .dat 
-    così come specificato nel manuale SSAP 4.8.4 al capitolo 3.3.
+    così come specificato nel manuale SSAP 4.9.2 al capitolo 3.3.
 
 La struttura degli attributi dello shapefile è riportata sotto. Non è richiesto un ordine prestabilito dei campi, è invece obbligatorio l'uso dei nomi di campo e del tipo e lunghezza minima indicata. 
 
@@ -170,6 +170,8 @@ Nel dettaglio:
 - Per **SSAP** = "fld" (falda) è ammesso un solo strato con **SSAP_ID** = 0: questo valore identifica univocamente la falda.
 
 - Per **SSAP** = "sin" (superficie singola di verifica) è ammesso un solo strato con **SSAP_ID** > 0
+
+- Per **SSAP** = "svr" (sovraccarichi) è creato in ogni caso un file .svr con carichi uniformi non inclinati
 
 - Il file **.geo** è generato in base ai valori dei campi dedicati (PHI, C, CU etc.), possono essere presenti contemporaneamente valori di C e Cu > 0, l'utente può scegliere se imporre condizioni drenate e non drenate valide per il singolo strato impostando D (dreained) o U (undrained) nel campo **DR_UNDR**, i file per SSAP2010 verranno creati di conseguenza.
 
