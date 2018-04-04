@@ -61,8 +61,6 @@ Una volta completata l'installazione individuare la directory d'installazione e 
     Il controllo può richiedere alcuni secondi e viene eseguito di norma una sola volta.  
    
 
-![Optional Text](../master/ScreenShot/Screenshot_Shp2SSAP.png)
-
 Si aprirà un interfaccia GUI (Graphic User Interface) dal quale sarà possibile aprire un file shapefile polyline esistente (tasto *Input Shapefile*) e indicare i file SSAP2010 di output (tasto *Output SSAP files*). Di default vengono lette le directory indicate nel file *default.txt* che può essere modificato a piacimento.
 
 Gli shapefile secondo i requisiti richiesti possono essere creati tramite il tool **xy2Shp_forSSAP.exe** avviabile direttamente dall'interfaccia di **Shp2SSAP.exe** (tasto *Crea Shape da XY*) e quindi modificati ed integrati in ambiente GIS.  
@@ -103,7 +101,12 @@ Sono implementate funzioni di controllo della struttura degli shapefile di input
 
 In fase doi conversione è implementata procedura di triming degli strati che eccedono i valori di ascissa minimo e massimo dell'ascissa della superficie topografica o sono leggermente inferiori ad essa, utile per editare gli strati senza preoccuparsi della precisione dei punti di inizio e fine. E'possibile variare la tolleranza della procedura di triming editando il file default.txt.
   
-Il tasto *Crea Shape da XY* permette di avviare il tool **xy2Shp_forSSAP.exe** per creare uno shapefile polyline della superficie topografica da un elenco di coordinate xy (in SSAP2010 strato unico con **SSAP_ID** = 1), le coordinate dovranno avere valori e ordinamento secondo gli standard del file .dat per SSAP. Lo Shapefile avrà tutte le caratteristiche per generare con Shp2SSAP.exe un modello di pendio monostrato per SSAP. Nella cartella **ProfiliXY_Input** è riportato un profilo d'esempio.
+Il tasto *Crea Shape da XY* permette di avviare il tool **xy2Shp_forSSAP.exe** per creare uno shapefile polyline della superficie topografica da un elenco di coordinate xy (in SSAP2010 strato unico con **SSAP_ID** = 1). I dati di inpu possono essere da file o direttamente dalla cache degli appunti (ovviamente l'ultima copia eseguita). 
+Le coordinate di input dovranno avere valori e ordinamento secondo gli standard del file .dat per SSAP. Lo Shapefile avrà tutte le caratteristiche per generare con Shp2SSAP.exe un modello di pendio monostrato per SSAP. Nella cartella **ProfiliXY_Input** è riportato un profilo d'esempio.
+
+Il tasto "Input appunti" permette di utilizzare direttamente i dati estratti dal Plugin "Profile" di Qgis.
+
+![Optional Text](../master/ScreenShot/Screenshot_Shp2SSAP.png)
 
     ATTENZIONE: La struttura tipo del file XY ammessa è quella tipica generata dagli strumenti GIS 
     per la creazione di profili da DTM. Il file deve essere un file ascii (.txt per default) 
@@ -114,7 +117,9 @@ Il tasto *Crea Shape da XY* permette di avviare il tool **xy2Shp_forSSAP.exe** p
     Vengono automaticamente saltate le righe con caratteri non numerici quindi è ammesso l'header del file o 
     i descrittori di campo.
     
-Nel tool xy2Shp_forSSAP.exe sono presenti opzioni per aggiungere una falda parallela alla superficie e impostare i parametri geotecnici per le terre. Per una back analysis speditiva in condizioni residue può essere approssimato l'angolo d'attrito interno alla pendenza media del pendio e imposto zero alla coesione dreanata (ovvero approssimare l'angolo d'attrito all'angolo di riposo di materiali granulari non coesivi).
+Nel tool xy2Shp_forSSAP.exe sono presenti opzioni per aggiungere una falda parallela alla superficie e impostare i parametri geotecnici per le terre. Può essere creato un substrato infinitamente rigido parallelo alla superficie topografica. 
+
+Per una back analysis speditiva in condizioni residue può essere approssimato l'angolo d'attrito interno alla pendenza media del pendio e imposto zero alla coesione dreanata (ovvero approssimare l'angolo d'attrito all'angolo di riposo di materiali granulari non coesivi).
 
     SUGGERIMENTO: Non vi sono limitazioni alla generazione di una singola polyline a partire 
     da un elenco coordinate, pertanto  è possibile, rispettando rigidamente le specifiche SSAP,
