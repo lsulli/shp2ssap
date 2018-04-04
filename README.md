@@ -101,12 +101,13 @@ Sono implementate funzioni di controllo della struttura degli shapefile di input
     ATTENZIONE: nel caso di modelli di pendio complessi o in presenza di lenti, l'opzione 
     "verifica ordinamento verticale strati" può generare falsi errori, nel caso deve essere disattivata.
 
-In fase doi conversione è implementata procedura di triming degli strati che eccedono i valori di ascissa minimo e massimo dell'ascissa della superficie topografica o sono leggermente inferiori ad essa, utile per editare gli strati senza preoccuparsi della precisione dei punti di inizio e fine. E'possibile variare la tolleranza della procedura di triming editando il file default.txt.
+In fase di conversione è implementata procedura di triming degli strati che eccedono i valori di ascissa minimo e massimo dell'ascissa della superficie topografica o sono leggermente inferiori ad essa (opzione *Regola gli strati alla superficie topografica*), utile per editare gli strati senza preoccuparsi della precisione dei punti di inizio e fine. E'possibile variare la tolleranza della procedura di triming editando il file default.txt.
+L'opzione *Semplifica polyline se > 100 punti* è funzionale a correggere i file .dat generati da shapefile creati con il tool **xy2Shp_forSSAP.exe** attingendo da profili estratti da DTM LIDAR o simili.
   
 Il tasto *Crea Shape da XY* permette di avviare il tool **xy2Shp_forSSAP.exe** per creare uno shapefile polyline della superficie topografica da un elenco di coordinate xy (in SSAP2010 strato unico con **SSAP_ID** = 1). I dati di inpu possono essere da file o direttamente dalla cache degli appunti (ovviamente l'ultima copia eseguita). 
 Le coordinate di input dovranno avere valori e ordinamento secondo gli standard del file .dat per SSAP. Lo Shapefile avrà tutte le caratteristiche per generare con Shp2SSAP.exe un modello di pendio monostrato per SSAP. Nella cartella **ProfiliXY_Input** è riportato un profilo d'esempio.
 
-Il tasto "Input appunti" permette di utilizzare direttamente i dati estratti dal Plugin "Profile" di Qgis.
+Il tasto "Input appunti" permette di utilizzare direttamente i dati copiati negli appunti tramite il Plugin "Profile tool" di Qgis oltre, ovviamente, 
 
 ![Optional Text](../master/ScreenShot/Screenshot_xy2Shp_forSSAP.png)
 
