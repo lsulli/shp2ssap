@@ -1,3 +1,7 @@
+2018.04.04
+Pubblicata come pre-realease versione 1.1.8
+Modifiche file di installazione
+
 2017.05.14
 Modifiche file installazione
 Risolto errore nella fase di installazione che settava di default una cartella diversa da C:\Shp2SSAP
