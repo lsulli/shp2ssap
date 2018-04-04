@@ -46,7 +46,7 @@ Eseguibile per windows per la creazione di file .dat, .geo, .fld, .svr, .sin e .
 
 Direttamente dall'interfaccia dell'eseguibile Shp2SSAP.exe è attivabile un tool specifico (xy2shp_forSSAP.exe) per creare uno shapefile monostrato (già strutturato per la creazione di file per SSAP) partendo da un elenco di coordinate cartesiane xy descriventi il profilo morfologico del terreno. Lo shapefile descrive il modello geometrico (ovvero i dati per il file .dat), comprensivo di falda (dati per il file .fld) se impostato dall'utente, alle polyline che descrivono il modello geometrico sono associati gli attributi per la creazione del file .geo. Editando lo Shapefile in ambiente GIS Possono essere modificati gli attributi per il file .geo, aggiunte altre polyline che descrivono altri strati, carichi (dati per file .svr) e una superficie di verifica singola (per file .sin).
 
-![Screenshot](Schema_Lavoro_Shp2SSAP.png)
+[Optional Text](../master/ScreenShot/Schema_Lavoro_Shp2SSAP.png)
 
 **INSTALLAZIONE**
 
@@ -67,7 +67,7 @@ Si aprirà un interfaccia GUI (Graphic User Interface) dal quale sarà possibile
 
 Gli shapefile secondo i requisiti richiesti possono essere creati tramite il tool **xy2Shp_forSSAP.exe** avviabile direttamente dall'interfaccia di **Shp2SSAP.exe** (tasto *Crea Shape da XY*) e quindi modificati ed integrati in ambiente GIS.  
 
-![Screenshot](Screenshot_xy2Shp_forSSAP.png)
+[Optional Text](../master/ScreenShot/Screenshot_xy2Shp_forSSAP.png)
 
     ATTENZIONE: Nel caso venga aperta una sezione ex-novo in ambiente GIS fare molta attenzione ad impostare 
     unità di misura metriche. Il sistema di coordinate scelto deve essere anch'esso metrico. 
