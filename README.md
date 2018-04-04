@@ -67,7 +67,7 @@ Si aprirà un interfaccia GUI (Graphic User Interface) dal quale sarà possibile
 
 Gli shapefile secondo i requisiti richiesti possono essere creati tramite il tool **xy2Shp_forSSAP.exe** avviabile direttamente dall'interfaccia di **Shp2SSAP.exe** (tasto *Crea Shape da XY*) e quindi modificati ed integrati in ambiente GIS.  
 
-[Optional Text](../master/ScreenShot/Screenshot_xy2Shp_forSSAP.png)
+![Optional Text](../master/ScreenShot/Screenshot_xy2Shp_forSSAP.png)
 
     ATTENZIONE: Nel caso venga aperta una sezione ex-novo in ambiente GIS fare molta attenzione ad impostare 
     unità di misura metriche. Il sistema di coordinate scelto deve essere anch'esso metrico. 
