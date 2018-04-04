@@ -131,6 +131,10 @@ Per una back analysis speditiva in condizioni residue può essere approssimato l
 
 **CARATTERISTICHE DELLO SHAPEFILE MODELLO PENDIO**
 
+
+    RICORDATE: con il tool xy2Shp_forSSAP.exe potete generare direttamente uno shapefile di partenza 
+    che rispetta i criteri indcati in questa sezione, non è necessario crearlo ex-novo.
+
 Sono ammessi solo shapefile del tipo polyline "singol part". Nel caso venga caricato uno shapefile di geometria differente verrà generato un errore. 
 
     ATTENZIONE: La geometria deve rispettare rigidamente le specifiche SSAP per i file .dat 
@@ -174,7 +178,7 @@ Nel dettaglio:
 
 - Nel campo **SSAP** deve essere indicato a quale file ssap è riferita la polyline.
 
-- Per gli strati con campo **SSAP** = "dat" e **SSAP** = "svr" è obbligatorio un insieme di valori **SSAP_ID** crescenti dall'alto al basso e continuo da 1 a n (n = 20 per **SSAP** = "dat" e n = 10 per **SSAP** = "svr" n). Per queste polyline **non** sono ammessi valori di **SSAP_ID** = 0, valore riservato alle polyline con **SSAP** = "fld".
+- Per gli strati con campo **SSAP** = "dat" e **SSAP** = "svr" è obbligatorio un insieme di valori **SSAP_ID** crescenti dall'alto al basso e continuo da 1 a n (n = 20 per **SSAP** = "dat" e n = 10 per **SSAP** = "svr"). Per queste polyline **non** sono ammessi valori di **SSAP_ID** = 0, valore riservato alle polyline con **SSAP** = "fld".
 
 - Le polyline con **SSAP** = "dat" e **SSAP** = "svr" possono essere aggiunte anche intercalate a polyline dello stesso tipo già esistenti (aggiunta di strati a piacere), deve comunque essere rispettata la sequenza geometrica crescente e continua dall'alto al basso del campo **SSAP_ID**: quindi nel caso dell'inserimento di un nuovo strato tra due esistenti deve essere editatto e aggiornato il campo **SSAP_ID**. 
 
@@ -188,9 +192,9 @@ Nel dettaglio:
 
 Il campo **EXCLUDE** permette di escludere singoli strati (ad esempio **SSAP** = "svr", "fld" o "sin") che non verranno considerati nella conversione nei file per SSAP2010.
 
-    ATTENZIONE: nel caso siano escluse singole polyline SSAP = "dat" o SSAP = "svr" è necessario 
-    editare e cambiare i valori del campo USER_ID per ripristinare la sequenza continua e crescente 
-    1 - n dall'alto verso il basso
+    ATTENZIONE: nel caso siano escluse singole polyline SSAP = "dat" o SSAP = "svr" è necessario verificare
+    i valori del campo USER_ID per garantire una seguenza continua e crescente 1 - n dall'alto 
+    verso il basso, nel caso è necessario ripristinare la seguenza editando i valori nel campo SSAP_ID.
 
 Se presente un valore **SIGCI** > 0 viene generato un file .geo per strati rocciosi e vengono ignorati i valori dei campi per le terre che SSAP richiede siano impostati a zero.
 
