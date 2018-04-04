@@ -61,7 +61,7 @@ Una volta completata l'installazione individuare la directory d'installazione e 
     Il controllo può richiedere alcuni secondi e viene eseguito di norma una sola volta.  
    
 
-![Screenshot](\ScreenShot\Screenshot_Shp2SSAP.png)
+![Screenshot](.\ScreenShot\Screenshot_Shp2SSAP.png)
 
 Si aprirà un interfaccia GUI (Graphic User Interface) dal quale sarà possibile aprire un file shapefile polyline esistente (tasto *Input Shapefile*) e indicare i file SSAP2010 di output (tasto *Output SSAP files*). Di default vengono lette le directory indicate nel file *default.txt* che può essere modificato a piacimento.
 
