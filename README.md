@@ -1,4 +1,4 @@
-##**Shp2SSAP.exe ver 1.1.7**##
+##**Shp2SSAP.exe ver 1.1.8**##
 
 Applicativo per la gestione del modello del pendio SSAP2010 (www.ssap.eu) in ambiente GIS. 
 
@@ -32,11 +32,13 @@ Per il software SSAP2010 vedi termini di licenza riportati in www.ssap.eu. (Auto
 
 **REQUISITI SISTEMA**
 
-Applicativo sviluppato con Python 3x a 32 bit, S.O. Windows 32 o 64 bit (richiesti con Windows 7 o superiore, Windows 8x, windows 10, da testare con Windows Vista ed XP). Il file eseguibile non richiede librerie preinstallate (tutti i moduli e le librerie di python sono comprese nel file eseguibile) nè è richiesta l'installazione di software GIS specifici, qualsiasi strumento GIS che permette la modifica degli shapefile è ammesso. Testato con ArcGis 9.2, 10.0, Arcview 3.2 e Qgis 2.1.x.
+Applicativo sviluppato con Python 3x a 32 bit, S.O. Windows 32 o 64 bit (richiesti con Windows 8 o superiore, windows 10, da testare con Windows Vista ed XP). Il file eseguibile non richiede librerie preinstallate (tutti i moduli e le librerie di python sono comprese nel file eseguibile) nè è richiesta l'installazione di software GIS specifici, qualsiasi strumento GIS che permette la modifica degli shapefile è ammesso. Testato con ArcGis 9.2, 10.0, Arcview 3.2 e Qgis 2.1.x.
 Non è strettamente necessario che sia installato SSAP2010 ma è vivamente consigliato per la verifica dei file creati.
     
     ATTENZIONE: per il corretto uso di questo applicativo è necessario conoscere le nozioni fondamentali 
     di SSAP2010, in particolare i criteri di costruzione dei file .dat.
+    
+    ATTENZIONE: per l'installazione con il file di setup è necessario avere i privilegi di amministratore.
 
 **FUNZIONALITA' PRINCIPALI**
 
@@ -48,7 +50,7 @@ Direttamente dall'interfaccia dell'eseguibile Shp2SSAP.exe è attivabile un tool
 
 **INSTALLAZIONE**
 
-Il file **Shp2SSAP_setup.exe** è un file compresso auto-estraente con procedura guidata. Non vengono modificate le chiavi di registro nè creati file all'esterno della directory di installazione. Vengono copiati nella directory scelta vari file e subdirectory. Si consiglia di non spostare nessun file dalle directory d'installazione, in ogni caso i file **Shp2SSAP.exe** e **xy2Shp_forSSAP.exe** devono risiedere nella stessa directory per la corretta funzionalità dell'applicazione.
+Il file **Shp2SSAP_setup.exe** è un file compresso auto-estraente con procedura guidata. Non vengono modificate le chiavi di registro nè creati file all'esterno della directory di installazione tuttavia se si utilizza il file di setup è richiestol'accesso come amministratore. Vengono copiati nella directory scelta vari file e subdirectory. Si consiglia di non spostare nessun file dalle directory d'installazione, in ogni caso i file **Shp2SSAP.exe** e **xy2Shp_forSSAP.exe** devono risiedere nella stessa directory per la corretta funzionalità dell'applicazione.
 Il file **Shp2SSAP.zip** è un semplice archivio compresso con gli stessi file generati dal file di setup.
 
  **GUIDA All'USO**
@@ -56,15 +58,16 @@ Il file **Shp2SSAP.zip** è un semplice archivio compresso con gli stessi file g
 Una volta completata l'installazione individuare la directory d'installazione e avviare il file **Shp2SSAP.exe**; il collegamento sul desktop deve essere creato dall'utente.
 
     ATTENZIONE: l'antivirus al primo avvio può eseguire un controllo dell'eseguibile.
-    Il controllo può richiedere alcuni secondi e viene eseguito di norma una sola volta.
-    
-    ATTENZIONE: per configurazioni di sistema con privilegi di accesso diversificati 
-    (amministratore, power user, user, etc.) è possibile che l'esecuzione dell'applicativo 
-    richieda l'accesso come amministratore.
+    Il controllo può richiedere alcuni secondi e viene eseguito di norma una sola volta.  
+   
+
+![Screenshot](Screenshot_Shp2SSAP.png)
 
 Si aprirà un interfaccia GUI (Graphic User Interface) dal quale sarà possibile aprire un file shapefile polyline esistente (tasto *Input Shapefile*) e indicare i file SSAP2010 di output (tasto *Output SSAP files*). Di default vengono lette le directory indicate nel file *default.txt* che può essere modificato a piacimento.
 
 Gli shapefile secondo i requisiti richiesti possono essere creati tramite il tool **xy2Shp_forSSAP.exe** avviabile direttamente dall'interfaccia di **Shp2SSAP.exe** (tasto *Crea Shape da XY*) e quindi modificati ed integrati in ambiente GIS.  
+
+![Screenshot](Screenshot_xy2Shp_forSSAP.png)
 
     ATTENZIONE: Nel caso venga aperta una sezione ex-novo in ambiente GIS fare molta attenzione ad impostare 
     unità di misura metriche. Il sistema di coordinate scelto deve essere anch'esso metrico. 
@@ -198,4 +201,4 @@ Nel caso siano generati errori da **SSAP2010**, in particolare in fase di lettur
 Grazie per la collaborazione e buon lavoro.
 
 
-Ultima modifica: **2018.01.27**
+Ultima modifica: **2018.04.04**
