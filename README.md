@@ -20,6 +20,8 @@ Guida: https://github.com/lsulli/shp2ssap/blob/master/Manuale_Shp2SSAP_1_1_7.pdf
 
 **UPGRADE**
 
+Versione 1.1.8: aggiunte funzionalità "input appunti" e crea substrato con resistenza infinita in xy2shp_forSSAP.exe e strumento di semplificazione delle polyline con più di 100 punti.
+
 Versione 1.1: aggiunto e integrato tool xy2shp_forSSAP.exe
 
 **LICENZA**
