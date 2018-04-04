@@ -46,7 +46,7 @@ Eseguibile per windows per la creazione di file .dat, .geo, .fld, .svr, .sin e .
 
 Direttamente dall'interfaccia dell'eseguibile Shp2SSAP.exe è attivabile un tool specifico (xy2shp_forSSAP.exe) per creare uno shapefile monostrato (già strutturato per la creazione di file per SSAP) partendo da un elenco di coordinate cartesiane xy descriventi il profilo morfologico del terreno. Lo shapefile descrive il modello geometrico (ovvero i dati per il file .dat), comprensivo di falda (dati per il file .fld) se impostato dall'utente, alle polyline che descrivono il modello geometrico sono associati gli attributi per la creazione del file .geo. Editando lo Shapefile in ambiente GIS Possono essere modificati gli attributi per il file .geo, aggiunte altre polyline che descrivono altri strati, carichi (dati per file .svr) e una superficie di verifica singola (per file .sin).
 
-[Optional Text](../master/ScreenShot/Schema_Lavoro_Shp2SSAP.png)
+![Optional Text](../master/ScreenShot/Schema_Lavoro_Shp2SSAP.png)
 
 **INSTALLAZIONE**
 
