@@ -52,7 +52,7 @@ Direttamente dall'interfaccia dell'eseguibile Shp2SSAP.exe è attivabile un tool
 
 **INSTALLAZIONE**
 
-Il file **Shp2SSAP_setup.exe** è un file compresso auto-estraente con procedura guidata. Non vengono modificate le chiavi di registro nè creati file all'esterno della directory di installazione tuttavia se si utilizza il file di setup è richiestol'accesso come amministratore. Vengono copiati nella directory scelta vari file e subdirectory. Si consiglia di non spostare nessun file dalle directory d'installazione, in ogni caso i file **Shp2SSAP.exe** e **xy2Shp_forSSAP.exe** devono risiedere nella stessa directory per la corretta funzionalità dell'applicazione.
+Il file **Shp2SSAP_setup.exe** è un file compresso auto-estraente con procedura guidata. Non vengono modificate le chiavi di registro nè creati file all'esterno della directory di installazione, tuttavia se si utilizza il file di setup è richiesto l'accesso come amministratore. Vengono copiati nella directory scelta vari file e subdirectory. Si consiglia di non spostare nessun file dalle directory d'installazione, in ogni caso i file **Shp2SSAP.exe** e **xy2Shp_forSSAP.exe** devono risiedere nella stessa directory per la corretta funzionalità dell'applicazione.
 Il file **Shp2SSAP.zip** è un semplice archivio compresso con gli stessi file generati dal file di setup.
 
  **GUIDA All'USO**
