@@ -4,10 +4,10 @@ Applicativo per la gestione del modello del pendio SSAP2010 (www.ssap.eu) in amb
 
 Permette di convertire shapefile polyline di un modello del pendio in file per SSAP2010 (testato per versioni 4x). Nell’applicazione è integrato strumento di creazione di uno shapefile di un pendio monostrato partendo da un elenco di coordinate della superficie topografica.
 
-# Table of Contents
-1. [Example](#autore)
-2. [Example2](#INSTALLAZIONE)
-3. [Third Example](#third-example)
+** SOMMARIO **
+1. [Autore](#autore)
+2. [Requisiti di Sistema](#Re_sist)
+3. [Funzionalità principali](#Fun_princ)
 
 **AUTORE**<a name="autore"></a>
 
@@ -37,7 +37,7 @@ Le procedure fondamentali utilizzano il modulo shapefile.py (credit. https://git
 
 Per il software SSAP2010 vedi termini di licenza riportati in www.ssap.eu. (Autore Lorenzo Borselli)
 
-**REQUISITI SISTEMA**
+**REQUISITI SISTEMA** <a name="re_sist"></a>
 
 Applicativo sviluppato con Python 3.5 a 32 bit, S.O. Windows 32 o 64 bit (testato con Windows 8.1, windows 10, da testare con Windows 8, 7, Vista ed XP). Il file eseguibile non richiede librerie preinstallate (tutti i moduli e le librerie di python sono comprese nel file eseguibile) nè è richiesta l'installazione di software GIS specifici, qualsiasi strumento GIS che permette la modifica degli shapefile è ammesso. Testato con ArcGis 9.2, 10.0, Arcview 3.2 e Qgis 2.1.x.
 Non è strettamente necessario che sia installato SSAP2010 ma è vivamente consigliato per la verifica dei file creati.
@@ -47,7 +47,7 @@ Non è strettamente necessario che sia installato SSAP2010 ma è vivamente consi
     
     ATTENZIONE: per l'installazione con il file di setup è necessario avere i privilegi di amministratore.
 
-**FUNZIONALITA' PRINCIPALI**
+**FUNZIONALITA' PRINCIPALI** <a name="fun_princ"></a>
 
 Eseguibile per windows per la creazione di file .dat, .geo, .fld, .svr, .sin e .mod per SSAP2010 (www.SSAP.eu) partendo da un unico shapefile polyline. Sfruttando le funzionalità GIS è possibile gestire in forma integrata l'editing della geometria per i file .dat, .fld, .svr  e .sin e i dati delle informazioni per il file .geo e .svr. 
 
