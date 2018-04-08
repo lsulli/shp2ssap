@@ -4,10 +4,10 @@ Applicativo per la gestione del modello del pendio SSAP2010 (www.ssap.eu) in amb
 
 Permette di convertire shapefile polyline di un modello del pendio in file per SSAP2010 (testato per versioni 4x). Nell’applicazione è integrato strumento di creazione di uno shapefile di un pendio monostrato partendo da un elenco di coordinate della superficie topografica.
 
-** SOMMARIO **
+**SOMMARIO**
 1. [Autore](#autore)
-2. [Requisiti di Sistema](#Re_sist)
-3. [Funzionalità principali](#Fun_princ)
+2. [Requisiti di Sistema](#re_sist)
+3. [Funzionalità principali](#fun_princ)
 
 **AUTORE**<a name="autore"></a>
 
