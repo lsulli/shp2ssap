@@ -9,7 +9,7 @@ Permette di convertire shapefile polyline di un modello del pendio in file per S
 2. [Example2](#INSTALLAZIONE)
 3. [Third Example](#third-example)
 
-##**AUTORE**
+**AUTORE**<a name="autore"></a>
 
 Lorenzo Sulli - Autorità di bacino distrettuale Appennino settentrionale
 
