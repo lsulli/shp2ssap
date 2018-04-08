@@ -8,6 +8,10 @@ Permette di convertire shapefile polyline di un modello del pendio in file per S
 1. [Autore](#autore)
 2. [Requisiti di Sistema](#re_sist)
 3. [Funzionalità principali](#fun_princ)
+4. [Installazione](#installazione)
+5. [Guida all'Uso](#guida)
+6. [Caratteristiche Shapfile](#car_shape)
+7. [Bug fix](#bug_fix)
 
 **AUTORE**<a name="autore"></a>
 
@@ -55,12 +59,12 @@ Direttamente dall'interfaccia dell'eseguibile Shp2SSAP.exe è attivabile un tool
 
 ![Optional Text](../master/ScreenShot/Schema_Lavoro_Shp2SSAP.png)
 
-**INSTALLAZIONE**
+**INSTALLAZIONE** <a name="installazione"></a>
 
 Il file **Shp2SSAP_setup.exe** è un file compresso auto-estraente con procedura guidata. Non vengono modificate le chiavi di registro nè creati file all'esterno della directory di installazione, tuttavia se si utilizza il file di setup è richiesto l'accesso come amministratore. Vengono copiati nella directory scelta vari file e subdirectory. Si consiglia di non spostare nessun file dalle directory d'installazione, in ogni caso i file **Shp2SSAP.exe** e **xy2Shp_forSSAP.exe** devono risiedere nella stessa directory per la corretta funzionalità dell'applicazione.
 Il file **Shp2SSAP.zip** è un semplice archivio compresso con gli stessi file generati dal file di setup.
 
- **GUIDA All'USO**
+ **GUIDA All'USO** <a name="guida"></a>
 
 Una volta completata l'installazione individuare la directory d'installazione e avviare il file **Shp2SSAP.exe**; il collegamento sul desktop deve essere creato dall'utente.
 
@@ -134,7 +138,7 @@ Per una back analysis speditiva in condizioni residue può essere approssimato l
     creare polyline dei carichi o di singoli strati (ad esempio di un muro) per poi integrarli 
     nel modello pendio in ambiemte GIS.
 
-**CARATTERISTICHE DELLO SHAPEFILE MODELLO PENDIO**
+**CARATTERISTICHE DELLO SHAPEFILE MODELLO PENDIO**<a name="car_shape"></a>
 
 
     RICORDATE: con il tool xy2Shp_forSSAP.exe potete generare direttamente uno shapefile di partenza 
@@ -205,7 +209,7 @@ Se presente un valore **SIGCI** > 0 viene generato un file .geo per strati rocci
 
 """
 
-**BUG FIX**
+**BUG FIX** <a name="bug_fix"></a>
 
 L'applicativo è stato testato a lungo anche con modelli di pendio molto complessi e simulando diverse combinazioni degli errori che vengono intercettati dal sistema di controllo. 
 
