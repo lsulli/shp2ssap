@@ -10,7 +10,7 @@ Permette di convertire shapefile polyline di un modello del pendio in file per S
 3. [Funzionalità principali](#fun_princ)
 4. [Installazione](#installazione)
 5. [Guida all'Uso](#guida)
-6. [Caratteristiche Shapfile](#car_shape)
+6. [Caratteristiche Shapefile](#car_shape)
 7. [Bug fix](#bug_fix)
 
 **AUTORE**<a name="autore"></a>
