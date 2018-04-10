@@ -6,12 +6,13 @@ Permette di convertire shapefile polyline di un modello del pendio in file per S
 
 **SOMMARIO**
 1. [Autore](#autore)
-2. [Requisiti di Sistema](#re_sist)
-3. [Funzionalità principali](#fun_princ)
-4. [Installazione](#installazione)
-5. [Guida all'Uso](#guida)
-6. [Caratteristiche Shapefile](#car_shape)
-7. [Bug fix](#bug_fix)
+2. [Upgrade](#upgrade)
+3. [Requisiti di Sistema](#re_sist)
+4. [Funzionalità principali](#fun_princ)
+5. [Installazione](#installazione)
+6. [Guida all'Uso](#guida)
+7. [Caratteristiche Shapefile](#car_shape)
+8. [Bug fix](#bug_fix)
 
 **AUTORE**<a name="autore"></a>
 
@@ -27,9 +28,10 @@ File installazione: https://github.com/lsulli/shp2ssap/raw/master/Shp2SSAP_118_s
 
 Guida: https://github.com/lsulli/shp2ssap/blob/master/README.md
 
-**UPGRADE**
+**UPGRADE**<a name="upgrade"></a>
 
-Versione 1.1.8: aggiunte funzionalità "input appunti" e crea substrato con resistenza infinita in xy2shp_forSSAP.exe e strumento di semplificazione delle polyline con più di 100 punti.
+Versione 1.1.8: aggiunte funzionalità "input appunti" e opzione crea substrato con resistenza infinita in xy2shp_forSSAP.exe.
+Strumento di semplificazione delle polyline con più di 100 punti in Shp2SSAP.exe
 
 Versione 1.1: aggiunto e integrato tool xy2shp_forSSAP.exe
 
@@ -43,7 +45,7 @@ Per il software SSAP2010 vedi termini di licenza riportati in www.ssap.eu. (Auto
 
 **REQUISITI SISTEMA** <a name="re_sist"></a>
 
-Applicativo sviluppato con Python 3.5 a 32 bit, S.O. Windows 32 o 64 bit (testato con Windows 8.1, windows 10, da testare con Windows 8, 7, Vista ed XP). Il file eseguibile non richiede librerie preinstallate (tutti i moduli e le librerie di python sono comprese nel file eseguibile) nè è richiesta l'installazione di software GIS specifici, qualsiasi strumento GIS che permette la modifica degli shapefile è ammesso. Testato con ArcGis 9.2, 10.0, Arcview 3.2 e Qgis 2.1.x.
+Applicativo sviluppato con Python 3.4 a 64 bit, richiede S.O. Windows 64 bit (testato con sistemi Windows  a 64 bit, verificato con windows 8.1 e windows 10). Il file eseguibile non richiede librerie preinstallate (tutti i moduli e le librerie di python sono comprese nel file eseguibile) nè è richiesta l'installazione di software GIS specifici, qualsiasi strumento GIS che permette la modifica degli shapefile è ammesso. Gli shapefile generati dall'applicativo tramite shapefile.py risultano  compatibili con tutti i sistemi GIS.
 Non è strettamente necessario che sia installato SSAP2010 ma è vivamente consigliato per la verifica dei file creati.
     
     ATTENZIONE: per il corretto uso di questo applicativo è necessario conoscere le nozioni fondamentali 
@@ -55,7 +57,7 @@ Non è strettamente necessario che sia installato SSAP2010 ma è vivamente consi
 
 Eseguibile per windows per la creazione di file .dat, .geo, .fld, .svr, .sin e .mod per SSAP2010 (www.SSAP.eu) partendo da un unico shapefile polyline. Sfruttando le funzionalità GIS è possibile gestire in forma integrata l'editing della geometria per i file .dat, .fld, .svr  e .sin e i dati delle informazioni per il file .geo e .svr. 
 
-Direttamente dall'interfaccia dell'eseguibile Shp2SSAP.exe è attivabile un tool specifico (xy2shp_forSSAP.exe) per creare uno shapefile monostrato (già strutturato per la creazione di file per SSAP) partendo da un elenco di coordinate cartesiane xy descriventi il profilo morfologico del terreno. Lo shapefile descrive il modello geometrico (ovvero i dati per il file .dat), comprensivo di falda (dati per il file .fld) se impostato dall'utente, alle polyline che descrivono il modello geometrico sono associati gli attributi per la creazione del file .geo. Editando lo Shapefile in ambiente GIS Possono essere modificati gli attributi per il file .geo, aggiunte altre polyline che descrivono altri strati, carichi (dati per file .svr) e una superficie di verifica singola (per file .sin).
+Direttamente dall'interfaccia dell'eseguibile Shp2SSAP.exe è attivabile un tool specifico (xy2shp_forSSAP.exe) per creare uno shapefile monostrato (già strutturato per la creazione di file per SSAP) partendo da un elenco di coordinate cartesiane xy descriventi il profilo morfologico del terreno. Lo shapefile descrive il modello geometrico (ovvero i dati per il file .dat), con la presenza opzionale di falda (dati per il file .fld), alle polyline che descrivono il modello geometrico sono associati gli attributi per la creazione del file .geo. Editando lo Shapefile in ambiente GIS Possono essere modificati gli attributi per il file .geo, aggiunte altre polyline che descrivono altri strati, inserire carichi (dati per file .svr) e una superficie di verifica singola (per file .sin).
 
 ![Optional Text](../master/ScreenShot/Schema_Lavoro_Shp2SSAP.png)
 
@@ -90,7 +92,9 @@ Una volta aperto lo shapefile in ambiente GIS potranno essere aggiunti gli strat
     ATTENZIONE: la geometria della polyline .sin è particolarmente critica per le compatibilità 
     richieste da SSAP, deve quindi essere editata con criterio.
     
-La diversa tipologia di strato è identificata dall'attributo nel campo **SSAP**. I valori dei parametri geotecnici per terre e rocce dovranno essere aggiunti nei campi dedicati (PHI, C, ....vedi oltre per i dettagli). La condizione drenata / non drenata deve essere impostata nel campo **DR_UNDR**. Se **SSAP** = svr i carichi devono essere specificati nel campo **VAL**. Particolare attenzione deve essere posta all'assegnazione dell'indice (campo **SSAP_ID**) per le polyline con **SSAP** = dat e **SSAP** = svr, l'indice deve rispettare i requisiti per SSAP2010, ovvero essere univoco, continuo e crescente dall'alto verso il basso. 
+La diversa tipologia di strato è identificata dall'attributo nel campo **SSAP**. I valori dei parametri geotecnici per terre e rocce dovranno essere aggiunti nei campi dedicati (PHI, C, ....vedi oltre per i dettagli). La condizione drenata / non drenata deve essere impostata nel campo **DR_UNDR**. Se **SSAP** = svr i carichi devono essere specificati nel campo **VAL**. 
+I carichi **non** prevedono le opzioni introdotte dalla versione SSAP 4.8.4, pur mantenendo la compatibilità con le versioni successive non sono previste le opzioni relative ai carichi inclinati e alla distribuzione di carichi trapezioidali.
+Particolare attenzione deve essere posta all'assegnazione dell'indice (campo **SSAP_ID**) per le polyline con **SSAP** = dat e **SSAP** = svr, l'indice deve rispettare i requisiti per SSAP2010, ovvero essere univoco, continuo e crescente dall'alto verso il basso. 
 
 Leggere con attenzione i dettagli nel paragrafo "CARATTERISTICHE DELLO SHAPEFILE MODELLO PENDIO".
 
@@ -113,7 +117,7 @@ Sono implementate funzioni di controllo della struttura degli shapefile di input
 In fase di conversione è implementata procedura di triming degli strati che eccedono i valori di ascissa minimo e massimo dell'ascissa della superficie topografica o sono leggermente inferiori ad essa (opzione *Regola gli strati alla superficie topografica*), utile per editare gli strati senza preoccuparsi della precisione dei punti di inizio e fine. E'possibile variare la tolleranza della procedura di triming editando il file default.txt.
 L'opzione *Semplifica polyline se > 100 punti* è funzionale a correggere i file .dat generati da shapefile creati con il tool **xy2Shp_forSSAP.exe** attingendo da profili estratti da DTM LIDAR o simili.
   
-Il tasto *Crea Shape da XY* permette di avviare il tool **xy2Shp_forSSAP.exe** per creare uno shapefile polyline della superficie topografica da un elenco di coordinate xy (in SSAP2010 strato unico con **SSAP_ID** = 1). I dati di inpu possono essere da file o direttamente dalla cache degli appunti (ovviamente l'ultima copia eseguita). 
+Il tasto *Crea Shape da XY* permette di avviare il tool **xy2Shp_forSSAP.exe** per creare uno shapefile polyline della superficie topografica da un elenco di coordinate xy (in SSAP2010 strato unico con **SSAP_ID** = 1). I dati di input possono essere da file o direttamente dalla cache degli appunti (ovviamente recupera l'ultima copia eseguita). 
 Le coordinate di input dovranno avere valori e ordinamento secondo gli standard del file .dat per SSAP. Lo Shapefile avrà tutte le caratteristiche per generare con Shp2SSAP.exe un modello di pendio monostrato per SSAP. Nella cartella **ProfiliXY_Input** è riportato un profilo d'esempio.
 
 ![Optional Text](../master/ScreenShot/Screenshot_xy2Shp_forSSAP.png)
@@ -122,14 +126,15 @@ Le coordinate di input dovranno avere valori e ordinamento secondo gli standard 
     per la creazione di profili da DTM. Il file deve essere un file ascii (.txt per default) 
     con solo due colonne (valori x e valori Y), quindi senza colonna indice o altri attributi.
     Le due colonne di coordinate dovranno essere separate dai caratteri TAB, punto e virgola, 
-    barra verticale o spazio singolo, **la virgola non è ammessa come separatore di colonna**.
+    barra verticale o spazio singolo, la virgola non è ammessa come separatore di colonna.
     Per il decimale è ammesso sia il punto che la virgola. 
     Vengono automaticamente saltate le righe con caratteri non numerici quindi è ammesso l'header del file o 
     i descrittori di campo.
     
-Il tasto *Input appunti* è stato pensato per utilizzare direttamente i dati copiati negli appunti tramite il Plugin "Profile tool" di Qgis tuttavia è utile per tutte le fonti dati che rispettano, almeno per due punti, le indicazioni appena esplicitate sopra, nel dubbio copiate i dati in un semplice file di testo per esaminarli, poi copiateli di nuovo e utilizzate il comando *Input appunti*. 
+Il tasto *Input appunti* è stato pensato per utilizzare direttamente i dati copiati negli appunti tramite il Plugin "Profile tool" di Qgis, tuttavia è utile per tutte le fonti dati che rispettano almeno per due punti le indicazioni appena esplicitate sopra, nel dubbio copiare i dati in un semplice file di testo per esaminarli, poi copiateli di nuovo e utilizzate il comando *Input appunti*. 
     
-Nel tool xy2Shp_forSSAP.exe sono presenti opzioni per aggiungere una falda parallela alla superficie e impostare i parametri geotecnici per le terre. Può essere creato un substrato infinitamente rigido parallelo alla superficie topografica. 
+Nel tool xy2Shp_forSSAP.exe sono presenti opzioni per aggiungere una falda parallela alla superficie e impostare i parametri geotecnici per le terre. 
+Può essere creato un substrato infinitamente rigido parallelo alla superficie topografica. 
 
 Per una back analysis speditiva in condizioni residue può essere approssimato l'angolo d'attrito interno alla pendenza media del pendio e imposto zero alla coesione dreanata (ovvero approssimare l'angolo d'attrito all'angolo di riposo di materiali granulari non coesivi).
 
@@ -141,13 +146,13 @@ Per una back analysis speditiva in condizioni residue può essere approssimato l
 **CARATTERISTICHE DELLO SHAPEFILE MODELLO PENDIO**<a name="car_shape"></a>
 
 
-    RICORDATE: con il tool xy2Shp_forSSAP.exe potete generare direttamente uno shapefile di partenza 
-    che rispetta i criteri indcati in questa sezione, non è necessario crearlo ex-novo.
+    RICORDATE: con il tool xy2Shp_forSSAP.exe potete generare direttamente uno shapefile che rispetta 
+    i criteri indcati in questa sezione, non è necessario crearlo ex-novo.
 
 Sono ammessi solo shapefile del tipo polyline "singol part". Nel caso venga caricato uno shapefile di geometria differente verrà generato un errore. 
 
     ATTENZIONE: La geometria deve rispettare rigidamente le specifiche SSAP per i file .dat 
-    così come specificato nel manuale SSAP 4.9.2 al capitolo 3.3.
+    così come specificato nel manuale SSAP 4.9.6 al capitolo 3.3.
 
 La struttura degli attributi dello shapefile è riportata sotto. Non è richiesto un ordine prestabilito dei campi, è invece obbligatorio l'uso dei nomi di campo e del tipo e lunghezza minima indicata. 
 
@@ -203,9 +208,10 @@ Il campo **EXCLUDE** permette di escludere singoli strati (ad esempio **SSAP** =
 
     ATTENZIONE: nel caso siano escluse singole polyline SSAP = "dat" o SSAP = "svr" è necessario verificare
     i valori del campo USER_ID per garantire una seguenza continua e crescente 1 - n dall'alto 
-    verso il basso, nel caso è necessario ripristinare la seguenza editando i valori nel campo SSAP_ID.
+    verso il basso, nel caso è necessario ripristinare la seguenza editando i valori nel campo SSAP_ID, 
+    se la sequenza è errata verrà generato un errore.
 
-Se presente un valore **SIGCI** > 0 viene generato un file .geo per strati rocciosi e vengono ignorati i valori dei campi per le terre che SSAP richiede siano impostati a zero.
+Se presente un valore **SIGCI** > 0 viene generato un file .geo per strati rocciosi e vengono ignorati i valori dei campi per le terre, che saranno impostati a zero nel file .geo di output.
 
 """
 
@@ -222,4 +228,4 @@ Nel caso siano generati errori da **SSAP2010**, in particolare in fase di lettur
 Grazie per la collaborazione e buon lavoro.
 
 
-Ultima modifica: **2018.04.04**
+Ultima modifica: **2018.04.11**
