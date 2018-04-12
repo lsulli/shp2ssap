@@ -51,7 +51,9 @@ Non è strettamente necessario che sia installato SSAP2010 ma è vivamente consi
     ATTENZIONE: per il corretto uso di questo applicativo è necessario conoscere le nozioni fondamentali 
     di SSAP2010, in particolare i criteri di costruzione dei file .dat.
     
-    ATTENZIONE: per l'installazione con il file di setup è necessario avere i privilegi di amministratore.
+    ATTENZIONE: per l'installazione con il file di setup è necessario avere i privilegi di amministratore ed
+    essere certi di avere i requisiti di lettura/scrittura per la directory di installazione dove vengono 
+    creati ed eleiminati dei file temporanei.
 
 **FUNZIONALITA' PRINCIPALI** <a name="fun_princ"></a>
 
