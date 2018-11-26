@@ -133,7 +133,7 @@ Le coordinate di input dovranno avere valori e ordinamento secondo gli standard 
     Vengono automaticamente saltate le righe con caratteri non numerici quindi è ammesso l'header del file o 
     i descrittori di campo.
     
-Il tasto *Input appunti* è stato pensato per utilizzare direttamente i dati copiati negli appunti tramite il Plugin "Profile tool" di Qgis, tuttavia è utile per tutte le fonti dati che rispettano almeno per due punti le indicazioni appena esplicitate sopra, nel dubbio copiare i dati in un semplice file di testo per esaminarli, poi copiateli di nuovo e utilizzate il comando *Input appunti*. 
+Il tasto *Input appunti* è stato pensato per utilizzare direttamente i dati copiati negli appunti tramite il Plugin "Profile tool" di Qgis, tuttavia è utile per tutte le fonti dati che rispettano almeno per due punti del pendio le indicazioni appena esplicitate sopra, nel dubbio incollate i dati in un semplice file di testo per esaminarli, poi copiateli di nuovo e utilizzate il comando *Input appunti*. 
     
 Nel tool xy2Shp_forSSAP.exe sono presenti opzioni per aggiungere una falda parallela alla superficie e impostare i parametri geotecnici per le terre. 
 Può essere creato un substrato infinitamente rigido parallelo alla superficie topografica. 
