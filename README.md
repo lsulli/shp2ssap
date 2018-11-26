@@ -100,9 +100,9 @@ I carichi **non** prevedono le opzioni introdotte dalla versione SSAP 4.8.4, pur
 Particolare attenzione deve essere posta all'assegnazione dell'indice (campo **SSAP_ID**) per le polyline con **SSAP** = dat e **SSAP** = svr, l'indice deve rispettare i requisiti per SSAP2010, ovvero essere univoco, continuo e crescente dall'alto verso il basso. 
 
     SUGGERIMENTO: Per garantire la creazione di una seguenza corretta degll'indice degli strati la conversione 
-    degli strati dello shapefile negli strati del file .dat segue rigidamente i valori del campo **SSAP_ID**
+    degli strati dello shapefile negli strati del file .dat segue rigidamente i valori del campo SSAP_ID
     e ignora il feature ID assegnato dal sistema, è quindi possibile inserire uno strato ex novo tra strati 
-    già esistenti se si ha cura di aggiornare la seguenza dei valori indice in **SSAP_ID**
+    già esistenti se si ha cura di aggiornare la seguenza dei valori indice in SSAP_ID
 
 Leggere con attenzione i dettagli nel paragrafo "CARATTERISTICHE DELLO SHAPEFILE MODELLO PENDIO".
 
