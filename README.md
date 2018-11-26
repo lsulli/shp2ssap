@@ -236,4 +236,4 @@ Nel caso siano generati errori da **SSAP2010**, in particolare in fase di lettur
 Grazie per la collaborazione e buon lavoro.
 
 
-Ultima modifica: **2018.04.11**
+Ultima modifica: **2018.11.26*
