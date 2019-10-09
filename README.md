@@ -73,7 +73,9 @@ Il file **Shp2SSAP.zip** è un semplice archivio compresso con gli stessi file g
 Una volta completata l'installazione individuare la directory d'installazione e avviare il file **Shp2SSAP.exe**; il collegamento sul desktop deve essere creato dall'utente.
 
     ATTENZIONE: l'antivirus al primo avvio può eseguire un controllo dell'eseguibile.
-    Il controllo può richiedere alcuni secondi e viene eseguito di norma una sola volta.  
+    Il controllo può richiedere alcuni secondi e viene eseguito di norma una sola volta. 
+    Antivirus particolarmente stringenti, in particolare quelli gestiti dai sistemi server, possono 
+    mettere in quarantena il file .exe impedendo l'uso dell'applicativo eseguibile.
    
 
 Si aprirà un interfaccia GUI (Graphic User Interface) dal quale sarà possibile aprire un file shapefile polyline esistente (tasto *Input Shapefile*) e indicare i file SSAP2010 di output (tasto *Output SSAP files*). Di default vengono lette le directory indicate nel file *default.txt* che può essere modificato a piacimento.
