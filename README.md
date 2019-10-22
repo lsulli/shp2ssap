@@ -133,7 +133,12 @@ In fase di conversione è implementata procedura di triming degli strati che ecc
     spezzate complesse possono determinare errori nella procedura di trimming.
     
 L'opzione *Semplifica polyline se > 100 punti* è funzionale a correggere i file .dat generati da shapefile creati con il tool **xy2Shp_forSSAP.exe** attingendo da profili estratti da DTM LIDAR o simili.
-  
+
+    ATTENZIONE: L'uso di questa opzione è efficace per strati paralleli ma non permettere 
+    di mantenere lo snapping quando vi sono strati intersecanti con la superfice topografica.
+    In questo caso è necessario ridurre tramite editing manuale il numero di punti sino a < 100
+    controllando che le regole di condivisione dei nodi richieste da SSAp siano rispettate.
+    
 Il tasto *Crea Shape da XY* permette di avviare il tool **xy2Shp_forSSAP.exe** per creare uno shapefile polyline della superficie topografica da un elenco di coordinate xy (in SSAP2010 strato unico con **SSAP_ID** = 1). I dati di input possono essere da file o direttamente dalla cache degli appunti (ovviamente recupera l'ultima copia eseguita). 
 Le coordinate di input dovranno avere valori e ordinamento secondo gli standard del file .dat per SSAP. Lo Shapefile avrà tutte le caratteristiche per generare con Shp2SSAP.exe un modello di pendio monostrato per SSAP. Nella cartella **ProfiliXY_Input** è riportato un profilo d'esempio.
 
@@ -148,7 +153,7 @@ Le coordinate di input dovranno avere valori e ordinamento secondo gli standard 
     Vengono automaticamente saltate le righe con caratteri non numerici quindi è ammesso l'header 
     del file o i descrittori di campo.
     
-Il tasto *Input appunti* è stato pensato per utilizzare direttamente i dati copiati negli appunti tramite il Plugin "Profile tool" di Qgis, tuttavia è utile per tutte le fonti dati che rispettano almeno per due punti del pendio le indicazioni appena esplicitate sopra, nel dubbio incollate i dati in un semplice file di testo per esaminarli, poi copiateli di nuovo e utilizzate il comando *Input appunti*. 
+Il tasto *Input appunti* è stato pensato per utilizzare direttamente i dati copiati negli appunti tramite il Plugin "Profile tool" (http://plugins.qgis.org/plugins/profiletool/) di Qgis (www.qgis.org/en/site/), tuttavia è utile per tutte le fonti dati che rispettano almeno per due punti del pendio le indicazioni appena esplicitate sopra, nel dubbio incollate i dati in un semplice file di testo per esaminarli, poi copiateli di nuovo e utilizzate il comando *Input appunti*. 
     
 Nel tool xy2Shp_forSSAP.exe sono presenti opzioni per aggiungere una falda parallela alla superficie e impostare i parametri geotecnici per le terre. 
 Può essere creato un substrato infinitamente rigido parallelo alla superficie topografica. 
