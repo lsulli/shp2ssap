@@ -26,6 +26,8 @@ https://github.com/lsulli/shp2ssap
 
 File installazione: https://github.com/lsulli/shp2ssap/raw/master/Shp2SSAP_118_setup.exe
 
+Archivio zip: https://github.com/lsulli/shp2ssap/raw/master/Shp2SSAP_118.zip
+
 Guida: https://github.com/lsulli/shp2ssap/blob/master/README.md
 
 **UPGRADE**<a name="upgrade"></a>
