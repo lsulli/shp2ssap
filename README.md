@@ -174,7 +174,7 @@ Per una back analysis speditiva in condizioni residue può essere approssimato l
 Sono ammessi solo shapefile del tipo polyline "singol part". Nel caso venga caricato uno shapefile di geometria differente verrà generato un errore. 
 
     ATTENZIONE: La geometria deve rispettare rigidamente le specifiche SSAP per i file .dat 
-    così come specificato nel manuale SSAP 4.9.6 al capitolo 3.3.
+    così come specificato nel manuale SSAP 4.9.8 al capitolo 3.3.
 
 La struttura degli attributi dello shapefile è riportata sotto. Non è richiesto un ordine prestabilito dei campi, è invece obbligatorio l'uso dei nomi di campo e del tipo e lunghezza minima indicata. 
 
