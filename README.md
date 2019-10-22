@@ -143,8 +143,8 @@ Le coordinate di input dovranno avere valori e ordinamento secondo gli standard 
     Le due colonne di coordinate dovranno essere separate dai caratteri TAB, punto e virgola, 
     barra verticale o spazio singolo, la virgola non è ammessa come separatore di colonna.
     Per il decimale è ammesso sia il punto che la virgola. 
-    Vengono automaticamente saltate le righe con caratteri non numerici quindi è ammesso l'header del file o 
-    i descrittori di campo.
+    Vengono automaticamente saltate le righe con caratteri non numerici quindi è ammesso l'header 
+    del file o i descrittori di campo.
     
 Il tasto *Input appunti* è stato pensato per utilizzare direttamente i dati copiati negli appunti tramite il Plugin "Profile tool" di Qgis, tuttavia è utile per tutte le fonti dati che rispettano almeno per due punti del pendio le indicazioni appena esplicitate sopra, nel dubbio incollate i dati in un semplice file di testo per esaminarli, poi copiateli di nuovo e utilizzate il comando *Input appunti*. 
     
@@ -189,7 +189,7 @@ La struttura degli attributi dello shapefile è riportata sotto. Non è richiest
 
 ['GAMMASAT', 'N', 5, 2] Peso di volume saturo - KN/mc  (campo richiesto)
 
-['EXCLUDE', 'N', 1, 0] Campo booleano per escludere strato. Valori ammessi: 1 escludi (valore predefinito), <> 1 converti (campo richiesto)
+['EXCLUDE', 'N', 1, 0] Campo booleano per escludere strato, sovraccarico, falda o superfice di verifica. Valori ammessi: 1 escludi, <> 1 converti (campo richiesto)
 
 ['DR_UNDR', 'C', 1, 0] Campo scelta verifica condizioni drenate/non drenate. Valori ammessi:  D o <> U drenato (valore predefinito), U non drenato (Undrained) (campo richiesto)
 
@@ -205,6 +205,8 @@ La struttura degli attributi dello shapefile è riportata sotto. Non è richiest
 
 Nel dettaglio:
 
+- Nel campo **SSAP_ID** deve essere indicato l'indice dello strato (archiviato nel file .dat) o del sovraccarico (archiviato nel file .svr) rispettando la sequenza numerica secondo le specifice indicate nel manuale SSAP.
+
 - Nel campo **SSAP** deve essere indicato a quale file ssap è riferita la polyline.
 
 - Per gli strati con campo **SSAP** = "dat" e **SSAP** = "svr" è obbligatorio un insieme di valori **SSAP_ID** crescenti dall'alto al basso e continuo da 1 a n (n = 20 per **SSAP** = "dat" e n = 10 per **SSAP** = "svr"). Per queste polyline **non** sono ammessi valori di **SSAP_ID** = 0, valore riservato alle polyline con **SSAP** = "fld".
@@ -215,11 +217,12 @@ Nel dettaglio:
 
 - Per **SSAP** = "sin" (superficie singola di verifica) è ammesso un solo strato con **SSAP_ID** > 0
 
-- Per **SSAP** = "svr" (sovraccarichi) è creato in ogni caso un file .svr con carichi uniformi non inclinati
+- Per **SSAP** = "svr" (sovraccarichi), è ammesso un solo strato con **SSAP_ID** > 0. 
+Viene creato in ogni caso un file .svr con carichi uniformi non inclinati
 
-- Il file **.geo** è generato in base ai valori dei campi dedicati (PHI, C, CU etc.), possono essere presenti contemporaneamente valori di C e Cu > 0, l'utente può scegliere se imporre condizioni drenate e non drenate valide per il singolo strato impostando D (dreained) o U (undrained) nel campo **DR_UNDR**, i file per SSAP2010 verranno creati di conseguenza.
+- Il file **.geo** è generato in base ai valori dei campi dedicati (PHI, C, CU etc.), possono essere presenti contemporaneamente valori di C e Cu > 0, l'utente può scegliere se imporre condizioni drenate e non drenate valide per il singolo strato impostando D (dreained) o U (undrained) nel campo **DR_UNDR**, i file .geo per SSAP2010 verranno creati di conseguenza scrivendo i valori secondo le specifiche SSAP.
 
-Il campo **EXCLUDE** permette di escludere singoli strati (ad esempio **SSAP** = "svr", "fld" o "sin") che non verranno considerati nella conversione nei file per SSAP2010.
+Il campo **EXCLUDE** permette di escludere singoli strati (**SSAP** = "dat", "svr", "fld" o "sin") che non verranno considerati nella conversione nei file per SSAP2010.
 
     ATTENZIONE: nel caso siano escluse singole polyline SSAP = "dat" o SSAP = "svr" è necessario verificare
     i valori del campo USER_ID per garantire una seguenza continua e crescente 1 - n dall'alto 
