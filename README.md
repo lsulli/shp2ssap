@@ -80,7 +80,7 @@ Una volta completata l'installazione individuare la directory d'installazione e 
     mettere in quarantena il file .exe impedendo l'uso dell'applicativo eseguibile.
    
 
-Si aprirà un interfaccia GUI (Graphic User Interface) dal quale sarà possibile aprire un file shapefile polyline esistente (tasto *Input Shapefile*) e indicare i file SSAP2010 di output (tasto *Output SSAP files*). Di default vengono lette le directory indicate nel file *default.txt* che può essere modificato a piacimento.
+Si aprirà un interfaccia dal quale sarà possibile aprire un file shapefile polyline esistente (tasto *Input Shapefile*) e indicare i file SSAP2010 di output (tasto *Output SSAP files*). Di default vengono lette le directory indicate nel file *default.txt* che può essere modificato a piacimento.
 
 Gli shapefile secondo i requisiti richiesti possono essere creati tramite il tool **xy2Shp_forSSAP.exe** avviabile direttamente dall'interfaccia di **Shp2SSAP.exe** (tasto *Crea Shape da XY*) e quindi modificati ed integrati in ambiente GIS.  
 
