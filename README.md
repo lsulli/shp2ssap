@@ -126,11 +126,13 @@ Sono implementate funzioni di controllo della struttura degli shapefile di input
     ATTENZIONE: nel caso di modelli di pendio complessi o in presenza di lenti, l'opzione 
     "verifica ordinamento verticale strati" può generare falsi errori, nel caso deve essere disattivata.
 
-In fase di conversione è implementata procedura di triming degli strati che eccedono i valori di ascissa minimo e massimo dell'ascissa della superficie topografica o sono leggermente inferiori ad essa (opzione *Regola gli strati alla superficie topografica*), utile per editare gli strati senza preoccuparsi della precisione dei punti di inizio e fine. E'possibile variare la tolleranza della procedura di triming editando il file default.txt. 
+In fase di conversione è implementata procedura di triming degli strati che non rispettano i valori di ascissa minimo e massimo dell'ascissa della superficie topografica o, meglio, sono leggermente inferiori ad essa, (opzione *Regola gli strati alla superficie topografica*), utile per editare gli strati senza preoccuparsi della precisione dei punti di inizio e fine. E'possibile variare la tolleranza della procedura di triming editando il file default.txt (tolleranza di default pari a 1/20 della lunghezza planimetrica della superficie topografica). 
 
     ATTENZIONE: Nell'uso di questa opzione è comunque necessario verificare che i nodi 
     ricadenti nell'intervallo di tolleranza siano relativamente allineati, 
     spezzate complesse possono determinare errori nella procedura di trimming.
+    Il procedimento dà i risultati migliori impostando i limiti degli strati con valori 
+    di x superiori al limite sinistro e inferiori al limite destro entro la tolleranza impostata. 
     
 L'opzione *Semplifica polyline se > 100 punti* è funzionale a correggere i file .dat generati da shapefile creati con il tool **xy2Shp_forSSAP.exe** attingendo da profili estratti da DTM LIDAR o simili.
 
