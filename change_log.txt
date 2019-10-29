@@ -1,5 +1,10 @@
+2019.06.26
+v. 1.1.8 build 212
+Modifiche e aggiornamento file di installazione
+
+
 2018.04.04
-Pubblicata come pre-realease versione 1.1.8
+Pubblicata versione 1.1.8
 Modifiche file di installazione
 
 2017.05.14
