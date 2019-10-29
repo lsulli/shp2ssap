@@ -1,4 +1,4 @@
-##**Shp2SSAP.exe ver 1.1.8 (build 211)**##
+##**Shp2SSAP.exe ver 1.1.8 (build 212)**##
 
 Applicativo per la gestione del modello del pendio SSAP2010 (www.ssap.eu) in ambiente GIS. 
 
