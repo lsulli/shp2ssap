@@ -1,10 +1,13 @@
 2019.06.22
-v. 1.1.8 build 212
+v. 1.1.8 build 212 - correzione messaggi interfaccia ed eliminazione messaggi da console python print() non significativi
 Modifiche e aggiornamento file di installazione
 
+2018.04.05
+Pubblicata versione 1.1.8 build 211 - Correzione errore trimming strati
+Modifiche file di installazione
 
 2018.04.04
-Pubblicata versione 1.1.8
+Pubblicata versione 1.1.8 build 210
 Modifiche file di installazione
 
 2017.05.14
