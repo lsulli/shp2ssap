@@ -88,8 +88,6 @@ Per una back analysis speditiva in condizioni residue può essere approssimato l
     creare polyline dei carichi o di singoli strati (ad esempio di un muro) per poi integrarli 
     nel modello pendio in ambiemte GIS.
 
-![Optional Text](../master/ScreenShot/Screenshot_Shp2SSAP_Tab2.png)
-
     ATTENZIONE: Nel caso venga aperta una sezione ex-novo in ambiente GIS fare molta attenzione ad impostare 
     unità di misura metriche. Il sistema di coordinate scelto deve essere anch'esso metrico. 
     L'uso del sistema EPSG 3003 (Monte Mario Italy 1) o di altri sistemi metrici validi per l'Italia 
@@ -122,6 +120,8 @@ Nella cartella **Shapefile_ModelliPendio** sono disponibili shapefile di alcuni 
     Quando uno shapefile è in fase di editing nel caso vi siano anomalie nella creazione dei file SSAP è 
     probabile che si sia verificato un accesso in simultanea al file temporaneo, si consiglia di chiudere 
     l'applicativo GIS o esportare lo shapefile con un diverso nome.
+
+![Optional Text](../master/ScreenShot/Screenshot_Shp2SSAP_Tab2.png)
 
 Con il tasto *Verifica Preliminare* è possibile eseguire un controllo dello shapefile di input senza generare file SSAP2010, verranno indicati eventuali errori rispetto alle specifiche SSAP2010 o indicate informazioni generali se il file risulta corretto. Il tasto *Converti* esegue la conversione da shapefile a file per SSA2010, nel caso di errori nel file di input questi vengono comunicati (come per la verifica preliminare) e la conversione è interrotta, se lo shapefile rispetta le specifiche SSAP2010 verranno generati sempre file .mod, .dat, .geo. I file .fld, .svr e .sin sono presenti se sono inserite le relative polyline nello shapefile. 
 
