@@ -28,6 +28,9 @@ https://github.com/lsulli/shp2ssap
 
 Guida: https://github.com/lsulli/shp2ssap/blob/master/README.md
 
+File plugin: https://github.com/lsulli/shp2ssap/blob/master/Shp2SSAP_QGIS_ver201_246.zip <a name="file_zip"></a>
+
+
 **UPGRADE**<a name="upgrade"></a>
 
 Versione 2.0.1: Elaborazione Plugin da file python ver 2.0.0 e creazione interfaccia in file .ui per QTDesigner e dialog.py
@@ -58,7 +61,7 @@ E'possibile creare uno shapefile monostrato (già strutturato per la creazione d
 
 **INSTALLAZIONE** <a name="installazione"></a>
 
-L'installazione può essere fatta direttamente in Qgis dal file zip *Shp2SSAP_QGIS* tramite Plugin/Install from zip 
+L'installazione può essere fatta direttamente in Qgis dal file zip *Shp2SSAP_QGIS* (#file_zip) tramite Plugin/Install from zip 
 
  **GUIDA All'USO** <a name="guida"></a>
 
