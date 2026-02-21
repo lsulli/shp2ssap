@@ -1,6 +1,6 @@
-##**Shp2SSAP.exe ver 1.1.8 (build 212)**##
+##*Qgis Plugin Shp2SSAP ver 2.0.1 (build 256)**##
 
-Applicativo per la gestione del modello del pendio SSAP2010 (www.ssap.eu) in ambiente GIS. 
+Plugin per Qgis per la gestione del modello del pendio SSAP2010 (www.ssap.eu) in ambiente GIS. 
 
 Permette di convertire shapefile polyline di un modello del pendio in file per SSAP2010 (testato per versioni 4x). Nell’applicazione è integrato strumento di creazione di uno shapefile di un pendio monostrato partendo da un elenco di coordinate della superficie topografica.
 
@@ -20,22 +20,21 @@ Lorenzo Sulli - Autorità di bacino distrettuale Appennino settentrionale
 
 l.sulli@appenninosettentrionale.it - lorenzo.sulli@gmail.com
 
+Ottimizzazione codice e generazione codice Plugin da sorgenti python Shp2SSAP_Ver_118_build212.py e xy2shp_forSSAP_095_028.py tramite ChaptGPT 5.2
+
 **INDIRIZZO DOWNLOAD**
 
 https://github.com/lsulli/shp2ssap
-
-File installazione: https://github.com/lsulli/shp2ssap/raw/master/Shp2SSAP_118_setup.exe
-
-Archivio zip: https://github.com/lsulli/shp2ssap/raw/master/Shp2SSAP_118.zip
 
 Guida: https://github.com/lsulli/shp2ssap/blob/master/README.md
 
 **UPGRADE**<a name="upgrade"></a>
 
-Versione 1.1.8: aggiunte funzionalità "input appunti" e opzione crea substrato con resistenza infinita in xy2shp_forSSAP.exe.
-Strumento di semplificazione delle polyline con più di 100 punti in Shp2SSAP.exe
+Versione 2.0.1: Conversione interfaccia in file .ui per QTDesigner e dialog.py
 
-Versione 1.1: aggiunto e integrato tool xy2shp_forSSAP.exe
+Versione 2.0.0: Prima versione Plugin
+
+Versione 1.1.8: ultima versione codice python esterno a qgis 
 
 **LICENZA**
 
@@ -47,42 +46,21 @@ Per il software SSAP2010 vedi termini di licenza riportati in www.ssap.eu. (Auto
 
 **REQUISITI SISTEMA** <a name="re_sist"></a>
 
-Applicativo sviluppato con Python 3.4 a 64 bit, richiede S.O. Windows 64 bit (testato con sistemi Windows  a 64 bit, verificato con windows 8.1 e windows 10). Il file eseguibile non richiede librerie preinstallate (tutti i moduli e le librerie di python sono comprese nel file eseguibile) nè è richiesta l'installazione di software GIS specifici, qualsiasi strumento GIS che permette la modifica degli shapefile è ammesso. Gli shapefile generati dall'applicativo tramite shapefile.py risultano  compatibili con tutti i sistemi GIS.
-Non è strettamente necessario che sia installato SSAP2010 ma è vivamente consigliato per la verifica dei file creati.
-    
-    ATTENZIONE: per il corretto uso di questo applicativo è necessario conoscere le nozioni fondamentali 
-    di SSAP2010, in particolare i criteri di costruzione dei file .dat.
-    
-    ATTENZIONE: per l'installazione con il file di setup è necessario avere i privilegi di amministratore ed
-    essere certi di avere i requisiti di lettura/scrittura per la directory di installazione dove vengono 
-    creati ed eleiminati dei file temporanei.
+Qgis installato versione 3.x o superiore, testato con 3.24 e 3.34
 
 **FUNZIONALITA' PRINCIPALI** <a name="fun_princ"></a>
 
-Eseguibile per windows per la creazione di file .dat, .geo, .fld, .svr, .sin e .mod per SSAP2010 (www.SSAP.eu) partendo da un unico shapefile polyline. Sfruttando le funzionalità GIS è possibile gestire in forma integrata l'editing della geometria per i file .dat, .fld, .svr  e .sin e i dati delle informazioni per il file .geo e .svr. 
+Plugin per Qgis per la creazione di file .dat, .geo, .fld, .svr, .sin e .mod per SSAP2010 (www.SSAP.eu) partendo da un unico shapefile polyline. Sfruttando le funzionalità GIS è possibile gestire in forma integrata l'editing della geometria per i file .dat, .fld, .svr  e .sin e i dati delle informazioni per il file .geo e .svr. 
 
-Direttamente dall'interfaccia dell'eseguibile Shp2SSAP.exe è attivabile un tool specifico (xy2shp_forSSAP.exe) per creare uno shapefile monostrato (già strutturato per la creazione di file per SSAP) partendo da un elenco di coordinate cartesiane xy descriventi il profilo morfologico del terreno. Lo shapefile descrive il modello geometrico (ovvero i dati per il file .dat), con la presenza opzionale di falda (dati per il file .fld), alle polyline che descrivono il modello geometrico sono associati gli attributi per la creazione del file .geo. Editando lo Shapefile in ambiente GIS Possono essere modificati gli attributi per il file .geo, aggiunte altre polyline che descrivono altri strati, inserire carichi (dati per file .svr) e una superficie di verifica singola (per file .sin).
+E'possibile creare uno shapefile monostrato (già strutturato per la creazione di file per SSAP) partendo da un elenco di coordinate cartesiane xy descriventi il profilo morfologico del terreno. Lo shapefile descrive il modello geometrico (ovvero i dati per il file .dat), con la presenza opzionale di falda (dati per il file .fld), alle polyline che descrivono il modello geometrico sono associati gli attributi per la creazione del file .geo. Editando lo Shapefile in ambiente GIS Possono essere modificati gli attributi per il file .geo, aggiunte altre polyline che descrivono altri strati, inserire carichi (dati per file .svr) e una superficie di verifica singola (per file .sin).
 
 ![Optional Text](../master/ScreenShot/Schema_Lavoro_Shp2SSAP.png)
 
 **INSTALLAZIONE** <a name="installazione"></a>
 
-Il file **Shp2SSAP_setup.exe** è un file compresso auto-estraente con procedura guidata. Non vengono modificate le chiavi di registro nè creati file all'esterno della directory di installazione, tuttavia se si utilizza il file di setup è richiesto l'accesso come amministratore. Vengono copiati nella directory scelta vari file e subdirectory. Si consiglia di non spostare nessun file dalle directory d'installazione, in ogni caso i file **Shp2SSAP.exe** e **xy2Shp_forSSAP.exe** devono risiedere nella stessa directory per la corretta funzionalità dell'applicazione.
-Il file **Shp2SSAP.zip** è un semplice archivio compresso con gli stessi file generati dal file di setup.
+L'installazione può essere fatta direttamente in Qgis dal file zip Shp2SSAP_Suite_QGIS tramite Plugin/Install from zip 
 
  **GUIDA All'USO** <a name="guida"></a>
-
-Una volta completata l'installazione individuare la directory d'installazione e avviare il file **Shp2SSAP.exe**; il collegamento sul desktop deve essere creato dall'utente.
-
-    ATTENZIONE: l'antivirus al primo avvio può eseguire un controllo dell'eseguibile.
-    Il controllo può richiedere alcuni secondi e viene eseguito di norma una sola volta. 
-    Antivirus particolarmente stringenti, in particolare quelli gestiti dai sistemi server, possono 
-    mettere in quarantena il file .exe impedendo l'uso dell'applicativo eseguibile.
-   
-
-Si aprirà un interfaccia dal quale sarà possibile aprire un file shapefile polyline esistente (tasto *Input Shapefile*) e indicare i file SSAP2010 di output (tasto *Output SSAP files*). Di default vengono lette le directory indicate nel file *default.txt* che può essere modificato a piacimento.
-
-Gli shapefile secondo i requisiti richiesti possono essere creati tramite il tool **xy2Shp_forSSAP.exe** avviabile direttamente dall'interfaccia di **Shp2SSAP.exe** (tasto *Crea Shape da XY*) e quindi modificati ed integrati in ambiente GIS.  
 
 ![Optional Text](../master/ScreenShot/Screenshot_Shp2SSAP.png)
 
