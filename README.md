@@ -30,11 +30,11 @@ Guida: https://github.com/lsulli/shp2ssap/blob/master/README.md
 
 **UPGRADE**<a name="upgrade"></a>
 
-Versione 2.0.1: Conversione interfaccia in file .ui per QTDesigner e dialog.py
+Versione 2.0.1: Elaborazione Plugin da file python ver 2.0.0 e creazione interfaccia in file .ui per QTDesigner e dialog.py
 
-Versione 2.0.0: Prima versione Plugin
+Versione 2.0.0: Versione python funzionalità unificate, interfaccia tkinter, file python llanciabile da GUI python
 
-Versione 1.1.8: ultima versione codice python esterno a qgis 
+Versione 1.1.8: Versione python per eseguibile .exe
 
 **LICENZA**
 
