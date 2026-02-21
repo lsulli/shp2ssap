@@ -62,7 +62,33 @@ L'installazione può essere fatta direttamente in Qgis dal file zip Shp2SSAP_Sui
 
  **GUIDA All'USO** <a name="guida"></a>
 
-![Optional Text](../master/ScreenShot/Screenshot_Shp2SSAP.png)
+Dalla scheda *XY → Shapefile* è possibile creare uno shapefile polyline della superficie topografica da un elenco di coordinate xy (in SSAP2010 strato unico con **SSAP_ID** = 1). I dati di input possono essere da file o direttamente dalla cache degli appunti (ovviamente recupera l'ultima copia eseguita). 
+Le coordinate di input dovranno avere valori e ordinamento secondo gli standard del file .dat per SSAP. Lo Shapefile avrà tutte le caratteristiche per generare con Shp2SSAP.exe un modello di pendio monostrato per SSAP. Nella cartella **ProfiliXY_Input** è riportato un profilo d'esempio.
+
+![Optional Text](../master/ScreenShot/Screenshot_Shp2SSAP_Tab1.png)
+
+    ATTENZIONE: La struttura tipo del file XY ammessa è quella tipica generata dagli strumenti GIS 
+    per la creazione di profili da DTM. Il file deve essere un file ascii (.txt per default) 
+    con solo due colonne (valori x e valori Y), quindi senza colonna indice o altri attributi.
+    Le due colonne di coordinate dovranno essere separate dai caratteri TAB, punto e virgola, 
+    barra verticale o spazio singolo, la virgola non è ammessa come separatore di colonna.
+    Per il decimale è ammesso sia il punto che la virgola. 
+    Vengono automaticamente saltate le righe con caratteri non numerici quindi è ammesso l'header 
+    del file o i descrittori di campo.
+    
+Il tasto *Input appunti* è stato pensato per utilizzare direttamente i dati copiati negli appunti tramite il Plugin "Profile tool" (http://plugins.qgis.org/plugins/profiletool/) di Qgis (www.qgis.org/en/site/), tuttavia è utile per tutte le fonti dati che rispettano almeno per due punti del pendio le indicazioni appena esplicitate sopra, nel dubbio incollate i dati in un semplice file di testo per esaminarli, poi copiateli di nuovo e utilizzate il comando *Input appunti*. 
+    
+Sono presenti opzioni per aggiungere una falda parallela alla superficie e impostare i parametri geotecnici per le terre. 
+Può essere creato un substrato infinitamente rigido parallelo alla superficie topografica. 
+
+Per una back analysis speditiva in condizioni residue può essere approssimato l'angolo d'attrito interno alla pendenza media del pendio e imposto zero alla coesione dreanata (ovvero approssimare l'angolo d'attrito all'angolo di riposo di materiali granulari non coesivi).
+
+    SUGGERIMENTO: Non vi sono limitazioni alla generazione di una singola polyline a partire 
+    da un elenco coordinate, pertanto  è possibile, rispettando rigidamente le specifiche SSAP,
+    creare polyline dei carichi o di singoli strati (ad esempio di un muro) per poi integrarli 
+    nel modello pendio in ambiemte GIS.
+
+![Optional Text](../master/ScreenShot/Screenshot_Shp2SSAP_Tab2.png)
 
     ATTENZIONE: Nel caso venga aperta una sezione ex-novo in ambiente GIS fare molta attenzione ad impostare 
     unità di misura metriche. Il sistema di coordinate scelto deve essere anch'esso metrico. 
@@ -97,7 +123,7 @@ Nella cartella **Shapefile_ModelliPendio** sono disponibili shapefile di alcuni 
     probabile che si sia verificato un accesso in simultanea al file temporaneo, si consiglia di chiudere 
     l'applicativo GIS o esportare lo shapefile con un diverso nome.
 
-Con il tasto *Verifica Preliminare Shape* è possibile eseguire un controllo dello shapefile di input senza generare file SSAP2010, verranno indicati eventuali errori rispetto alle specifiche SSAP2010 o indicate informazioni generali se il file risulta corretto. Il tasto *Converti* esegue la conversione da shapefile a file per SSA2010, nel caso di errori nel file di input questi vengono comunicati (come per la verifica preliminare) e la conversione è interrotta, se lo shapefile rispetta le specifiche SSAP2010 verranno generati sempre file .mod, .dat, .geo. I file .fld, .svr e .sin sono presenti se sono inserite le relative polyline nello shapefile. 
+Con il tasto *Verifica Preliminare* è possibile eseguire un controllo dello shapefile di input senza generare file SSAP2010, verranno indicati eventuali errori rispetto alle specifiche SSAP2010 o indicate informazioni generali se il file risulta corretto. Il tasto *Converti* esegue la conversione da shapefile a file per SSA2010, nel caso di errori nel file di input questi vengono comunicati (come per la verifica preliminare) e la conversione è interrotta, se lo shapefile rispetta le specifiche SSAP2010 verranno generati sempre file .mod, .dat, .geo. I file .fld, .svr e .sin sono presenti se sono inserite le relative polyline nello shapefile. 
 
 Sono implementate funzioni di controllo della struttura degli shapefile di input (coordinate negative, numero di strati, sequenza corretta ID strati, etc.) che interrompe la procedura e genera un avviso d'errore che esplicita la tipologia d'errore intercettata.
 
@@ -112,38 +138,13 @@ In fase di conversione è implementata procedura di triming degli strati che non
     Il procedimento dà i risultati migliori impostando i limiti degli strati con valori 
     di x superiori al limite sinistro e inferiori al limite destro entro la tolleranza impostata. 
     
-L'opzione *Semplifica polyline se > 100 punti* è funzionale a correggere i file .dat generati da shapefile creati con il tool **xy2Shp_forSSAP.exe** attingendo da profili estratti da DTM LIDAR o simili.
+L'opzione *Semplifica polyline se > 100 punti* è funzionale a correggere i file .dat generati da shapefile creati con  *XY → Shapefile* attingendo da profili estratti da DTM LIDAR o simili.
 
     ATTENZIONE: L'uso di questa opzione è efficace per strati paralleli ma non permettere 
     di mantenere lo snapping quando vi sono strati intersecanti con la superfice topografica.
     In questo caso è necessario ridurre tramite editing manuale il numero di punti sino a < 100
-    controllando che le regole di condivisione dei nodi richieste da SSAp siano rispettate.
+    controllando che le regole di condivisione dei nodi richieste da SSAP siano rispettate.
     
-Il tasto *Crea Shape da XY* permette di avviare il tool **xy2Shp_forSSAP.exe** per creare uno shapefile polyline della superficie topografica da un elenco di coordinate xy (in SSAP2010 strato unico con **SSAP_ID** = 1). I dati di input possono essere da file o direttamente dalla cache degli appunti (ovviamente recupera l'ultima copia eseguita). 
-Le coordinate di input dovranno avere valori e ordinamento secondo gli standard del file .dat per SSAP. Lo Shapefile avrà tutte le caratteristiche per generare con Shp2SSAP.exe un modello di pendio monostrato per SSAP. Nella cartella **ProfiliXY_Input** è riportato un profilo d'esempio.
-
-![Optional Text](../master/ScreenShot/Screenshot_xy2Shp_forSSAP.png)
-
-    ATTENZIONE: La struttura tipo del file XY ammessa è quella tipica generata dagli strumenti GIS 
-    per la creazione di profili da DTM. Il file deve essere un file ascii (.txt per default) 
-    con solo due colonne (valori x e valori Y), quindi senza colonna indice o altri attributi.
-    Le due colonne di coordinate dovranno essere separate dai caratteri TAB, punto e virgola, 
-    barra verticale o spazio singolo, la virgola non è ammessa come separatore di colonna.
-    Per il decimale è ammesso sia il punto che la virgola. 
-    Vengono automaticamente saltate le righe con caratteri non numerici quindi è ammesso l'header 
-    del file o i descrittori di campo.
-    
-Il tasto *Input appunti* è stato pensato per utilizzare direttamente i dati copiati negli appunti tramite il Plugin "Profile tool" (http://plugins.qgis.org/plugins/profiletool/) di Qgis (www.qgis.org/en/site/), tuttavia è utile per tutte le fonti dati che rispettano almeno per due punti del pendio le indicazioni appena esplicitate sopra, nel dubbio incollate i dati in un semplice file di testo per esaminarli, poi copiateli di nuovo e utilizzate il comando *Input appunti*. 
-    
-Nel tool xy2Shp_forSSAP.exe sono presenti opzioni per aggiungere una falda parallela alla superficie e impostare i parametri geotecnici per le terre. 
-Può essere creato un substrato infinitamente rigido parallelo alla superficie topografica. 
-
-Per una back analysis speditiva in condizioni residue può essere approssimato l'angolo d'attrito interno alla pendenza media del pendio e imposto zero alla coesione dreanata (ovvero approssimare l'angolo d'attrito all'angolo di riposo di materiali granulari non coesivi).
-
-    SUGGERIMENTO: Non vi sono limitazioni alla generazione di una singola polyline a partire 
-    da un elenco coordinate, pertanto  è possibile, rispettando rigidamente le specifiche SSAP,
-    creare polyline dei carichi o di singoli strati (ad esempio di un muro) per poi integrarli 
-    nel modello pendio in ambiemte GIS.
 
 **CARATTERISTICHE DELLO SHAPEFILE MODELLO PENDIO**<a name="car_shape"></a>
 
