@@ -61,7 +61,7 @@ E'possibile creare uno shapefile monostrato (già strutturato per la creazione d
 
 **INSTALLAZIONE** <a name="installazione"></a>
 
-L'installazione può essere fatta direttamente in Qgis dal file zip *Shp2SSAP_QGIS* (#file_zip) tramite Plugin/Install from zip 
+L'installazione può essere fatta direttamente in Qgis dal file zip [Shp2SSAP_QGIS](#file_zip) tramite Plugin/Install from zip 
 
  **GUIDA All'USO** <a name="guida"></a>
 
