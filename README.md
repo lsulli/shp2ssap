@@ -2,7 +2,7 @@
 
 Plugin per Qgis per la gestione del modello del pendio SSAP2010 (www.ssap.eu) in ambiente GIS. 
 
-Permette di convertire shapefile e geopackage polyline di un modello del pendio in file per SSAP2010 (testato per versioni 4x e superiori). Può essere creato uno shapefile di un pendio monostrato partendo da un elenco di coordinate della superficie topografica.
+Permette di convertire shapefile e geopackage polyline di un modello del pendio in file per SSAP2010 (testato per versioni di SSAP 4x e superiori). Può essere creato uno shapefile di un pendio monostrato partendo da un elenco di coordinate della superficie topografica.
 
 **SOMMARIO**
 1. [Autore](#autore)
@@ -28,7 +28,7 @@ https://github.com/lsulli/shp2ssap
 
 Guida: https://github.com/lsulli/shp2ssap/blob/master/README.md
 
-File plugin: https://github.com/lsulli/shp2ssap/blob/master/Shp2SSAP_QGIS_ver201_246.zip <a name="file_zip"></a>
+File plugin: https://github.com/lsulli/shp2ssap/blob/master/Shp2SSAP_QGIS_ver202_260.zip <a name="file_zip"></a>
 
 
 **UPGRADE**<a name="upgrade"></a>
@@ -45,19 +45,18 @@ Versione 1.1.8: Versione python per eseguibile .exe
 
 http://www.gnu.org/licenses/gpl.html
 
-Le procedure fondamentali utilizzano il modulo shapefile.py (credit. https://github.com/GeospatialPython/pyshp)
-
+Le procedure fondamentali utilizzano il modulo shapefile.py (credit. https://github.com/GeospatialPython/pyshp) e le librerie di Qgis.
 Per il software SSAP2010 vedi termini di licenza riportati in www.ssap.eu. (Autore Lorenzo Borselli)
 
 **REQUISITI SISTEMA** <a name="re_sist"></a>
 
-Qgis installato versione 3.x o superiore, testato con 3.24 e 3.34
+Qgis installato versione 3.x o superiore, testato con 3.24, 3.34, 3.40
 
 **FUNZIONALITA' PRINCIPALI** <a name="fun_princ"></a>
 
 Plugin per Qgis per la creazione di file .dat, .geo, .fld, .svr, .sin e .mod per SSAP2010 (www.SSAP.eu) partendo da un unico shapefile polyline. Sfruttando le funzionalità GIS è possibile gestire in forma integrata l'editing della geometria per i file .dat, .fld, .svr  e .sin e i dati delle informazioni per il file .geo e .svr. 
 
-E'possibile creare uno shapefile monostrato (già strutturato per la creazione di file per SSAP) partendo da un elenco di coordinate cartesiane xy descriventi il profilo morfologico del terreno. Lo shapefile descrive il modello geometrico (ovvero i dati per il file .dat), con la presenza opzionale di falda (dati per il file .fld), alle polyline che descrivono il modello geometrico sono associati gli attributi per la creazione del file .geo. Editando lo Shapefile in ambiente GIS Possono essere modificati gli attributi per il file .geo, aggiunte altre polyline che descrivono altri strati, inserire carichi (dati per file .svr) e una superficie di verifica singola (per file .sin).
+E'possibile creare uno shapefile monostrato (già strutturato per la creazione di file per SSAP) partendo da un elenco di coordinate cartesiane xy descriventi il profilo morfologico del terreno. Lo shapefile descrive il modello geometrico (ovvero i dati per il file .dat), con la presenza opzionale di falda (dati per il file .fld) e bedrock (strato **SSAP_ID** = 2 nel file .dat), alle polyline che descrivono il modello geometrico sono associati gli attributi per la creazione del file .geo. Editando lo Shapefile in ambiente GIS Possono essere modificati gli attributi per il file .geo, aggiunte altre polyline che descrivono altri strati, inserire carichi (dati per file .svr) e una superficie di verifica singola (per file .sin).
 
 ![Optional Text](../master/ScreenShot/Schema_Lavoro_Shp2SSAP.png)
 
@@ -67,7 +66,7 @@ L'installazione può essere fatta direttamente in Qgis dal file zip [Shp2SSAP_QG
 
  **GUIDA All'USO** <a name="guida"></a>
 
-Dalla scheda *XY → Shapefile* è possibile creare uno shapefile polyline della superficie topografica da un elenco di coordinate xy (in SSAP2010 strato unico con **SSAP_ID** = 1). I dati di input possono essere da file o direttamente dalla cache degli appunti (ovviamente recupera l'ultima copia eseguita). 
+Dalla scheda *XY → Shapefile* è possibile creare uno shapefile polyline della superficie topografica da un elenco di coordinate xy (nel file .dat  strato unico con **SSAP_ID** = 1). I dati di input possono essere da file o direttamente dalla cache degli appunti (recupera l'ultima copia eseguita). 
 Le coordinate di input dovranno avere valori e ordinamento secondo gli standard del file .dat per SSAP. Lo Shapefile avrà tutte le caratteristiche per generare con Shp2SSAP.exe un modello di pendio monostrato per SSAP. Nella cartella **ProfiliXY_Input** è riportato un profilo d'esempio.
 
 ![Optional Text](../master/ScreenShot/Screenshot_Shp2SSAP_Tab1.png)
@@ -84,9 +83,9 @@ Le coordinate di input dovranno avere valori e ordinamento secondo gli standard 
 Il tasto *Input appunti* è stato pensato per utilizzare direttamente i dati copiati negli appunti tramite il Plugin "Profile tool" (http://plugins.qgis.org/plugins/profiletool/) di Qgis (www.qgis.org/en/site/), tuttavia è utile per tutte le fonti dati che rispettano almeno per due punti del pendio le indicazioni appena esplicitate sopra, nel dubbio incollate i dati in un semplice file di testo per esaminarli, poi copiateli di nuovo e utilizzate il comando *Input appunti*. 
     
 Sono presenti opzioni per aggiungere una falda parallela alla superficie e impostare i parametri geotecnici per le terre. 
-Può essere creato un substrato infinitamente rigido parallelo alla superficie topografica. 
+Può essere creato un substrato infinitamente rigido parallelo alla superficie topografica (strato **SSAP_ID** = 2 nel file .dat)
 
-Per una back analysis speditiva in condizioni residue può essere approssimato l'angolo d'attrito interno alla pendenza media del pendio e imposto zero alla coesione dreanata (ovvero approssimare l'angolo d'attrito all'angolo di riposo di materiali granulari non coesivi).
+Per una back analysis speditiva in condizioni residue può essere approssimato l'angolo d'attrito interno alla pendenza media del pendio (calcolata semplicemente come rapporto tra dislivello e lunghezza pendio) e imposto zero alla coesione dreanata (ovvero approssimare l'angolo d'attrito all'angolo di riposo di materiali granulari non coesivi).
 
     SUGGERIMENTO: Non vi sono limitazioni alla generazione di una singola polyline a partire 
     da un elenco coordinate, pertanto  è possibile, rispettando rigidamente le specifiche SSAP,
@@ -100,7 +99,7 @@ Per una back analysis speditiva in condizioni residue può essere approssimato l
     assolute per le ascisse, lo shapefile del modello pendio sarà proiettato in basso a sinistra 
     rispetto all'Italia.
 
-Una volta aperto lo shapefile in ambiente GIS potranno essere aggiunti gli strati per .dat, carichi per .svr, la falda per .fld e una superficie per la verifica singola (.sin). 
+Una volta aperto lo shapefile in ambiente GIS potranno essere aggiunti ulteriori strati per .dat, carichi per .svr, la falda per .fld e una superficie per la verifica singola (.sin). 
 
     ATTENZIONE: la geometria della polyline .sin è particolarmente critica per le compatibilità 
     richieste da SSAP, deve quindi essere editata con criterio.
@@ -135,13 +134,10 @@ Sono implementate funzioni di controllo della struttura degli shapefile di input
     ATTENZIONE: nel caso di modelli di pendio complessi o in presenza di lenti, l'opzione 
     "verifica ordinamento verticale strati" può generare falsi errori, nel caso deve essere disattivata.
 
-In fase di conversione è implementata procedura di triming degli strati che non rispettano i valori di ascissa minimo e massimo dell'ascissa della superficie topografica o, meglio, sono leggermente inferiori ad essa, (opzione *Regola gli strati alla superficie topografica*), utile per editare gli strati senza preoccuparsi della precisione dei punti di inizio e fine. E'possibile variare la tolleranza della procedura di triming editando il file default.txt (tolleranza di default pari a 1/20 della lunghezza planimetrica della superficie topografica). 
+Prima della conversione è possibile applicare una procedura di triming degli strati che non rispettano i valori di ascissa minimo e massimo della superficie topografica o, meglio, sono leggermente inferiori o superiori ad esse, (opzione *Regola gli strati alla superficie topografica*), utile per editare gli strati senza preoccuparsi della precisione dei punti di inizio e fine. 
 
-    ATTENZIONE: Nell'uso di questa opzione è comunque necessario verificare che i nodi 
-    ricadenti nell'intervallo di tolleranza siano relativamente allineati, 
-    spezzate complesse possono determinare errori nella procedura di trimming.
-    Il procedimento dà i risultati migliori impostando i limiti degli strati con valori 
-    di x superiori al limite sinistro e inferiori al limite destro entro la tolleranza impostata. 
+    ATTENZIONE: Il procedimento funziona solo impostando i limiti degli strati con valori 
+    di x superiori al limite sinistro e inferiori al limite destro. 
     
 L'opzione *Semplifica polyline se > 100 punti* è funzionale a correggere i file .dat generati da shapefile creati con  *XY → Shapefile* attingendo da profili estratti da DTM LIDAR o simili.
 
