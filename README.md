@@ -1,4 +1,4 @@
-##*Qgis Plugin Shp2SSAP ver 2.0.3 (build 264)**##
+##*Qgis Plugin Shp2SSAP ver 2.0.4 (build 266)**##
 
 Plugin per Qgis per la gestione del modello del pendio SSAP2010 (www.ssap.eu) in ambiente GIS. 
 
@@ -28,14 +28,16 @@ https://github.com/lsulli/shp2ssap
 
 Guida: https://github.com/lsulli/shp2ssap/blob/master/README.md
 
-File plugin: https://github.com/lsulli/shp2ssap/blob/master/Shp2SSAP_QGIS_ver203_264.zip <a name="file_zip"></a>
+File plugin: https://github.com/lsulli/shp2ssap/blob/master/Shp2SSAP_QGIS_ver204_266.zip <a name="file_zip"></a>
 
 
 **UPGRADE**<a name="upgrade"></a>
 
-Versione 2.0.3. Aggiunto tasto avvio di SSAP  direttamente dall'interfaccia, indicazione path di SSAP nelle opzioni.
+Versione 2.0.4 - Riscritta funzione semplificazione polyline. Agisce su layer prima della conversione.
+
+Versione 2.0.3 - Aggiunto tasto avvio di SSAP direttamente dall'interfaccia, indicazione path di SSAP nelle opzioni.
                 
-Versione 2.0.2: Modificata funzione trimming. Agisce direttamente su Shapefile prima della conversione. Non serve pù settare la tolleranza per il trimming.
+Versione 2.0.2 - Modificata funzione trimming. Agisce direttamente su Shapefile prima della conversione. Non serve pù settare la tolleranza per il trimming.
                 Build 262: creazione file di log delle chiamate impostato come opzionale - Opzione da modificare nel codice.
 
 Versione 2.0.1: Elaborazione Plugin da file python ver 2.0.0 e creazione interfaccia in file .ui per QTDesigner e dialog.py
