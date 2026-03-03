@@ -1,4 +1,5 @@
 2026.03.03
+v. 2.0.4 build 267 - Corretto ordine di tabulazione, sposta tasto info per XY
 v. 2.0.4 build 266 - Modifica alla funzione di semplificazione delle polyline se > 100 nodi. Funzione agisce sul layer di input prima della conversione
 
 2026.03.02
@@ -39,6 +40,7 @@ Aggiunto file change_log.txt
 2017.05.08
 Shp2SSAP ver. 1.1.7 build 201
 - Cambiato il metodo di conversione dei file, ora genera una copia temporanea dello shapefile da convertire, viene simulato un accesso simultaneo al file originale per evitare conflitti tra software GIS e Shp2SSAP.exe
+
 
 
 
