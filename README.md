@@ -1,4 +1,4 @@
-##*Qgis Plugin Shp2SSAP ver 2.0.4 (build 266)**##
+##*Qgis Plugin Shp2SSAP ver 2.0.4 (build 267)**##
 
 Plugin per Qgis per la gestione del modello del pendio SSAP2010 (www.ssap.eu) in ambiente GIS. 
 
@@ -28,7 +28,7 @@ https://github.com/lsulli/shp2ssap
 
 Guida: https://github.com/lsulli/shp2ssap/blob/master/README.md
 
-File plugin: https://github.com/lsulli/shp2ssap/blob/master/Shp2SSAP_QGIS_V204_build266.zip <a name="file_zip"></a>
+File plugin: https://github.com/lsulli/shp2ssap/blob/master/Shp2SSAP_QGIS_v204_build267.zip <a name="file_zip"></a>
 
 
 **UPGRADE**<a name="upgrade"></a>
