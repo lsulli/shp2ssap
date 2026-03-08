@@ -33,7 +33,7 @@ File plugin: https://github.com/lsulli/shp2ssap/blob/master/Shp2SSAP_QGIS_v205_b
 
 **UPGRADE**<a name="upgrade"></a>
 
-Vedi change_log.txt
+Vedi change_log.txt - https://github.com/lsulli/shp2ssap/blob/master/change_log.txt
 
 **LICENZA**
 
