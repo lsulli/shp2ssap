@@ -33,18 +33,7 @@ File plugin: https://github.com/lsulli/shp2ssap/blob/master/Shp2SSAP_QGIS_v205_b
 
 **UPGRADE**<a name="upgrade"></a>
 
-Versione 2.0.4 - Riscritta funzione semplificazione polyline. Agisce su layer prima della conversione.
-
-Versione 2.0.3 - Aggiunto tasto avvio di SSAP direttamente dall'interfaccia, indicazione path di SSAP nelle opzioni.
-                
-Versione 2.0.2 - Modificata funzione trimming. Agisce direttamente su Shapefile prima della conversione. Non serve pù settare la tolleranza per il trimming.
-                Build 262: creazione file di log delle chiamate impostato come opzionale - Opzione da modificare nel codice.
-
-Versione 2.0.1: Elaborazione Plugin da file python ver 2.0.0 e creazione interfaccia in file .ui per QTDesigner e dialog.py
-
-Versione 2.0.0: Versione python funzionalità unificate, interfaccia tkinter, file python lanciabile da GUI python
-
-Versione 1.1.8: Versione python per eseguibile .exe
+Vedi change_log.txt
 
 **LICENZA**
 
