@@ -1,3 +1,6 @@
+2026.03.08
+v. 2.0.5 build 270 - Completati messaggi avviso, modifiche interfaccia, inserimento controllo per impostare numero nodi massimo per la semplificazione del layer
+
 2026.03.07
 v. 2.0.4 build 268 - Corretto messaggi avviso, inserito tasto info per bedrock e falda
 
@@ -43,6 +46,7 @@ Aggiunto file change_log.txt
 2017.05.08
 Shp2SSAP ver. 1.1.7 build 201
 - Cambiato il metodo di conversione dei file, ora genera una copia temporanea dello shapefile da convertire, viene simulato un accesso simultaneo al file originale per evitare conflitti tra software GIS e Shp2SSAP.exe
+
 
 
 
