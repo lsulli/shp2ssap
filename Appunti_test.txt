@@ -1,0 +1,8 @@
+ver 206_271
+carica correttamente dxf 2d da elevation e da profile. 
+carica correttamente csv da elevation
+carica correttamente copi ada appunti da profile
+conversione tutto ok
+trimmming ok
+simplify ok
+editing freehand con inserimento starti sub orizzontali ok 
