@@ -1,4 +1,4 @@
-ver 206_271
+ver 206_271  - 2026.03.09
 carica correttamente dxf 2d da elevation e da profile. 
 carica correttamente csv da elevation
 carica correttamente copi ada appunti da profile
