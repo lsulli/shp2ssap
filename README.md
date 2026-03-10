@@ -60,18 +60,17 @@ L'installazione può essere fatta direttamente in Qgis dal file zip [Shp2SSAP_QG
 
  **GUIDA All'USO** <a name="guida"></a>
 
-Dalla scheda *XY → Shapefile* è possibile creare uno shapefile polyline della superficie topografica da un elenco di coordinate xy (nel file .dat  strato unico con **SSAP_ID** = 1). I dati di input possono essere da file o direttamente dalla cache degli appunti (recupera l'ultima copia eseguita). 
-Le coordinate di input dovranno avere valori e ordinamento secondo gli standard del file .dat per SSAP. Lo Shapefile avrà tutte le caratteristiche per generare con Shp2SSAP.exe un modello di pendio monostrato per SSAP. Nella cartella **ProfiliXY_Input** è riportato un profilo d'esempio.
+Dalla scheda *XY → Vettoriale* è possibile creare uno shapefile polyline della superficie topografica da un elenco di coordinate xy (nel file .dat  strato unico con **SSAP_ID** = 1). I dati di input possono essere da file o direttamente dalla cache degli appunti (recupera l'ultima copia eseguita). Testato per i formati .csv e DXF 2D esportati dallo strumento *elevation* di Qgis e per dati copiati nella cache e formato DXF 2D per *Profile Plugin*.
+Le coordinate di input dovranno avere valori e ordinamento secondo gli standard del file .dat per SSAP. Lo Shapefile avrà tutte le caratteristiche per generare con Shp2SSAP.exe un modello di pendio monostrato per SSAP.
 
 ![Optional Text](../master/ScreenShot/Screenshot_Shp2SSAP_Tab1.png)
 
     ATTENZIONE: La struttura tipo del file XY ammessa è quella tipica generata dagli strumenti GIS 
-    per la creazione di profili da DTM. Il file deve essere un file ascii (.txt per default) 
-    con solo due colonne (valori x e valori Y), quindi senza colonna indice o altri attributi.
-    Le due colonne di coordinate dovranno essere separate dai caratteri TAB, punto e virgola, 
-    barra verticale o spazio singolo, la virgola non è ammessa come separatore di colonna.
+    per la creazione di profili da DTM. Il file deve essere un file ascii (.txt, .csv o .dxf per default) 
+    con coppie di valori numerici anche in formato stringa (valori x e valori Y), ammette strighe intercalari.
+    La virgola non è ammessa come separatore di colonna.
     Per il decimale è ammesso sia il punto che la virgola. 
-    Vengono automaticamente saltate le righe con caratteri non numerici quindi è ammesso l'header 
+    Vengono automaticamente saltati valori stringa e righe nulle quindi è ammesso l'header 
     del file o i descrittori di campo.
     
 Il tasto *Input appunti* è stato pensato per utilizzare direttamente i dati copiati negli appunti tramite il Plugin "Profile tool" (http://plugins.qgis.org/plugins/profiletool/) di Qgis (www.qgis.org/en/site/), tuttavia è utile per tutte le fonti dati che rispettano almeno per due punti del pendio le indicazioni appena esplicitate sopra, nel dubbio incollate i dati in un semplice file di testo per esaminarli, poi copiateli di nuovo e utilizzate il comando *Input appunti*. 
