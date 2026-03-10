@@ -1,8 +1,8 @@
-##*Qgis Plugin Shp2SSAP ver 2.0.6 (build 271)**##
+##*Qgis Plugin Shp2SSAP ver 2.0.6 (build 272)**##
 
 Plugin per Qgis per la gestione del modello del pendio SSAP2010 (www.ssap.eu) in ambiente GIS. 
 
-Permette di convertire shapefile e geopackage polyline di un modello del pendio in file per SSAP2010 (testato per versioni di SSAP 4x e superiori). Può essere creato uno shapefile di un pendio monostrato partendo da un elenco di coordinate della superficie topografica.
+Permette di convertire shapefile e geopackage polyline di un modello del pendio in file per SSAP2010 (testato per versioni di SSAP 4x e superiori). Può essere creato uno shapefile di un pendio monostrato partendo da un elenco di coordinate della superficie topografica anche in formato DXF 2D o .csv estratti dallo strumento **elevation** di Qgis o **rofile Plugin** per Qgis
 
 **SOMMARIO**
 1. [Autore](#autore)
@@ -28,7 +28,7 @@ https://github.com/lsulli/shp2ssap
 
 Guida: https://github.com/lsulli/shp2ssap/blob/master/README.md
 
-File plugin: https://github.com/lsulli/shp2ssap/blob/master/Shp2SSAP_QGIS_v206_build271.zip <a name="file_zip"></a>
+File plugin: https://github.com/lsulli/shp2ssap/blob/master/Shp2SSAP_QGIS_v206_build272.zip <a name="file_zip"></a>
 
 
 **UPGRADE**<a name="upgrade"></a>
