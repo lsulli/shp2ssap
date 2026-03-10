@@ -60,7 +60,7 @@ L'installazione può essere fatta direttamente in Qgis dal file zip [Shp2SSAP_QG
 
  **GUIDA All'USO** <a name="guida"></a>
 
-Dalla scheda *XY → Vettoriale* è possibile creare uno shapefile polyline della superficie topografica da un elenco di coordinate xy (nel file .dat  strato unico con **SSAP_ID** = 1). I dati di input possono essere da file o direttamente dalla cache degli appunti (recupera l'ultima copia eseguita). Testato per i formati .csv e DXF 2D esportati dallo strumento *elevation* di Qgis e per dati copiati nella cache e formato DXF 2D per *Profile Plugin*.
+Dalla TAB *XY → Vettoriale* è possibile creare uno shapefile polyline della superficie topografica da un elenco di coordinate xy (nel file .dat  strato unico con **SSAP_ID** = 1). I dati di input possono essere da file o direttamente dalla cache degli appunti (recupera l'ultima copia eseguita). Testato per i formati .csv e DXF 2D esportati dallo strumento *elevation* di Qgis e per dati copiati nella cache e formato DXF 2D per *Profile Plugin*.
 Le coordinate di input dovranno avere valori e ordinamento secondo gli standard del file .dat per SSAP. Lo Shapefile avrà tutte le caratteristiche per generare con Shp2SSAP.exe un modello di pendio monostrato per SSAP.
 
 ![Optional Text](../master/ScreenShot/Screenshot_Shp2SSAP_Tab1.png)
@@ -133,7 +133,7 @@ Agedno sul file vettoriale è possibile applicare una procedura di triming degli
     ATTENZIONE: Il procedimento funziona solo impostando i limiti degli strati con valori 
     di x inferiori al limite sinistro e superiori al limite destro. 
     
-L'opzione *riduci il numero di nodi per strato* è indispensabile per creare shapefile con un numero di nodi coerente alle specifiche SSAP, cioè inferiore a 100 nodi, condzione frequente se il profilo topografico deriva direttamente da dtm. Per default viene creato un vettoriale temporaneo del nome *miolayer_semplificato*, è disponibile l'opzione per editare direttamente il layer indicato nella casella *vettoriale di input*.
+L'opzione *riduci il numero di nodi per strato* è indispensabile per creare shapefile con un numero di nodi coerente alle specifiche SSAP, cioè inferiore a 100 nodi, condizione frequente se il profilo topografico deriva direttamente da dtm. Per default viene creato un vettoriale temporaneo del nome *miolayer_semplificato*, è disponibile l'opzione per editare direttamente il layer indicato nella casella *vettoriale di input*.
 
     SUGGERIMENTO: L'uso di questa opzione è utile anche nel caso si voglia facilitare lo snapping 
     di nuove polyline alla superficie topografica riducendo il numero di nodi di aggancio (in particolare in caso di lenti con un lato coincidente con la superficie.
@@ -142,15 +142,15 @@ L'opzione *riduci il numero di nodi per strato* è indispensabile per creare sha
 **CARATTERISTICHE DELLO SHAPEFILE MODELLO PENDIO**<a name="car_shape"></a>
 
 
-    RICORDATE: con il tool xy2Shp_forSSAP.exe potete generare direttamente uno shapefile che rispetta 
+    RICORDATE: TAB *XY → Vettoriale* viene generato direttamente un vettoriale che rispetta 
     i criteri indcati in questa sezione, non è necessario crearlo ex-novo.
 
-Sono ammessi solo shapefile del tipo polyline "singol part". Nel caso venga caricato uno shapefile di geometria differente verrà generato un errore. 
+Sono ammessi solo vettoriali del tipo polyline "singol part". Nel caso venga caricato un vettoriale di geometria differente verrà generato un errore. 
 
     ATTENZIONE: La geometria deve rispettare rigidamente le specifiche SSAP per i file .dat 
     così come specificato nel manuale SSAP 4.9.8 al capitolo 3.3.
 
-La struttura degli attributi dello shapefile è riportata sotto. Non è richiesto un ordine prestabilito dei campi, è invece obbligatorio l'uso dei nomi di campo e del tipo e lunghezza minima indicata. 
+La struttura degli attributi del vettoriale è riportata sotto. Non è richiesto un ordine prestabilito dei campi, è invece obbligatorio l'uso dei nomi di campo e del tipo e lunghezza minima indicata. 
 
     ATTENZIONE: non sono ammessi valori nulli, possono essere generati errori in fase di conversione.
     In alcuni casi si tratta di errori non gestiti che quindi sono 'asintomatici' ma non permettono
