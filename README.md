@@ -70,17 +70,17 @@ E'possibile creare uno shapefile monostrato (già strutturato per la creazione d
                     ┌──────────────▼───────────────────────┐
                     │   Editing in QGIS (aggiungi strati,  │
                     │   compila parametri geotecnici)      │
-                    └──────────────┬───────────────────────┘
+                    └──────────────┬───────────────────────
                                    │
-                             Trim / Semplifica
+                         TAB: Vettoriale → Files SSAP
+                                   │
+                              Trim/semplifica                               
                               (se necessario)
                                    │
                     ┌──────────────▼───────────────────────┐
                     │      Verifica preliminare            │
                     └──────────────┬───────────────────────┘
-                                   │
-                    TAB: Vettoriale → Files SSAP
-                                   │
+                                   │                
                     ┌──────────────▼───────────────────────┐
                     │    .dat  .geo  .fld  .svr  .mod      │
                     └──────────────┬───────────────────────┘
