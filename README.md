@@ -73,7 +73,7 @@ E'possibile creare uno shapefile monostrato (già strutturato per la creazione d
                     └──────────────┬───────────────────────┘
                                    │
                              Trim / Semplifica
-                    (se necessario per strati aggiuntivi)
+                              (se necessario)
                                    │
                     ┌──────────────▼───────────────────────┐
                     │      Verifica preliminare            │
