@@ -52,7 +52,40 @@ Plugin per Qgis per la creazione di file .dat, .geo, .fld, .svr, .sin e .mod per
 
 E'possibile creare uno shapefile monostrato (già strutturato per la creazione di file per SSAP) partendo da un elenco di coordinate cartesiane xy descriventi il profilo morfologico del terreno. Lo shapefile descrive il modello geometrico (ovvero i dati per il file .dat), con la presenza opzionale di falda (dati per il file .fld) e bedrock (strato **SSAP_ID** = 2 nel file .dat), alle polyline che descrivono il modello geometrico sono associati gli attributi per la creazione del file .geo. Editando lo Shapefile in ambiente GIS Possono essere modificati gli attributi per il file .geo, aggiunte altre polyline che descrivono altri strati, inserire carichi (dati per file .svr) e una superficie di verifica singola (per file .sin).
 
-![Optional Text](../master/ScreenShot/Schema_Lavoro_Shp2SSAP.png)
+## Workflow tipico
+
+```
+                    ┌──────────────────────────────────────┐
+                    │         PROFILO TOPOGRAFICO          │
+                    │  (file XY, DXF, CSV, o clipboard)    │
+                    └──────────────┬───────────────────────┘
+                                   │
+                          TAB: XY → Vettoriale
+                                   │
+                    ┌──────────────▼───────────────────────┐
+                    │     SHAPEFILE / GEOPACKAGE SSAP      │
+                    │  (dat, fld, bedrock — con campi)     │
+                    └──────────────┬───────────────────────┘
+                                   │
+                    ┌──────────────▼───────────────────────┐
+                    │   Editing in QGIS (aggiungi strati,  │
+                    │   compila parametri geotecnici)      │
+                    └──────────────┬───────────────────────┘
+                                   │
+                             Trim / Semplifica
+                    (se necessario per strati aggiuntivi)
+                                   │
+                    ┌──────────────▼───────────────────────┐
+                    │      Verifica preliminare            │
+                    └──────────────┬───────────────────────┘
+                                   │
+                    TAB: Vettoriale → Files SSAP
+                                   │
+                    ┌──────────────▼───────────────────────┐
+                    │    .dat  .geo  .fld  .svr  .mod      │
+                    └──────────────┬───────────────────────┘
+                                   │
+                             Avvia SSAP2010
 
 **INSTALLAZIONE** <a name="installazione"></a>
 
@@ -121,8 +154,6 @@ Nella cartella **Shapefile_ModelliPendio** sono disponibili shapefile di alcuni 
 ![Optional Text](../master/ScreenShot/Screenshot_Shp2SSAP_Tab2.png)
 
 Con il tasto *Verifica Preliminare* viene eseguito un controllo del vettoriale di input senza generare file SSAP2010. Vengono indicati eventuali errori rispetto alle specifiche SSAP2010 o indicate informazioni generali se il file risulta corretto. 
-
-CodiceControlloERR 01Impossibile leggere lo shapefileERR 02Campi obbligatori mancantiERR 03Valori non ammessi nel campo SSAPERR 04Lo shapefile non è di tipo PolylineERR 05Numero di strati superiore al limite SSAP (dat ≤ 20, svr ≤ 10)ERR 06Polyline con più di 100 vertici (limite SSAP)ERR 07SSAP_ID = 0 non ammesso (eccetto fld)ERR 08Coordinate negativeERR 09Superficie topografica aggettanteERR 10Sequenza SSAP_ID non continuaERR 11Ordine verticale strati non coerente (top→bottom)
 
 Il tasto *Converti* esegue la conversione da vettoriale a file per SSA2010, nel caso di errori nel file di input questi vengono comunicati (come per la verifica preliminare) e la conversione è interrotta, se lo shapefile rispetta le specifiche SSAP2010 verranno generati sempre file .mod, .dat, .geo. I file .fld, .svr e .sin sono presenti se sono inserite le relative polyline nello shapefile. 
 
