@@ -257,11 +257,11 @@ L'applicativo è stato testato anche con modelli di pendio molto complessi e sim
 
 La facilità con cui è possibile creare strati di geometria complessa con l'editing in Qgis è fonte potenziale di errori non gestiti, questi dipendono principalmente dal mancato rispetto dei criteri di editing del SSAP.
 
-Nel caso siano generati errori imprevisti potete segnalarli via mail (lorenzo.sulli@gmail.com) allegando lo shapefile che ha generato l'errore.
+Nel caso siano generati errori imprevisti potete segnalarli via mail (l.sulli@appenninosettentrionale.it) allegando lo shapefile che ha generato l'errore.
 Nel caso siano generati errori da **SSAP2010**, in particolare in fase di lettura del modello, dopo aver controllato che non vi siano stati errori di editing, potete segnalarlo via mail allegando sia lo shapefile che il modello SSAP che ha generato l'errore.
 
 
 Grazie per la collaborazione e buon lavoro.
 
 
-Ultima modifica: **2026.03.01**
+Ultima modifica: **2026.03.10**
