@@ -52,7 +52,7 @@ Plugin per Qgis per la creazione di file .dat, .geo, .fld, .svr, .sin e .mod per
 
 E'possibile creare uno shapefile monostrato (già strutturato per la creazione di file per SSAP) partendo da un elenco di coordinate cartesiane xy descriventi il profilo morfologico del terreno. Lo shapefile descrive il modello geometrico (ovvero i dati per il file .dat), con la presenza opzionale di falda (dati per il file .fld) e bedrock (strato **SSAP_ID** = 2 nel file .dat), alle polyline che descrivono il modello geometrico sono associati gli attributi per la creazione del file .geo. Editando lo Shapefile in ambiente GIS Possono essere modificati gli attributi per il file .geo, aggiunte altre polyline che descrivono altri strati, inserire carichi (dati per file .svr) e una superficie di verifica singola (per file .sin).
 
-## Workflow tipico
+**Workflow tipico**
 
 ```
                     ┌──────────────────────────────────────┐
@@ -86,7 +86,9 @@ E'possibile creare uno shapefile monostrato (già strutturato per la creazione d
                     └──────────────┬───────────────────────┘
                                    │
                              Avvia SSAP2010
-##
+
+```
+
 **INSTALLAZIONE** <a name="installazione"></a>
 
 L'installazione può essere fatta direttamente in Qgis dal file zip [Shp2SSAP_QGIS](#file_zip) tramite Plugin/Install from zip 
