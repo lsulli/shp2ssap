@@ -121,24 +121,23 @@ Nella cartella **Shapefile_ModelliPendio** sono disponibili shapefile di alcuni 
 
 ![Optional Text](../master/ScreenShot/Screenshot_Shp2SSAP_Tab2.png)
 
-Con il tasto *Verifica Preliminare* è possibile eseguire un controllo dello shapefile di input senza generare file SSAP2010, verranno indicati eventuali errori rispetto alle specifiche SSAP2010 o indicate informazioni generali se il file risulta corretto. Il tasto *Converti* esegue la conversione da shapefile a file per SSA2010, nel caso di errori nel file di input questi vengono comunicati (come per la verifica preliminare) e la conversione è interrotta, se lo shapefile rispetta le specifiche SSAP2010 verranno generati sempre file .mod, .dat, .geo. I file .fld, .svr e .sin sono presenti se sono inserite le relative polyline nello shapefile. 
+Con il tasto *Verifica Preliminare* viene eseguito un controllo del vettoriale di input senza generare file SSAP2010. Vengono indicati eventuali errori rispetto alle specifiche SSAP2010 o indicate informazioni generali se il file risulta corretto. 
+Il tasto *Converti* esegue la conversione da vettoriale a file per SSA2010, nel caso di errori nel file di input questi vengono comunicati (come per la verifica preliminare) e la conversione è interrotta, se lo shapefile rispetta le specifiche SSAP2010 verranno generati sempre file .mod, .dat, .geo. I file .fld, .svr e .sin sono presenti se sono inserite le relative polyline nello shapefile. 
 
 Sono implementate funzioni di controllo della struttura degli shapefile di input (coordinate negative, numero di strati, sequenza corretta ID strati, etc.) che interrompe la procedura e genera un avviso d'errore che esplicita la tipologia d'errore intercettata.
 
-    ATTENZIONE: nel caso di modelli di pendio complessi o in presenza di lenti, l'opzione 
+    ATTENZIONE: nel caso di modelli di pendio complessi o in presenza di lenti, in particolare con strati che attraversano altri strati, l'opzione 
     "verifica ordinamento verticale strati" può generare falsi errori, nel caso deve essere disattivata.
 
-Prima della conversione è possibile applicare una procedura di triming degli strati che non rispettano i valori di ascissa minimo e massimo della superficie topografica o, meglio, sono leggermente inferiori o superiori ad esse, (opzione *Regola gli strati alla superficie topografica*), utile per editare gli strati senza preoccuparsi della precisione dei punti di inizio e fine. 
+Prima della conversione è possibile applicare una procedura di triming degli strati che eccedono i valori di ascissa minimo e/o massimo della superficie topografica (opzione *Regola gli strati del vettoriale ai limiti della superficie topografica*), utile per editare gli strati senza preoccuparsi della precisione dei punti di inizio e fine rispetto alla superficie topografica.
 
     ATTENZIONE: Il procedimento funziona solo impostando i limiti degli strati con valori 
-    di x superiori al limite sinistro e inferiori al limite destro. 
+    di x inferiori al limite sinistro e superiori al limite destro. 
     
-L'opzione *Semplifica polyline se > 100 punti* è funzionale a correggere i file .dat generati da shapefile creati con  *XY → Shapefile* attingendo da profili estratti da DTM LIDAR o simili.
+L'opzione *riduci il numero di nodi per strato* è indispensabile per creare shapefile con un numero di nodi coerente alle specifiche SSAP, cioè inferiore a 100 nodi, condzione frequente se il profilo topografico deriva direttamente da dtm.
 
-    ATTENZIONE: L'uso di questa opzione è efficace per strati paralleli ma non permettere 
-    di mantenere lo snapping quando vi sono strati intersecanti con la superfice topografica.
-    In questo caso è necessario ridurre tramite editing manuale il numero di punti sino a < 100
-    controllando che le regole di condivisione dei nodi richieste da SSAP siano rispettate.
+    SUGGERIMENTO: L'uso di questa opzione è utile anche nel caso si vogli facilitare lo snapping 
+    di nuove polyline alla superficie topografica riducendo il numero di nodi di aggancio (in particolare in caso di lenti con un lato coincidente con la superficie.
     
 
 **CARATTERISTICHE DELLO SHAPEFILE MODELLO PENDIO**<a name="car_shape"></a>
