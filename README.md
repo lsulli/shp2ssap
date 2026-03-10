@@ -121,6 +121,9 @@ Nella cartella **Shapefile_ModelliPendio** sono disponibili shapefile di alcuni 
 ![Optional Text](../master/ScreenShot/Screenshot_Shp2SSAP_Tab2.png)
 
 Con il tasto *Verifica Preliminare* viene eseguito un controllo del vettoriale di input senza generare file SSAP2010. Vengono indicati eventuali errori rispetto alle specifiche SSAP2010 o indicate informazioni generali se il file risulta corretto. 
+
+CodiceControlloERR 01Impossibile leggere lo shapefileERR 02Campi obbligatori mancantiERR 03Valori non ammessi nel campo SSAPERR 04Lo shapefile non è di tipo PolylineERR 05Numero di strati superiore al limite SSAP (dat ≤ 20, svr ≤ 10)ERR 06Polyline con più di 100 vertici (limite SSAP)ERR 07SSAP_ID = 0 non ammesso (eccetto fld)ERR 08Coordinate negativeERR 09Superficie topografica aggettanteERR 10Sequenza SSAP_ID non continuaERR 11Ordine verticale strati non coerente (top→bottom)
+
 Il tasto *Converti* esegue la conversione da vettoriale a file per SSA2010, nel caso di errori nel file di input questi vengono comunicati (come per la verifica preliminare) e la conversione è interrotta, se lo shapefile rispetta le specifiche SSAP2010 verranno generati sempre file .mod, .dat, .geo. I file .fld, .svr e .sin sono presenti se sono inserite le relative polyline nello shapefile. 
 
 Sono implementate funzioni di controllo della struttura degli shapefile di input (coordinate negative, numero di strati, sequenza corretta ID strati, etc.) che interrompe la procedura e genera un avviso d'errore che esplicita la tipologia d'errore intercettata.
@@ -128,7 +131,7 @@ Sono implementate funzioni di controllo della struttura degli shapefile di input
     ATTENZIONE: nel caso di modelli di pendio complessi o in presenza di lenti, in particolare con strati che attraversano altri strati, l'opzione 
     "verifica ordinamento verticale strati" può generare falsi errori, nel caso deve essere disattivata.
 
-Agedno sul file vettoriale è possibile applicare una procedura di triming degli strati che eccedono i valori di ascissa minimo e/o massimo della superficie topografica (opzione *Regola gli strati del vettoriale ai limiti della superficie topografica*), utile per editare gli strati senza preoccuparsi della precisione dei punti di inizio e fine rispetto alla superficie topografica. Per default viene creato un vettoriale temporaneo del nome *miolayer_trim*, è disponibile l'opzione per editare direttamente il layer indicato nella casella *vettoriale di input*.
+Agendo sul file vettoriale è possibile applicare una procedura di triming degli strati che eccedono i valori di ascissa minimo e/o massimo della superficie topografica (opzione *Regola gli strati del vettoriale ai limiti della superficie topografica*), utile per editare gli strati senza preoccuparsi della precisione dei punti di inizio e fine rispetto alla superficie topografica. Per default viene creato un vettoriale temporaneo del nome *miolayer_trim*, è disponibile l'opzione per editare direttamente il layer indicato nella casella *vettoriale di input*.
 
     ATTENZIONE: Il procedimento funziona solo impostando i limiti degli strati con valori 
     di x inferiori al limite sinistro e superiori al limite destro. 
