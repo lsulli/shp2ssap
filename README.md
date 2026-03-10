@@ -64,7 +64,8 @@ E'possibile creare uno shapefile monostrato (già strutturato per la creazione d
                                    │
                     ┌──────────────▼───────────────────────┐
                     │     SHAPEFILE / GEOPACKAGE SSAP      │
-                    │  (dat, fld, bedrock — con campi)     │
+                    │ mono strato o con substrato e falda  │
+                    │        (dati per dat, fld, geo)      │
                     └──────────────┬───────────────────────┘
                                    │
                     ┌──────────────▼───────────────────────┐
