@@ -229,7 +229,7 @@ Sono ammessi solo vettoriali del tipo polyline "singol part". Nel caso venga car
     così come specificato nel manuale SSAP 4.9.8 al capitolo 3.3.
 
 <details>    
-<summary> Struttura degli attributi layer vettoriale per SSAP<\summary> 
+<summary> Struttura degli attributi layer vettoriale per SSAP</summary> 
 
 Non è richiesto un ordine prestabilito dei campi, è invece obbligatorio l'uso dei nomi di campo e del tipo e lunghezza minima indicata. 
 
@@ -292,7 +292,7 @@ Il campo **EXCLUDE** permette di escludere singoli strati (**SSAP** = "dat", "sv
     se la sequenza è errata verrà generato un errore.
 
 Se presente un valore **SIGCI** > 0 viene generato un file .geo per strati rocciosi e vengono ignorati i valori dei campi per le terre, che saranno impostati a zero nel file .geo di output.
-<\details>
+</details>
 
 """
 
