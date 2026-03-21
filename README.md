@@ -110,7 +110,7 @@ Le coordinate di input dovranno avere valori e ordinamento secondo gli standard 
     La virgola non è ammessa come separatore di colonna.
     Per il decimale è ammesso sia il punto che la virgola. 
     Vengono automaticamente saltati valori stringa e righe nulle quindi è ammesso l'header del file o i descrittori di campo.
-    Casi tipo testati (script di test: test_parse_xy_points.py)
+    Casi tipo testati (script di test: test_parse_xy_points.py):
     
     # 1. Riga normale con valori separati da qualsiasio spazio bianco (spazio, tab, newline, ecc.)
         input ("1.5 3.2")
@@ -192,9 +192,12 @@ Nella cartella **Shapefile_ModelliPendio** sono disponibili shapefile di alcuni 
     probabile che si sia verificato un accesso in simultanea al file temporaneo, si consiglia di chiudere 
     l'applicativo GIS o esportare lo shapefile con un diverso nome.
 
-**TAB XY → Vettoriale**
+**Vettoriale → File SSAP**
 
 ![Optional Text](../master/ScreenShot/Screenshot_Shp2SSAP_Tab2.png)
+
+Il layer vettoriale può essere caricato da disco o direttamente selezionando il layer attivo.
+I file SSAP di output sono salvati nella directory di default indicata nel TAB Opzioni
 
 Con il tasto *Verifica Preliminare* viene eseguito un controllo del vettoriale di input senza generare file SSAP2010. Vengono indicati eventuali errori rispetto alle specifiche SSAP2010 o indicate informazioni generali se il file risulta corretto. 
 
