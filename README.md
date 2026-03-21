@@ -104,12 +104,12 @@ Le coordinate di input dovranno avere valori e ordinamento secondo gli standard 
 
 ![Optional Text](../master/ScreenShot/Screenshot_Shp2SSAP_Tab1.png)
 
-    ATTENZIONE: La struttura tipo del file XY ammessa è quella tipica generata dagli strumenti GIS 
-    per la creazione di profili da DTM. Il file deve essere un file ascii (.txt, .csv o .dxf per default) 
-    con coppie di valori numerici anche in formato stringa (valori x e valori Y), ammette strighe intercalari.
-    La virgola non è ammessa come separatore di colonna.
-    Per il decimale è ammesso sia il punto che la virgola. 
-    Vengono automaticamente saltati valori stringa e righe nulle quindi è ammesso l'header del file o i descrittori di campo.
+ATTENZIONE: La struttura tipo del file XY ammessa è quella tipica generata dagli strumenti GIS 
+per la creazione di profili da DTM. Il file deve essere un file ascii (.txt, .csv o .dxf per default) 
+con coppie di valori numerici anche in formato stringa (valori x e valori Y), ammette strighe intercalari.
+La virgola non è ammessa come separatore di colonna.
+Per il decimale è ammesso sia il punto che la virgola. 
+Vengono automaticamente saltati valori stringa e righe nulle quindi è ammesso l'header del file o i descrittori di campo.
     
     <details>    
     <summary> Casi tipo testati (script di test: test_parse_xy_points.py):</summary>    
