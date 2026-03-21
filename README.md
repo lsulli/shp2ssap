@@ -111,8 +111,7 @@ Le coordinate di input dovranno avere valori e ordinamento secondo gli standard 
     Per il decimale è ammesso sia il punto che la virgola. 
     Vengono automaticamente saltati valori stringa e righe nulle quindi è ammesso l'header del file o i descrittori di campo.
     
-    <details>
-    
+    <details>    
     <summary> Casi tipo testati (script di test: test_parse_xy_points.py):</summary>    
     
     # 1. Riga normale con valori separati da qualsiasio spazio bianco (spazio, tab, newline, ecc.)
