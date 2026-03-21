@@ -98,6 +98,7 @@ L'installazione può essere fatta direttamente in Qgis dal file zip https://gith
 **GUIDA All'USO** <a name="guida"></a>
 
   **TAB XY → Vettoriale**
+  
 Dalla TAB *XY → Vettoriale* è possibile creare uno layer vettoriale polyline della superficie topografica da un elenco di coordinate xy (nel file .dat  strato unico con **SSAP_ID** = 1). I dati di input possono essere da file o direttamente dalla cache degli appunti (recupera l'ultima copia eseguita). Testato per i formati .csv e DXF 2D esportati dallo strumento *elevation* di Qgis e per dati copiati nella cache e formato DXF 2D per *Profile Plugin*.
 Le coordinate di input dovranno avere valori e ordinamento secondo gli standard del file .dat per SSAP. Lo Shapefile avrà tutte le caratteristiche per generare con Shp2SSAP.exe un modello di pendio monostrato per SSAP.
 
@@ -190,6 +191,8 @@ Nella cartella **Shapefile_ModelliPendio** sono disponibili shapefile di alcuni 
     Quando uno shapefile è in fase di editing nel caso vi siano anomalie nella creazione dei file SSAP è 
     probabile che si sia verificato un accesso in simultanea al file temporaneo, si consiglia di chiudere 
     l'applicativo GIS o esportare lo shapefile con un diverso nome.
+
+**TAB XY → Vettoriale**
 
 ![Optional Text](../master/ScreenShot/Screenshot_Shp2SSAP_Tab2.png)
 
