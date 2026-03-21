@@ -2,7 +2,7 @@
 
 Plugin per Qgis per la gestione del modello del pendio SSAP2010 (www.ssap.eu) in ambiente GIS. 
 
-Permette di convertire shapefile e geopackage polyline di un modello del pendio in file per SSAP2010 (testato per versioni di SSAP 4x e superiori). Può essere creato uno shapefile di un pendio monostrato partendo da un elenco di coordinate della superficie topografica anche in formato DXF 2D o .csv estratti dallo strumento **elevation** di Qgis o **rofile Plugin** per Qgis
+Permette di convertire shapefile e geopackage polyline di un modello del pendio in file per SSAP2010 (testato per versioni di SSAP 4x e superiori). Può essere creato un layer di un pendio monostrato pronto per la conversione partendo da un elenco di coordinate della superficie topografica, accetta file di testo con coppie di coordinate numeriche metriche, accetta formato DXF 2D o .csv estratti dallo strumento **elevation** di Qgis o **rofile Plugin** per Qgis
 
 **SOMMARIO**
 1. [Autore](#autore)
@@ -20,7 +20,8 @@ Lorenzo Sulli - Autorità di bacino distrettuale Appennino settentrionale
 
 l.sulli@appenninosettentrionale.it - lorenzo.sulli@gmail.com
 
-Ottimizzazione codice e generazione codice Plugin da sorgenti python Shp2SSAP_Ver_118_build212.py e xy2shp_forSSAP_095_028.py tramite ChaptGPT 5.2
+Ottimizzazione codice e generazione codice Plugin tramite ChaptGPT 5.2 sino a 27/02/2026 e quindi tramite Claude sonnet 4.6 partendo
+da sorgenti originali dell'autore python Shp2SSAP_Ver_118_build212.py e xy2shp_forSSAP_095_028.py
 
 **INDIRIZZO DOWNLOAD**
 
@@ -50,7 +51,7 @@ Qgis installato versione 3.x o superiore, testato con 3.24, 3.34, 3.40
 
 Plugin per Qgis per la creazione di file .dat, .geo, .fld, .svr, .sin e .mod per SSAP2010 (www.SSAP.eu) partendo da un unico shapefile polyline. Sfruttando le funzionalità GIS è possibile gestire in forma integrata l'editing della geometria per i file .dat, .fld, .svr  e .sin e i dati delle informazioni per il file .geo e .svr. 
 
-E'possibile creare uno shapefile monostrato (già strutturato per la creazione di file per SSAP) partendo da un elenco di coordinate cartesiane xy descriventi il profilo morfologico del terreno. Lo shapefile descrive il modello geometrico (ovvero i dati per il file .dat), con la presenza opzionale di falda (dati per il file .fld) e bedrock (strato **SSAP_ID** = 2 nel file .dat), alle polyline che descrivono il modello geometrico sono associati gli attributi per la creazione del file .geo. Editando lo Shapefile in ambiente GIS Possono essere modificati gli attributi per il file .geo, aggiunte altre polyline che descrivono altri strati, inserire carichi (dati per file .svr) e una superficie di verifica singola (per file .sin).
+E'possibile creare un layer vettoraile monostrato (già strutturato per la creazione di file per SSAP) partendo da un elenco di coordinate cartesiane xy descriventi il profilo morfologico del terreno. Lo shapefile descrive il modello geometrico (ovvero i dati per il file .dat), con la presenza opzionale di falda (dati per il file .fld) e bedrock (strato **SSAP_ID** = 2 nel file .dat), alle polyline che descrivono il modello geometrico sono associati gli attributi per la creazione del file .geo. Editando il layer vettoriale in ambiente GIS Possono essere modificati gli attributi per il file .geo, aggiunte altre polyline che descrivono altri strati, inserire carichi (dati per file .svr) e una superficie di verifica singola (per file .sin).
 
 **Workflow tipico**
 
@@ -96,7 +97,7 @@ L'installazione può essere fatta direttamente in Qgis dal file zip [Shp2SSAP_QG
 
  **GUIDA All'USO** <a name="guida"></a>
 
-Dalla TAB *XY → Vettoriale* è possibile creare uno shapefile polyline della superficie topografica da un elenco di coordinate xy (nel file .dat  strato unico con **SSAP_ID** = 1). I dati di input possono essere da file o direttamente dalla cache degli appunti (recupera l'ultima copia eseguita). Testato per i formati .csv e DXF 2D esportati dallo strumento *elevation* di Qgis e per dati copiati nella cache e formato DXF 2D per *Profile Plugin*.
+Dalla TAB *XY → Vettoriale* è possibile creare uno layer vettoriale polyline della superficie topografica da un elenco di coordinate xy (nel file .dat  strato unico con **SSAP_ID** = 1). I dati di input possono essere da file o direttamente dalla cache degli appunti (recupera l'ultima copia eseguita). Testato per i formati .csv e DXF 2D esportati dallo strumento *elevation* di Qgis e per dati copiati nella cache e formato DXF 2D per *Profile Plugin*.
 Le coordinate di input dovranno avere valori e ordinamento secondo gli standard del file .dat per SSAP. Lo Shapefile avrà tutte le caratteristiche per generare con Shp2SSAP.exe un modello di pendio monostrato per SSAP.
 
 ![Optional Text](../master/ScreenShot/Screenshot_Shp2SSAP_Tab1.png)
@@ -106,8 +107,85 @@ Le coordinate di input dovranno avere valori e ordinamento secondo gli standard 
     con coppie di valori numerici anche in formato stringa (valori x e valori Y), ammette strighe intercalari.
     La virgola non è ammessa come separatore di colonna.
     Per il decimale è ammesso sia il punto che la virgola. 
-    Vengono automaticamente saltati valori stringa e righe nulle quindi è ammesso l'header 
-    del file o i descrittori di campo.
+    Vengono automaticamente saltati valori stringa e righe nulle quindi è ammesso l'header del file o i descrittori di campo.
+    Casi tipo testati:
+    
+    # 1. Riga normale con spazio
+        input ("1.5 3.2")
+        output [1.5, 3.2]
+    # 2. Riga con virgola come decimale
+        input ("1,5 3,2")
+        output [1.5, 3.2]
+    # 3. Riga con etichetta testuale davanti e virgole come separatori
+    check(
+        "Etichetta testuale prima dei numeri, attributo testuale prima dei numeri",
+        parse_xy_points("id_stringa, label:, 1.5, 3.2"),
+        [[1.5, 3.2]],
+    )
+
+    # 4. Riga con testo misto
+    check(
+        "Testo misto (x=1.5 y=3.2) o (x like 1.5 y like 3.2)",
+        parse_xy_points("x=1.5 y=3.2"),
+        [[1.5, 3.2]],
+    )
+
+    # 5. Separatore punto e virgola
+    check(
+        "Separatore semicolon",
+        parse_xy_points("2.0;4.5"),
+        [[2.0, 4.5]],
+    )
+
+    # 6. Riga con solo testo → scartata
+    check(
+        "Solo testo → nessun punto",
+        parse_xy_points("hello world"),
+        [],
+    )
+
+    # 7. Riga con un solo numero → scartata
+    check(
+        "Un solo numero → nessun punto",
+        parse_xy_points("42"),
+        [],
+    )
+
+    # 8. Righe multiple miste
+    check(
+        "Righe multiple miste",
+        parse_xy_points("A 1.0 2.0\n3.5 bad 7.1\n\n5.0 6.0"),
+        [[1.0, 2.0], [3.5, 7.1], [5.0, 6.0]],
+    )
+
+    # 9. Riga vuota → ignorata
+    check(
+        "Righe vuote ignorate",
+        parse_xy_points("\n\n1.0 2.0\n\n"),
+        [[1.0, 2.0]],
+    )
+
+    # 10. Numeri negativi
+    check(
+        "Numeri negativi",
+        parse_xy_points("-1.5 -3.2"),
+        [[-1.5, -3.2]],
+    )
+
+    # 11. Carattere non numerico generico come separatore → ignorata
+    check(
+        "Carattere non numerico generico come separatore → nessun punto",
+        parse_xy_points("1,5e3,2"),
+        [],
+    )
+
+    # 12. Tab come separatore
+    check(
+        "Tab come separatore",
+        parse_xy_points("1,5	3,2"),
+        [[1.5, 3.2]],
+    )
+
     
 Il tasto *Input appunti* è stato pensato per utilizzare direttamente i dati copiati negli appunti tramite il Plugin "Profile tool" (http://plugins.qgis.org/plugins/profiletool/) di Qgis (www.qgis.org/en/site/), tuttavia è utile per tutte le fonti dati che rispettano almeno per due punti del pendio le indicazioni appena esplicitate sopra, nel dubbio incollate i dati in un semplice file di testo per esaminarli, poi copiateli di nuovo e utilizzate il comando *Input appunti*. 
     
