@@ -110,8 +110,8 @@ Le coordinate di input dovranno avere valori e ordinamento secondo gli standard 
     La virgola non è ammessa come separatore di colonna.
     Per il decimale è ammesso sia il punto che la virgola. 
     Vengono automaticamente saltati valori stringa e righe nulle quindi è ammesso l'header del file o i descrittori di campo.
-    Casi tipo testati (script di test: test_parse_xy_points.py):
-    
+    <details>
+    <summary> Casi tipo testati (script di test: test_parse_xy_points.py):</summary>    
     # 1. Riga normale con valori separati da qualsiasio spazio bianco (spazio, tab, newline, ecc.)
         input ("1.5 3.2")
         output [1.5, 3.2]
@@ -145,7 +145,7 @@ Le coordinate di input dovranno avere valori e ordinamento secondo gli standard 
     # 11. Carattere non numerico generico come separatore → ignorata
         input ("1,5e3,2")
         output []
-   
+   </details>
     
 Il tasto *Input appunti* è stato pensato per utilizzare direttamente i dati copiati negli appunti tramite il Plugin "Profile tool" (http://plugins.qgis.org/plugins/profiletool/) di Qgis (www.qgis.org/en/site/), tuttavia è utile per tutte le fonti dati che rispettano almeno per due punti del pendio le indicazioni appena esplicitate sopra, nel dubbio incollate i dati in un semplice file di testo per esaminarli, poi copiateli di nuovo e utilizzate il comando *Input appunti*. 
     
