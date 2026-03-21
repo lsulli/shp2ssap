@@ -11,7 +11,7 @@ Permette di convertire shapefile e geopackage polyline di un modello del pendio 
 4. [Funzionalità principali](#fun_princ)
 5. [Installazione](#installazione)
 6. [Guida all'Uso](#guida)
-7. [Caratteristiche Shapefile](#car_shape)
+7. [Caratteristiche vettoriale per SSAP](#car_shape)
 8. [Bug fix](#bug_fix)
 
 **AUTORE**<a name="autore"></a>
@@ -219,9 +219,10 @@ L'opzione *riduci il numero di nodi per strato* è indispensabile per creare sha
     SUGGERIMENTO: L'uso di questa opzione è utile anche nel caso si voglia facilitare lo snapping di nuove polyline alla superficie topografica riducendo il numero di nodi di aggancio (in particolare in caso di lenti con un lato coincidente con la superficie.
     
 
-**CARATTERISTICHE DELLO SHAPEFILE MODELLO PENDIO**<a name="car_shape"></a>
+**CARATTERISTICHE DELLO VETTORIALE PER LA CONVERSIONE NEL MODELLO PENDIO SSAPè**<a name="car_shape"></a>
 
-    RICORDATE: TAB *XY → Vettoriale* viene generato direttamente un vettoriale che rispetta i criteri indcati in questa sezione, non è necessario crearlo ex-novo.
+    RICORDATE: TAB *XY → Vettoriale* viene generato direttamente un vettoriale che rispetta i criteri indcati in questa sezione, 
+    non è necessario crearlo ex-novo.
 
 Sono ammessi solo vettoriali del tipo polyline "singol part". Nel caso venga caricato un vettoriale di geometria differente verrà generato un errore. 
 
@@ -230,6 +231,7 @@ Sono ammessi solo vettoriali del tipo polyline "singol part". Nel caso venga car
 
 <details>    
 <summary> Struttura degli attributi layer vettoriale per SSAP</summary> 
+
 
 Non è richiesto un ordine prestabilito dei campi, è invece obbligatorio l'uso dei nomi di campo e del tipo e lunghezza minima indicata. 
 
