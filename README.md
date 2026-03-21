@@ -95,7 +95,7 @@ E'possibile creare un layer vettoraile monostrato (già strutturato per la creaz
 
 L'installazione può essere fatta direttamente in Qgis dal file zip [Shp2SSAP_QGIS](#file_zip) tramite Plugin/Install from zip 
 
- **GUIDA All'USO** <a name="guida"></a>
+**GUIDA All'USO** <a name="guida"></a>
 
 Dalla TAB *XY → Vettoriale* è possibile creare uno layer vettoriale polyline della superficie topografica da un elenco di coordinate xy (nel file .dat  strato unico con **SSAP_ID** = 1). I dati di input possono essere da file o direttamente dalla cache degli appunti (recupera l'ultima copia eseguita). Testato per i formati .csv e DXF 2D esportati dallo strumento *elevation* di Qgis e per dati copiati nella cache e formato DXF 2D per *Profile Plugin*.
 Le coordinate di input dovranno avere valori e ordinamento secondo gli standard del file .dat per SSAP. Lo Shapefile avrà tutte le caratteristiche per generare con Shp2SSAP.exe un modello di pendio monostrato per SSAP.
@@ -108,84 +108,42 @@ Le coordinate di input dovranno avere valori e ordinamento secondo gli standard 
     La virgola non è ammessa come separatore di colonna.
     Per il decimale è ammesso sia il punto che la virgola. 
     Vengono automaticamente saltati valori stringa e righe nulle quindi è ammesso l'header del file o i descrittori di campo.
-    Casi tipo testati:
+    Casi tipo testati (script di test: test_parse_xy_points.py)
     
-    # 1. Riga normale con spazio
+    # 1. Riga normale con valori separati da qualsiasio spazio bianco (spazio, tab, newline, ecc.)
         input ("1.5 3.2")
         output [1.5, 3.2]
     # 2. Riga con virgola come decimale
         input ("1,5 3,2")
         output [1.5, 3.2]
     # 3. Riga con etichetta testuale davanti e virgole come separatori
-    check(
-        "Etichetta testuale prima dei numeri, attributo testuale prima dei numeri",
-        parse_xy_points("id_stringa, label:, 1.5, 3.2"),
-        [[1.5, 3.2]],
-    )
-
+        input ("id_stringa, label:, 1.5, 3.2")
+        output [1.5, 3.2]
     # 4. Riga con testo misto
-    check(
-        "Testo misto (x=1.5 y=3.2) o (x like 1.5 y like 3.2)",
-        parse_xy_points("x=1.5 y=3.2"),
-        [[1.5, 3.2]],
-    )
-
+        input ("x=1.5 y=3.2") o ("x like 1.5 y like 3.2")
+        output [1.5, 3.2]
     # 5. Separatore punto e virgola
-    check(
-        "Separatore semicolon",
-        parse_xy_points("2.0;4.5"),
-        [[2.0, 4.5]],
-    )
-
+        input("2.0;4.5")
+        output [2.0, 4.5]
     # 6. Riga con solo testo → scartata
-    check(
-        "Solo testo → nessun punto",
-        parse_xy_points("hello world"),
-        [],
-    )
-
+        input ("hello world")
+        output []
     # 7. Riga con un solo numero → scartata
-    check(
-        "Un solo numero → nessun punto",
-        parse_xy_points("42"),
-        [],
-    )
-
+        input ("42")
+        output []
     # 8. Righe multiple miste
-    check(
-        "Righe multiple miste",
-        parse_xy_points("A 1.0 2.0\n3.5 bad 7.1\n\n5.0 6.0"),
-        [[1.0, 2.0], [3.5, 7.1], [5.0, 6.0]],
-    )
-
+        input ("A 1.0 2.0\n3.5 bad 7.1\n\n5.0 6.0")
+        output [[1.0, 2.0], [3.5, 7.1], [5.0, 6.0]]
     # 9. Riga vuota → ignorata
-    check(
-        "Righe vuote ignorate",
-        parse_xy_points("\n\n1.0 2.0\n\n"),
-        [[1.0, 2.0]],
-    )
-
-    # 10. Numeri negativi
-    check(
-        "Numeri negativi",
-        parse_xy_points("-1.5 -3.2"),
-        [[-1.5, -3.2]],
-    )
-
+        input ("\n\n1.0 2.0\n\n")
+        output [[1.0, 2.0]]
+    # 10. Numeri negativi (NB: non ammessi da SSAP)
+        input("-1.5 -3.2")
+        output[-1.5, -3.2]
     # 11. Carattere non numerico generico come separatore → ignorata
-    check(
-        "Carattere non numerico generico come separatore → nessun punto",
-        parse_xy_points("1,5e3,2"),
-        [],
-    )
-
-    # 12. Tab come separatore
-    check(
-        "Tab come separatore",
-        parse_xy_points("1,5	3,2"),
-        [[1.5, 3.2]],
-    )
-
+        input ("1,5e3,2")
+        output []
+   
     
 Il tasto *Input appunti* è stato pensato per utilizzare direttamente i dati copiati negli appunti tramite il Plugin "Profile tool" (http://plugins.qgis.org/plugins/profiletool/) di Qgis (www.qgis.org/en/site/), tuttavia è utile per tutte le fonti dati che rispettano almeno per due punti del pendio le indicazioni appena esplicitate sopra, nel dubbio incollate i dati in un semplice file di testo per esaminarli, poi copiateli di nuovo e utilizzate il comando *Input appunti*. 
     
@@ -206,7 +164,7 @@ Per una back analysis speditiva in condizioni residue può essere approssimato l
     assolute per le ascisse, lo shapefile del modello pendio sarà proiettato in basso a sinistra 
     rispetto all'Italia.
 
-Una volta aperto lo shapefile in ambiente GIS potranno essere aggiunti ulteriori strati per .dat, carichi per .svr, la falda per .fld e una superficie per la verifica singola (.sin). 
+Una volta aperto il layer vettoriale in ambiente GIS potranno essere aggiunti ulteriori strati per .dat, carichi per .svr, la falda per .fld e una superficie per la verifica singola (.sin). 
 
     ATTENZIONE: la geometria della polyline .sin è particolarmente critica per le compatibilità 
     richieste da SSAP, deve quindi essere editata con criterio.
