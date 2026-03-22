@@ -98,6 +98,7 @@ L'installazione può essere fatta direttamente in Qgis dal file zip https://gith
 **GUIDA All'USO** <a name="guida"></a>
 
 **AVVIO**
+
 Una volta installato e attivato il Plugin **Shp2SSAP**, dall'icona ![Optional Text](../master/Image_readme/fig_shp2SSAP_icon.png) della *toolbar plugins* o dalla omonima voce del menù *plugins* viene aperta una maschera multitab con tre TAB: *TAB XY → Vettoriale*, *Vettoriale → File SSAP* e *Opzioni*.
 
   **TAB XY → Vettoriale**
@@ -225,6 +226,10 @@ Funzione **Riduci il numero di nodi per strato**
 Funzione indispensabile per creare shapefile con un numero di nodi coerente alle specifiche SSAP, cioè inferiore a 100 nodi, condizione frequente se il profilo topografico deriva direttamente da dtm. Per default viene creato un vettoriale temporaneo del nome *miolayer_semplificato*, è disponibile l'opzione per editare direttamente il layer indicato nella casella *vettoriale di input*. Il controllo *Limite num. nodi* può essere impostato con un valore da 2 a 99 nel per semplificare l'eventuale editing di dettaglio dei nodi delle superfici di strato.
 
     SUGGERIMENTO: L'uso di questa opzione è utile anche nel caso si voglia facilitare lo snapping di nuove polyline alla superficie topografica riducendo il numero di nodi di aggancio (in particolare in caso di lenti con un lato coincidente con la superficie.
+
+**TAB Opzioni**
+
+
     
 
 **CARATTERISTICHE DELLO VETTORIALE PER LA CONVERSIONE NEL MODELLO PENDIO SSAP**<a name="car_shape"></a>
