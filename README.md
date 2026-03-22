@@ -110,46 +110,47 @@ Le coordinate di input dovranno avere valori e ordinamento secondo gli standard 
 <details>    
 <summary> Valori coppie XY. Casi tipo testati (script di test: test_parse_xy_points.py) </summary>  
 
+
   ATTENZIONE: La struttura tipo del file XY ammessa è quella tipica generata dagli strumenti GIS 
   per la creazione di profili da DTM. Il file deve essere un file ascii (.txt, .csv o .dxf per default) 
   con coppie di valori numerici anche in formato stringa (valori x e valori Y), ammette strighe intercalari.
   La virgola non è ammessa come separatore di colonna.
   Per il decimale è ammesso sia il punto che la virgola. 
   Vengono automaticamente saltati valori stringa e righe nulle quindi è ammesso l'header del file o i descrittori di campo.
-     
-    # 1. Riga normale con valori separati da qualsiasio spazio bianco (spazio, tab, newline, ecc.)
-        input ("1.5 3.2")
-        output [1.5, 3.2]
-    # 2. Riga con virgola come decimale
-        input ("1,5 3,2")
-        output [1.5, 3.2]
-    # 3. Riga con etichetta testuale davanti e virgole come separatori
-        input ("id_stringa, label:, 1.5, 3.2")
-        output [1.5, 3.2]
-    # 4. Riga con testo misto
-        input ("x=1.5 y=3.2") o ("x like 1.5 y like 3.2")
-        output [1.5, 3.2]
-    # 5. Separatore punto e virgola
-        input("2.0;4.5")
-        output [2.0, 4.5]
-    # 6. Riga con solo testo → scartata
-        input ("hello world")
-        output []
-    # 7. Riga con un solo numero → scartata
-        input ("42")
-        output []
-    # 8. Righe multiple miste
-        input ("A 1.0 2.0\n3.5 bad 7.1\n\n5.0 6.0")
-        output [[1.0, 2.0], [3.5, 7.1], [5.0, 6.0]]
-    # 9. Riga vuota → ignorata
-        input ("\n\n1.0 2.0\n\n")
-        output [[1.0, 2.0]]
-    # 10. Numeri negativi (NB: non ammessi da SSAP)
-        input("-1.5 -3.2")
-        output[-1.5, -3.2]
-    # 11. Carattere non numerico generico come separatore → ignorata
-        input ("1,5e3,2")
-        output []
+ 
+# 1. Riga normale con valori separati da qualsiasio spazio bianco (spazio, tab, newline, ecc.)
+    input ("1.5 3.2")
+    output [1.5, 3.2]
+# 2. Riga con virgola come decimale
+    input ("1,5 3,2")
+    output [1.5, 3.2]
+# 3. Riga con etichetta testuale davanti e virgole come separatori
+    input ("id_stringa, label:, 1.5, 3.2")
+    output [1.5, 3.2]
+# 4. Riga con testo misto
+    input ("x=1.5 y=3.2") o ("x like 1.5 y like 3.2")
+    output [1.5, 3.2]
+# 5. Separatore punto e virgola
+    input("2.0;4.5")
+    output [2.0, 4.5]
+# 6. Riga con solo testo → scartata
+    input ("hello world")
+    output []
+# 7. Riga con un solo numero → scartata
+    input ("42")
+    output []
+# 8. Righe multiple miste
+    input ("A 1.0 2.0\n3.5 bad 7.1\n\n5.0 6.0")
+    output [[1.0, 2.0], [3.5, 7.1], [5.0, 6.0]]
+# 9. Riga vuota → ignorata
+    input ("\n\n1.0 2.0\n\n")
+    output [[1.0, 2.0]]
+# 10. Numeri negativi (NB: non ammessi da SSAP)
+    input("-1.5 -3.2")
+    output[-1.5, -3.2]
+# 11. Carattere non numerico generico come separatore → ignorata
+    input ("1,5e3,2")
+    output []
 </details>
 
     
