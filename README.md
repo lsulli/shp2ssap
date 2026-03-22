@@ -98,7 +98,7 @@ L'installazione può essere fatta direttamente in Qgis dal file zip https://gith
 **GUIDA All'USO** <a name="guida"></a>
 
 **AVVIO**
-Una volta installato e attivato il Plugin **Shp2SSAP**, dall'icona ![Optional Text](../master/Image_readme/Shp2SSAP_icon.png) della *toolbar plugins* o dalla omonima voce del menù *plugins* viene aperta una maschera multitab con tre TAB: *TAB XY → Vettoriale*, *Vettoriale → File SSAP* e *Opzioni*.
+Una volta installato e attivato il Plugin **Shp2SSAP**, dall'icona ![Optional Text](../master/Image_readme/Shp2SSAP_icon.ico) della *toolbar plugins* o dalla omonima voce del menù *plugins* viene aperta una maschera multitab con tre TAB: *TAB XY → Vettoriale*, *Vettoriale → File SSAP* e *Opzioni*.
 
   **TAB XY → Vettoriale**
   
