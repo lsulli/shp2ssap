@@ -4,7 +4,7 @@ Plugin per Qgis per la gestione del modello del pendio SSAP2010 (www.ssap.eu) in
 
 Permette di convertire shapefile e geopackage polyline di un modello del pendio in file per SSAP2010 (testato per versioni di SSAP 4x e superiori). Può essere creato un layer di un pendio monostrato pronto per la conversione partendo da un elenco di coordinate della superficie topografica, accetta file di testo con coppie di coordinate numeriche metriche, accetta formato DXF 2D o .csv estratti dallo strumento **elevation** di Qgis o **rofile Plugin** per Qgis
 
-**SOMMARIO**
+**----- SOMMARIO -----**
 1. [Autore](#autore)
 2. [Upgrade](#upgrade)
 3. [Requisiti di Sistema](#re_sist)
@@ -14,7 +14,7 @@ Permette di convertire shapefile e geopackage polyline di un modello del pendio 
 7. [Caratteristiche vettoriale per SSAP](#car_shape)
 8. [Bug fix](#bug_fix)
 
-**AUTORE**<a name="autore"></a>
+**----- AUTORE -----** <a name="autore"></a>
 
 Lorenzo Sulli - Autorità di bacino distrettuale Appennino settentrionale
 
@@ -23,16 +23,16 @@ l.sulli@appenninosettentrionale.it - lorenzo.sulli@gmail.com
 Ottimizzazione codice e generazione codice Plugin tramite ChaptGPT 5.2 sino a 27/02/2026 e quindi tramite Claude sonnet 4.6 partendo
 da sorgenti originali dell'autore python Shp2SSAP_Ver_118_build212.py e xy2shp_forSSAP_095_028.py
 
-**INDIRIZZO DOWNLOAD**
+**HOME PAGE - CODE REPOSITORY**
 
 https://github.com/lsulli/shp2ssap
 
 Guida: https://github.com/lsulli/shp2ssap/blob/master/README.md
 
-File plugin: https://github.com/lsulli/shp2ssap/blob/master/Shp2SSAP_QGIS_v206_build272.zip <a name="file_zip"></a>
+Latest File plugin: https://github.com/lsulli/shp2ssap/releases/download/Ver_2_0_7_Build273/Shp2SSAP_QGIS_v207_build273.zip  
 
 
-**UPGRADE**<a name="upgrade"></a>
+**----- UPGRADE -----** <a name="upgrade"></a>
 
 Vedi change_log.txt - https://github.com/lsulli/shp2ssap/blob/master/change_log.txt
 
@@ -43,11 +43,12 @@ http://www.gnu.org/licenses/gpl.html
 Le procedure fondamentali utilizzano il modulo shapefile.py (credit. https://github.com/GeospatialPython/pyshp) e le librerie di Qgis.
 Per il software SSAP2010 vedi termini di licenza riportati in www.ssap.eu. (Autore Lorenzo Borselli)
 
-**REQUISITI SISTEMA** <a name="re_sist"></a>
+**----- REQUISITI SISTEMA -----** <a name="re_sist"></a>
 
 Qgis installato versione 3.x o superiore, testato con 3.24, 3.34, 3.40
+Non sono necessari moduli Python o librerie esterne a Qgis.
 
-**FUNZIONALITA' PRINCIPALI** <a name="fun_princ"></a>
+**----- FUNZIONALITA' PRINCIPALI -----** <a name="fun_princ"></a>
 
 Plugin per Qgis per la creazione di file .dat, .geo, .fld, .svr, .sin e .mod per SSAP2010 (www.SSAP.eu) partendo da un unico shapefile polyline. Sfruttando le funzionalità GIS è possibile gestire in forma integrata l'editing della geometria per i file .dat, .fld, .svr  e .sin e i dati delle informazioni per il file .geo e .svr. 
 
@@ -91,11 +92,11 @@ E'possibile creare un layer vettoraile monostrato (già strutturato per la creaz
 
 ```
 
-**INSTALLAZIONE** <a name="installazione"></a>
+**----- INSTALLAZIONE -----** <a name="installazione"></a>
 
 L'installazione può essere fatta direttamente in Qgis dal file zip [https://github.com/lsulli/shp2ssap/releases/download/Ver_2_0_7_Build273/Shp2SSAP_QGIS_v207_build273.zip] tramite menu [*Plugins/Manage and Install Plugins/Install from zip*] o installando il plugin da [*Plugins/Manage and Install Plugins/All*] cercando con la parola chiave *"Shp2SSAP"*
 
-**-----GUIDA All'USO-----** <a name="guida"></a>
+**----- GUIDA All'USO -----** <a name="guida"></a>
 
 
 **AVVIO**
@@ -245,7 +246,7 @@ il Tasto **Reset** reimposta i valori originali aggiornando il file default.txt.
 
     
 
-**-----CARATTERISTICHE DELLO VETTORIALE PER LA CONVERSIONE NEL MODELLO PENDIO SSAP-----** <a name="car_shape"></a>
+**----- CARATTERISTICHE DELLO VETTORIALE PER LA CONVERSIONE NEL MODELLO PENDIO SSAP -----** <a name="car_shape"></a>
 
     RICORDATE: TAB *XY → Vettoriale* viene generato direttamente un vettoriale che rispetta i criteri indcati in questa sezione, 
     non è necessario crearlo ex-novo.
@@ -324,7 +325,7 @@ Se presente un valore **SIGCI** > 0 viene generato un file .geo per strati rocci
 
 """
 
-**BUG FIX** <a name="bug_fix"></a>
+**----- BUG FIX -----** <a name="bug_fix"></a>
 
 L'applicativo è stato testato anche con modelli di pendio molto complessi e simulando diverse combinazioni di errori, questi vengono intercettati dal sistema di controllo che di regola sono riportati nel file log e esplicitati da finestre di messaggio dedicate o dallla messaggistica di Qgis.
 
@@ -337,4 +338,4 @@ Nel caso siano generati errori da **SSAP2010**, in particolare in fase di lettur
 Grazie per la collaborazione e buon lavoro.
 
 
-Ultima modifica: **2026.03.10**
+Ultima modifica: **2026.03.22**
