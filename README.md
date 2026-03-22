@@ -29,12 +29,7 @@ https://github.com/lsulli/shp2ssap
 
 Guida: https://github.com/lsulli/shp2ssap/blob/master/README.md
 
-Latest File plugin: https://github.com/lsulli/shp2ssap/releases/download/Ver_2_0_7_Build273/Shp2SSAP_QGIS_v207_build273.zip  
-
-
-**----- UPGRADE -----** <a name="upgrade"></a>
-
-Vedi change_log.txt - https://github.com/lsulli/shp2ssap/blob/master/change_log.txt
+Latest File plugin: https://github.com/lsulli/shp2ssap/releases/download/Ver_2_0_7_Build273/Shp2SSAP_QGIS_v207_build273.zip
 
 **LICENZA**
 
@@ -324,6 +319,10 @@ Se presente un valore **SIGCI** > 0 viene generato un file .geo per strati rocci
 </details>
 
 """
+
+**----- UPGRADE -----** <a name="upgrade"></a>
+
+Vedi change_log.txt - https://github.com/lsulli/shp2ssap/blob/master/change_log.txt
 
 **----- BUG FIX -----** <a name="bug_fix"></a>
 
