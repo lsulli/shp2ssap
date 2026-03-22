@@ -223,9 +223,10 @@ Agendo sul file vettoriale è possibile applicare una procedura di triming degli
     
 Funzione **Riduci il numero di nodi per strato**
 
-Funzione indispensabile per creare shapefile con un numero di nodi coerente alle specifiche SSAP, cioè inferiore a 100 nodi, condizione frequente se il profilo topografico deriva direttamente da dtm. Per default viene creato un vettoriale temporaneo del nome *miolayer_semplificato*, è disponibile l'opzione per editare direttamente il layer indicato nella casella *vettoriale di input*. Il controllo *Limite num. nodi* può essere impostato con un valore da 2 a 99 nel per semplificare l'eventuale editing di dettaglio dei nodi delle superfici di strato.
+Funzione indispensabile per creare shapefile con un numero di nodi coerente alle specifiche SSAP, cioè inferiore a 100 nodi, condizione frequente se il profilo topografico deriva direttamente da dtm. Per default viene creato un vettoriale temporaneo del nome *miolayer_semplificato*, è disponibile l'opzione per editare direttamente il layer indicato nella casella *vettoriale di input*. Il controllo *Limite num. nodi* può essere impostato con un valore da 2 a 99.
 
-    SUGGERIMENTO: L'uso di questa opzione è utile anche nel caso si voglia facilitare lo snapping di nuove polyline alla superficie topografica riducendo il numero di nodi di aggancio (in particolare in caso di lenti con un lato coincidente con la superficie.
+    SUGGERIMENTO: L'uso di questa opzione è utile anche nel caso si voglia facilitare lo snapping di nuove polyline 
+    alla superficie topografica riducendo il numero di nodi di aggancio (in particolare in caso di lenti con un lato coincidente con la superficie).
 
 **TAB Opzioni**
 
@@ -235,7 +236,7 @@ Il tasto **Ricarica** recupera i dati di default memorizzati tramite il tasto **
 il Tasto **Reset** reimposta i valori originali aggiornando il file default.txt.
 
 
-![Optional Text](../master/Image_readme/Screenshot_Shp2SSAP_Tab2.png)
+![Optional Text](../master/Image_readme/Screenshot_Shp2SSAP_Tab3.png)
 
     
 
