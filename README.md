@@ -236,7 +236,7 @@ Il tasto **Ricarica** recupera i dati di default memorizzati tramite il tasto **
 il Tasto **Reset** reimposta i valori originali aggiornando il file default.txt.
 
 
-![Optional Text](../master/Image_readme/Screenshot_Shp2SSAP_Tab_Opzioni.png)
+![Optional Text](../master/Image_readme/Screenshot_Shp2SSAP_Tab3.png)
 
     
 
