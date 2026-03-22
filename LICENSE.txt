@@ -1,9 +1,9 @@
 
-Shp2SSAP.exe
- e xy2Shp_forSSAP.exe
+Plugin Shp2SSAP for Qgis
+
 https://github.com/lsulli/shp2ssap
 
-Autore: Lorenzo Sulli- Copyright (C) 2017
+Autore: Lorenzo Sulli- Copyright (C) 2026
 
 
 
@@ -13,7 +13,7 @@ Software distribuito con licenza GNU-GPL versione 3 - 29.06.2007.
 
 lorenzo.sulli@gmail.com
 
-l.sulli@adbarno.it
+l.sulli@appenninosettetrionale.it
 
 
 
