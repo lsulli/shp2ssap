@@ -105,18 +105,18 @@ Una volta installato e attivato il Plugin **Shp2SSAP**, dall'icona ![Optional Te
 ![Optional Text](../master/Image_readme/Screenshot_Shp2SSAP_Tab1.png)
   
 Dalla TAB *XY → Vettoriale* è possibile creare uno layer vettoriale polyline della superficie topografica da un elenco di coordinate xy (nel file .dat  strato unico con **SSAP_ID** = 1). I dati di input possono essere da file o direttamente dalla cache degli appunti (recupera l'ultima copia eseguita). Testato per i formati .csv e DXF 2D esportati dallo strumento *elevation* di Qgis e per dati copiati nella cache e formato DXF 2D per *Profile Plugin*.
-Le coordinate di input dovranno avere valori e ordinamento secondo gli standard del file .dat per SSAP. Lo Shapefile avrà tutte le caratteristiche per generare con Shp2SSAP.exe un modello di pendio monostrato per SSAP.
+Le coordinate di input dovranno avere valori e ordinamento secondo gli standard del file .dat per SSAP. Il layer vettoriale avrà tutte le caratteristiche per essere convertito in file per SSAP di un modello di pendio monostrato.
 
-ATTENZIONE: La struttura tipo del file XY ammessa è quella tipica generata dagli strumenti GIS 
-per la creazione di profili da DTM. Il file deve essere un file ascii (.txt, .csv o .dxf per default) 
-con coppie di valori numerici anche in formato stringa (valori x e valori Y), ammette strighe intercalari.
-La virgola non è ammessa come separatore di colonna.
-Per il decimale è ammesso sia il punto che la virgola. 
-Vengono automaticamente saltati valori stringa e righe nulle quindi è ammesso l'header del file o i descrittori di campo.
-    
 <details>    
-<summary> Valori coppie XY. Casi tipo testati (script di test: test_parse_xy_points.py) </summary>    
-    
+<summary> Valori coppie XY. Casi tipo testati (script di test: test_parse_xy_points.py) </summary>  
+
+  ATTENZIONE: La struttura tipo del file XY ammessa è quella tipica generata dagli strumenti GIS 
+  per la creazione di profili da DTM. Il file deve essere un file ascii (.txt, .csv o .dxf per default) 
+  con coppie di valori numerici anche in formato stringa (valori x e valori Y), ammette strighe intercalari.
+  La virgola non è ammessa come separatore di colonna.
+  Per il decimale è ammesso sia il punto che la virgola. 
+  Vengono automaticamente saltati valori stringa e righe nulle quindi è ammesso l'header del file o i descrittori di campo.
+        
     # 1. Riga normale con valori separati da qualsiasio spazio bianco (spazio, tab, newline, ecc.)
         input ("1.5 3.2")
         output [1.5, 3.2]
