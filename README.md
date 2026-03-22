@@ -108,14 +108,14 @@ Dalla TAB *XY → Vettoriale* è possibile creare uno layer vettoriale polyline 
 Le coordinate di input dovranno avere valori e ordinamento secondo gli standard del file .dat per SSAP. Il layer vettoriale avrà tutte le caratteristiche per essere convertito in file per SSAP di un modello di pendio monostrato.
 
 <details>    
-<summary> Valori coppie XY. Casi tipo testati (script di test: test_parse_xy_points.py) </summary>  
+<summary> Valori coppie XY. Casi tipo testati. </summary>  
 
 
   La struttura tipo del file XY ammessa è quella tipica generata dagli strumenti GIS 
   per la creazione di profili da DTM. Il file deve essere un file ascii (.txt, .csv o .dxf per default) 
   con coppie di valori numerici elencati per righe. Sono ammessi vari casi compreso il caso con strighe intercalari.
   La virgola non è ammessa come separatore di colonna.
-  I casi testati sono i seguenti.
+  I casi testati sono i seguenti (script di test: [test_parse_xy_points.py](https://github.com/lsulli/shp2ssap/blob/master/test_parse_xy_points.py)).
      
     #1. Riga normale con valori separati da qualsiasio spazio bianco (spazio, tab, newline, ecc.)
         input ("1.5 3.2")
