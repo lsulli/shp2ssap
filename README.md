@@ -213,11 +213,15 @@ Sono implementate funzioni di controllo della struttura degli shapefile di input
     ATTENZIONE: nel caso di modelli di pendio complessi o in presenza di lenti, in particolare con strati che attraversano altri strati, l'opzione 
     "verifica ordinamento verticale strati" può generare falsi errori, nel caso deve essere disattivata.
 
-Agendo sul file vettoriale è possibile applicare una procedura di triming degli strati che eccedono i valori di ascissa minimo e/o massimo della superficie topografica (opzione *Regola gli strati del vettoriale ai limiti della superficie topografica*), utile per editare gli strati senza preoccuparsi della precisione dei punti di inizio e fine rispetto alla superficie topografica. Per default viene creato un vettoriale temporaneo del nome *miolayer_trim*, è disponibile l'opzione per editare direttamente il layer indicato nella casella *vettoriale di input*.
+Funzione *Regola gli strati del vettoriale ai limiti della superficie topografica*
+
+Agendo sul file vettoriale è possibile applicare una procedura di triming degli strati che eccedono i valori di ascissa minimo e/o massimo della superficie topografica, utile per editare gli strati senza preoccuparsi della precisione dei punti di inizio e fine rispetto alla superficie topografica. Per default viene creato un vettoriale temporaneo del nome *miolayer_trim*, è disponibile l'opzione per editare direttamente il layer indicato nella casella *vettoriale di input*.
 
     ATTENZIONE: Il procedimento funziona solo impostando i limiti degli strati con valori di x inferiori al limite sinistro e superiori al limite destro. 
     
-L'opzione *riduci il numero di nodi per strato* è indispensabile per creare shapefile con un numero di nodi coerente alle specifiche SSAP, cioè inferiore a 100 nodi, condizione frequente se il profilo topografico deriva direttamente da dtm. Per default viene creato un vettoriale temporaneo del nome *miolayer_semplificato*, è disponibile l'opzione per editare direttamente il layer indicato nella casella *vettoriale di input*.
+Funzione *Riduci il numero di nodi per strato*
+
+Funzione indispensabile per creare shapefile con un numero di nodi coerente alle specifiche SSAP, cioè inferiore a 100 nodi, condizione frequente se il profilo topografico deriva direttamente da dtm. Per default viene creato un vettoriale temporaneo del nome *miolayer_semplificato*, è disponibile l'opzione per editare direttamente il layer indicato nella casella *vettoriale di input*. Il controllo *Limite num. nodi* può essere impostato con un valore da 2 a 99 nel per semplificare l'eventuale editing di dettaglio dei nodi delle superfici di strato.
 
     SUGGERIMENTO: L'uso di questa opzione è utile anche nel caso si voglia facilitare lo snapping di nuove polyline alla superficie topografica riducendo il numero di nodi di aggancio (in particolare in caso di lenti con un lato coincidente con la superficie.
     
