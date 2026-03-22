@@ -5,7 +5,7 @@ Plugin per Qgis per la gestione del modello del pendio SSAP2010 (www.ssap.eu) in
 Permette di convertire shapefile e geopackage polyline di un modello del pendio in file per SSAP2010 (testato per versioni di SSAP 4x e superiori). Può essere creato un layer di un pendio monostrato pronto per la conversione partendo da un elenco di coordinate della superficie topografica, accetta file di testo con coppie di coordinate numeriche metriche, accetta formato DXF 2D o .csv estratti dallo strumento **elevation** di Qgis o **rofile Plugin** per Qgis
 
 **----- SOMMARIO -----**
-1. [Autore/Home Page/Repository](#autore)
+1. [Autore/Home Page/Licenza](#autore)
 2. [Requisiti di Sistema](#re_sist)
 3. [Funzionalità principali](#fun_princ)
 4. [Installazione](#installazione)
@@ -40,7 +40,8 @@ Per il software SSAP2010 vedi termini di licenza riportati in www.ssap.eu. (Auto
 
 **----- REQUISITI SISTEMA -----** <a name="re_sist"></a>
 
-Qgis installato versione 3.x o superiore, testato con 3.24, 3.34, 3.40
+Qgis installato versione 3.x o superiore, testato con 3.24, 3.34, 3.40.
+
 Non sono necessari moduli Python o librerie esterne a Qgis.
 
 **----- FUNZIONALITA' PRINCIPALI -----** <a name="fun_princ"></a>
