@@ -93,7 +93,7 @@ E'possibile creare un layer vettoraile monostrato (già strutturato per la creaz
 
 **INSTALLAZIONE** <a name="installazione"></a>
 
-L'installazione può essere fatta direttamente in Qgis dal file zip [https://github.com/lsulli/shp2ssap/releases/download/Ver_2_0_7_Build273/Shp2SSAP_QGIS_v207_build273.zip] tramite Plugins/Manage and Install Plugins/Install from zip o installando il plugin da Plugins/Manage and Install Plugins/All con la parola chiave "Shp2SSAP"
+L'installazione può essere fatta direttamente in Qgis dal file zip [https://github.com/lsulli/shp2ssap/releases/download/Ver_2_0_7_Build273/Shp2SSAP_QGIS_v207_build273.zip] tramite menu [*Plugins/Manage and Install Plugins/Install from zip*] o installando il plugin da [*Plugins/Manage and Install Plugins/All*] cercando con la parola chiave *"Shp2SSAP"*
 
 **GUIDA All'USO** <a name="guida"></a>
 
