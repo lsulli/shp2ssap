@@ -116,7 +116,7 @@ Le coordinate di input dovranno avere valori e ordinamento secondo gli standard 
   La virgola non è ammessa come separatore di colonna.
   Per il decimale è ammesso sia il punto che la virgola. 
   Vengono automaticamente saltati valori stringa e righe nulle quindi è ammesso l'header del file o i descrittori di campo.
-        
+     
     # 1. Riga normale con valori separati da qualsiasio spazio bianco (spazio, tab, newline, ecc.)
         input ("1.5 3.2")
         output [1.5, 3.2]
@@ -255,68 +255,68 @@ Sono ammessi solo vettoriali del tipo polyline "singol part". Nel caso venga car
 <details>    
 <summary> Struttura e significato degli attributi layer vettoriale per SSAP </summary> 
 
-
 Non è richiesto un ordine prestabilito dei campi, è invece obbligatorio l'uso dei nomi di campo e del tipo e lunghezza minima indicata. 
 
     ATTENZIONE: non sono ammessi valori nulli, possono essere generati errori in fase di conversione.
     In alcuni casi si tratta di errori non gestiti che quindi sono 'asintomatici' ma non permettono
     la conclusione del processo.
 
-['SSAP_ID', 'N', 2, 0] Indice dello strato (campo richiesto)
+      ['SSAP_ID', 'N', 2, 0] Indice dello strato (campo richiesto)
+      
+      ['SSAP', 'C', 3] Tipo file SSAP. Valori ammessi dat, geo, fld, svr, sin (campo richiesto)
+      
+      ['PHI', 'N', 4, 2] Valore Angolo d'attrito - gradi (campo richiesto)
+      
+      ['C', 'N', 5, 2] Coesione efficace - kpa (campo richiesto)
+      
+      ['CU', 'N', 5, 2] Coesione non drenata - kpa (campo richiesto)
+      
+      ['GAMMA', 'N', 5, 2] Peso di volume naturale - KN/mc (campo richiesto)
+      
+      ['GAMMASAT', 'N', 5, 2] Peso di volume saturo - KN/mc  (campo richiesto)
+      
+      ['EXCLUDE', 'N', 1, 0] Campo booleano per escludere strato, sovraccarico, falda o superfice di verifica. Valori ammessi: 1 escludi, <> 1 converti (campo richiesto)
+      
+      ['DR_UNDR', 'C', 1, 0] Campo scelta verifica condizioni drenate/non drenate. Valori ammessi:  D o <> U drenato (valore predefinito), U non drenato (Undrained) (campo richiesto)
+      
+      ['SIGCI', 'N', 5, 2] Resistenza Compressione Uniassiale Roccia Intatta  - Mpa (campo opzionale)
+      
+      ['GSI','N', 5, 2] Geological Strenght Index - adimensionale (campo opzionale)
+      
+      ['MI','N', 5, 2] Indice litologico ammasso - adimensionale (campo opzionale)
+      
+      ['D','N', 5, 2] Fattore di disturbo ammasso - adimensionale (campo opzionale)
+      
+      ['VAl1','N', 10, 2] Valore caratteristico file .svr - in Kpa (campo opzionale)
+      
+      Nel dettaglio:
+      
+      - Nel campo **SSAP_ID** deve essere indicato l'indice dello strato (archiviato nel file .dat) o del sovraccarico (archiviato nel file .svr) rispettando la sequenza numerica secondo le specifice indicate nel manuale SSAP.
+      
+      - Nel campo **SSAP** deve essere indicato a quale file ssap è riferita la polyline.
+      
+      - Per gli strati con campo **SSAP** = "dat" e **SSAP** = "svr" è obbligatorio un insieme di valori **SSAP_ID** crescenti dall'alto al basso e continuo da 1 a n (n = 20 per **SSAP** = "dat" e n = 10 per **SSAP** = "svr"). Per queste polyline **non** sono ammessi valori di **SSAP_ID** = 0, valore riservato alle polyline con **SSAP** = "fld".
+      
+      - Le polyline con **SSAP** = "dat" e **SSAP** = "svr" possono essere aggiunte anche intercalate a polyline dello stesso tipo già esistenti (aggiunta di strati a piacere), deve comunque essere rispettata la sequenza geometrica crescente e continua dall'alto al basso del campo **SSAP_ID**: quindi nel caso dell'inserimento di un nuovo strato tra due esistenti deve essere editatto e aggiornato il campo **SSAP_ID**. 
+      
+      - Per **SSAP** = "fld" (falda) è ammesso un solo strato con **SSAP_ID** = 0: questo valore identifica univocamente la falda.
+      
+      - Per **SSAP** = "sin" (superficie singola di verifica) è ammesso un solo strato con **SSAP_ID** > 0
+      
+      - Per **SSAP** = "svr" (sovraccarichi), è ammesso un solo strato con **SSAP_ID** > 0. 
+      Viene creato in ogni caso un file .svr con carichi uniformi non inclinati
+      
+      - Il file **.geo** è generato in base ai valori dei campi dedicati (PHI, C, CU etc.), possono essere presenti contemporaneamente valori di C e Cu > 0, l'utente può scegliere se imporre condizioni drenate e non drenate valide per il singolo strato impostando D (dreained) o U (undrained) nel campo **DR_UNDR**, i file .geo per SSAP2010 verranno creati di conseguenza scrivendo i valori secondo le specifiche SSAP.
+      
+      Il campo **EXCLUDE** permette di escludere singoli strati (**SSAP** = "dat", "svr", "fld" o "sin") che non verranno considerati nella conversione nei file per SSAP2010.
+      
+          ATTENZIONE: nel caso siano escluse singole polyline SSAP = "dat" o SSAP = "svr" è necessario verificare
+          i valori del campo USER_ID per garantire una seguenza continua e crescente 1 - n dall'alto 
+          verso il basso, nel caso è necessario ripristinare la seguenza editando i valori nel campo SSAP_ID, 
+          se la sequenza è errata verrà generato un errore.
+      
+      Se presente un valore **SIGCI** > 0 viene generato un file .geo per strati rocciosi e vengono ignorati i valori dei campi per le terre, che saranno impostati a zero nel file .geo di output.
 
-['SSAP', 'C', 3] Tipo file SSAP. Valori ammessi dat, geo, fld, svr, sin (campo richiesto)
-
-['PHI', 'N', 4, 2] Valore Angolo d'attrito - gradi (campo richiesto)
-
-['C', 'N', 5, 2] Coesione efficace - kpa (campo richiesto)
-
-['CU', 'N', 5, 2] Coesione non drenata - kpa (campo richiesto)
-
-['GAMMA', 'N', 5, 2] Peso di volume naturale - KN/mc (campo richiesto)
-
-['GAMMASAT', 'N', 5, 2] Peso di volume saturo - KN/mc  (campo richiesto)
-
-['EXCLUDE', 'N', 1, 0] Campo booleano per escludere strato, sovraccarico, falda o superfice di verifica. Valori ammessi: 1 escludi, <> 1 converti (campo richiesto)
-
-['DR_UNDR', 'C', 1, 0] Campo scelta verifica condizioni drenate/non drenate. Valori ammessi:  D o <> U drenato (valore predefinito), U non drenato (Undrained) (campo richiesto)
-
-['SIGCI', 'N', 5, 2] Resistenza Compressione Uniassiale Roccia Intatta  - Mpa (campo opzionale)
-
-['GSI','N', 5, 2] Geological Strenght Index - adimensionale (campo opzionale)
-
-['MI','N', 5, 2] Indice litologico ammasso - adimensionale (campo opzionale)
-
-['D','N', 5, 2] Fattore di disturbo ammasso - adimensionale (campo opzionale)
-
-['VAl1','N', 10, 2] Valore caratteristico file .svr - in Kpa (campo opzionale)
-
-Nel dettaglio:
-
-- Nel campo **SSAP_ID** deve essere indicato l'indice dello strato (archiviato nel file .dat) o del sovraccarico (archiviato nel file .svr) rispettando la sequenza numerica secondo le specifice indicate nel manuale SSAP.
-
-- Nel campo **SSAP** deve essere indicato a quale file ssap è riferita la polyline.
-
-- Per gli strati con campo **SSAP** = "dat" e **SSAP** = "svr" è obbligatorio un insieme di valori **SSAP_ID** crescenti dall'alto al basso e continuo da 1 a n (n = 20 per **SSAP** = "dat" e n = 10 per **SSAP** = "svr"). Per queste polyline **non** sono ammessi valori di **SSAP_ID** = 0, valore riservato alle polyline con **SSAP** = "fld".
-
-- Le polyline con **SSAP** = "dat" e **SSAP** = "svr" possono essere aggiunte anche intercalate a polyline dello stesso tipo già esistenti (aggiunta di strati a piacere), deve comunque essere rispettata la sequenza geometrica crescente e continua dall'alto al basso del campo **SSAP_ID**: quindi nel caso dell'inserimento di un nuovo strato tra due esistenti deve essere editatto e aggiornato il campo **SSAP_ID**. 
-
-- Per **SSAP** = "fld" (falda) è ammesso un solo strato con **SSAP_ID** = 0: questo valore identifica univocamente la falda.
-
-- Per **SSAP** = "sin" (superficie singola di verifica) è ammesso un solo strato con **SSAP_ID** > 0
-
-- Per **SSAP** = "svr" (sovraccarichi), è ammesso un solo strato con **SSAP_ID** > 0. 
-Viene creato in ogni caso un file .svr con carichi uniformi non inclinati
-
-- Il file **.geo** è generato in base ai valori dei campi dedicati (PHI, C, CU etc.), possono essere presenti contemporaneamente valori di C e Cu > 0, l'utente può scegliere se imporre condizioni drenate e non drenate valide per il singolo strato impostando D (dreained) o U (undrained) nel campo **DR_UNDR**, i file .geo per SSAP2010 verranno creati di conseguenza scrivendo i valori secondo le specifiche SSAP.
-
-Il campo **EXCLUDE** permette di escludere singoli strati (**SSAP** = "dat", "svr", "fld" o "sin") che non verranno considerati nella conversione nei file per SSAP2010.
-
-    ATTENZIONE: nel caso siano escluse singole polyline SSAP = "dat" o SSAP = "svr" è necessario verificare
-    i valori del campo USER_ID per garantire una seguenza continua e crescente 1 - n dall'alto 
-    verso il basso, nel caso è necessario ripristinare la seguenza editando i valori nel campo SSAP_ID, 
-    se la sequenza è errata verrà generato un errore.
-
-Se presente un valore **SIGCI** > 0 viene generato un file .geo per strati rocciosi e vengono ignorati i valori dei campi per le terre, che saranno impostati a zero nel file .geo di output.
 </details>
 
 """
