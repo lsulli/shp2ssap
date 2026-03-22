@@ -231,8 +231,11 @@ Funzione indispensabile per creare shapefile con un numero di nodi coerente alle
 **TAB Opzioni**
 
 Impostazione valori di default per TAB **XY → Vettoriale** e directory di riferimento per input e output e per l'eseguibile SSAP.exe.
+
 Il tasto **Salva** aggiorna i dati nelle TAB salvando i valori nel file *default.txt* nella directory "Shp2SSAP" creata all'interno della directory di default in uso, tipicamente "C:\Users\<user>\AppData\Roaming\QGIS\QGIS3\profiles\default\".
+
 Il tasto **Ricarica** recupera i dati di default memorizzati tramite il tasto **Salva**.
+
 il Tasto **Reset** reimposta i valori originali aggiornando il file default.txt.
 
 
