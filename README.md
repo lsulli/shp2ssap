@@ -1,4 +1,4 @@
-##**Qgis Plugin Shp2SSAP ver 2.0.7 (build 273)**##
+##**Qgis Plugin Shp2SSAP ver 2.0.7 (build 274)**##
 
 Plugin per Qgis per la gestione del modello del pendio SSAP2010 (www.ssap.eu) in ambiente GIS. 
 
@@ -90,7 +90,7 @@ E'possibile creare un layer vettoraile monostrato (già strutturato per la creaz
 
 **----- INSTALLAZIONE -----** <a name="installazione"></a>
 
-L'installazione può essere fatta direttamente in Qgis dal file zip [https://github.com/lsulli/shp2ssap/releases/download/Ver_2_0_7_Build273/Shp2SSAP_QGIS_v207_build273.zip] tramite menu [*Plugins/Manage and Install Plugins/Install from zip*] o installando il plugin da [*Plugins/Manage and Install Plugins/All*] cercando con la parola chiave *"Shp2SSAP"*
+L'installazione può essere fatta direttamente in Qgis dal file zip [https://github.com/lsulli/shp2ssap/releases/download/Ver_2_0_7_Build274/Shp2SSAP_QGIS_v207_build274.zip] tramite menu [*Plugins/Manage and Install Plugins/Install from zip*] o installando il plugin da [*Plugins/Manage and Install Plugins/All*] cercando con la parola chiave *"Shp2SSAP"*
 
 **----- GUIDA All'USO -----** <a name="guida"></a>
 
