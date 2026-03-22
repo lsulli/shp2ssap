@@ -115,7 +115,7 @@ Per il decimale è ammesso sia il punto che la virgola.
 Vengono automaticamente saltati valori stringa e righe nulle quindi è ammesso l'header del file o i descrittori di campo.
     
 <details>    
-<summary> Casi tipo testati (script di test: test_parse_xy_points.py):</summary>    
+<summary> Casi tipo testati (script di test: test_parse_xy_points.py)</summary>    
     
     # 1. Riga normale con valori separati da qualsiasio spazio bianco (spazio, tab, newline, ecc.)
         input ("1.5 3.2")
@@ -239,8 +239,7 @@ il Tasto **Reset** reimposta i valori originali aggiornando il file default.txt.
 
 
 ![Optional Text](../master/Image_readme/Screenshot_Shp2SSAP_Tab3.png)
-
-    
+ 
 
 **----- CARATTERISTICHE DELLO VETTORIALE PER LA CONVERSIONE NEL MODELLO PENDIO SSAP -----** <a name="car_shape"></a>
 
@@ -253,7 +252,7 @@ Sono ammessi solo vettoriali del tipo polyline "singol part". Nel caso venga car
     così come specificato nel manuale SSAP 4.9.8 al capitolo 3.3.
 
 <details>    
-<summary> **Struttura degli attributi layer vettoriale per SSAP** </summary> 
+<summary> Struttura degli attributi layer vettoriale per SSAP </summary> 
 
 
 Non è richiesto un ordine prestabilito dei campi, è invece obbligatorio l'uso dei nomi di campo e del tipo e lunghezza minima indicata. 
