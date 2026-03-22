@@ -95,13 +95,14 @@ E'possibile creare un layer vettoraile monostrato (già strutturato per la creaz
 
 L'installazione può essere fatta direttamente in Qgis dal file zip [https://github.com/lsulli/shp2ssap/releases/download/Ver_2_0_7_Build273/Shp2SSAP_QGIS_v207_build273.zip] tramite menu [*Plugins/Manage and Install Plugins/Install from zip*] o installando il plugin da [*Plugins/Manage and Install Plugins/All*] cercando con la parola chiave *"Shp2SSAP"*
 
-**GUIDA All'USO** <a name="guida"></a>
+**-----GUIDA All'USO-----** <a name="guida"></a>
 
 
 **AVVIO**
+
 Una volta installato e attivato il Plugin **Shp2SSAP**, dall'icona ![Optional Text](../master/Image_readme/fig_shp2SSAP_icon.png) della *toolbar plugins* o dalla omonima voce del menù *plugins* viene aperta una maschera multitab con tre TAB: *TAB XY → Vettoriale*, *Vettoriale → File SSAP* e *Opzioni*.
 
-  **TAB XY → Vettoriale**
+**TAB XY → Vettoriale**
 
   
 ![Optional Text](../master/Image_readme/Screenshot_Shp2SSAP_Tab1.png)
@@ -244,7 +245,7 @@ il Tasto **Reset** reimposta i valori originali aggiornando il file default.txt.
 
     
 
-**CARATTERISTICHE DELLO VETTORIALE PER LA CONVERSIONE NEL MODELLO PENDIO SSAP**<a name="car_shape"></a>
+**-----CARATTERISTICHE DELLO VETTORIALE PER LA CONVERSIONE NEL MODELLO PENDIO SSAP-----** <a name="car_shape"></a>
 
     RICORDATE: TAB *XY → Vettoriale* viene generato direttamente un vettoriale che rispetta i criteri indcati in questa sezione, 
     non è necessario crearlo ex-novo.
@@ -255,7 +256,7 @@ Sono ammessi solo vettoriali del tipo polyline "singol part". Nel caso venga car
     così come specificato nel manuale SSAP 4.9.8 al capitolo 3.3.
 
 <details>    
-<summary> Struttura degli attributi layer vettoriale per SSAP</summary> 
+<summary> **Struttura degli attributi layer vettoriale per SSAP** </summary> 
 
 
 Non è richiesto un ordine prestabilito dei campi, è invece obbligatorio l'uso dei nomi di campo e del tipo e lunghezza minima indicata. 
