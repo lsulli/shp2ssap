@@ -97,6 +97,9 @@ L'installazione può essere fatta direttamente in Qgis dal file zip https://gith
 
 **GUIDA All'USO** <a name="guida"></a>
 
+**AVVIO**
+Una volta installato e attivato il Plugin **Shp2SSAP**, dall'icona ![Optional Text](../master/ScreenShot/Shp2SSAP_icon.png) della *toolbar plugins* o dalla omonima voce del menù *plugins* viene aperta una maschera multitab con tre TAB: *TAB XY → Vettoriale*, *Vettoriale → File SSAP* e *Opzioni*.
+
   **TAB XY → Vettoriale**
   
 Dalla TAB *XY → Vettoriale* è possibile creare uno layer vettoriale polyline della superficie topografica da un elenco di coordinate xy (nel file .dat  strato unico con **SSAP_ID** = 1). I dati di input possono essere da file o direttamente dalla cache degli appunti (recupera l'ultima copia eseguita). Testato per i formati .csv e DXF 2D esportati dallo strumento *elevation* di Qgis e per dati copiati nella cache e formato DXF 2D per *Profile Plugin*.
