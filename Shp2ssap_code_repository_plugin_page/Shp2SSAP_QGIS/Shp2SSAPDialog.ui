@@ -1,0 +1,1448 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Shp2SSAPSuiteDialog</class>
+ <widget class="QDialog" name="Shp2SSAPSuiteDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>621</width>
+    <height>509</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>621</width>
+    <height>509</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>621</width>
+    <height>509</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Shp2SSAP</string>
+  </property>
+  <layout class="QVBoxLayout" name="mainLayout">
+   <item>
+    <widget class="QTabWidget" name="tabs">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>600</width>
+       <height>473</height>
+      </size>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tab_xy">
+      <attribute name="title">
+       <string>XY → Vettoriale</string>
+      </attribute>
+      <widget class="QCheckBox" name="chk_back_analysis">
+       <property name="geometry">
+        <rect>
+         <x>350</x>
+         <y>290</y>
+         <width>181</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string> φ = pendenza media e c' = 0</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="xyLbl">
+       <property name="geometry">
+        <rect>
+         <x>11</x>
+         <y>130</y>
+         <width>251</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>1000</width>
+         <height>200</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Assegna parametri geotecnici primo strato</string>
+       </property>
+      </widget>
+      <widget class="Line" name="line">
+       <property name="geometry">
+        <rect>
+         <x>230</x>
+         <y>130</y>
+         <width>341</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Lbl_title">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>20</y>
+         <width>381</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>1000</width>
+         <height>1000</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Creazione modello semplificato pendio vettoriale da coordinate XY&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="xyLbl_2">
+       <property name="geometry">
+        <rect>
+         <x>11</x>
+         <y>260</y>
+         <width>161</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>1000</width>
+         <height>200</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Superficie saturazione e bedrock</string>
+       </property>
+      </widget>
+      <widget class="Line" name="line_2">
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>260</y>
+         <width>111</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btn_help">
+       <property name="geometry">
+        <rect>
+         <x>480</x>
+         <y>410</y>
+         <width>93</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>'Avvia readme page su GitHub'</string>
+       </property>
+       <property name="text">
+        <string>Help</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="chk_falda">
+       <property name="geometry">
+        <rect>
+         <x>11</x>
+         <y>290</y>
+         <width>250</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>250</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Profondità superficie di saturazione (m):</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="sp_falda">
+       <property name="geometry">
+        <rect>
+         <x>260</x>
+         <y>290</y>
+         <width>61</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="decimals">
+        <number>2</number>
+       </property>
+       <property name="maximum">
+        <double>10000.000000000000000</double>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="chk_bedrock">
+       <property name="geometry">
+        <rect>
+         <x>11</x>
+         <y>320</y>
+         <width>241</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Profondità Bedrock parallelo (m):</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="sp_bedrock">
+       <property name="geometry">
+        <rect>
+         <x>260</x>
+         <y>320</y>
+         <width>61</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>180</width>
+         <height>162</height>
+        </size>
+       </property>
+       <property name="decimals">
+        <number>2</number>
+       </property>
+       <property name="maximum">
+        <double>10000.000000000000000</double>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btn_run_xy">
+       <property name="geometry">
+        <rect>
+         <x>12</x>
+         <y>411</y>
+         <width>152</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Converti e carica in QGIS</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="xy_btn_info">
+       <property name="geometry">
+        <rect>
+         <x>552</x>
+         <y>53</y>
+         <width>21</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>?</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="chk_cu">
+       <property name="geometry">
+        <rect>
+         <x>12</x>
+         <y>225</y>
+         <width>208</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>cu (oesione non drenata - kPa)</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="sp_phi">
+       <property name="geometry">
+        <rect>
+         <x>227</x>
+         <y>161</y>
+         <width>61</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="decimals">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <double>90.000000000000000</double>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="sp_c">
+       <property name="geometry">
+        <rect>
+         <x>227</x>
+         <y>192</y>
+         <width>61</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="decimals">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <double>1000000.000000000000000</double>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="chk_phi">
+       <property name="geometry">
+        <rect>
+         <x>12</x>
+         <y>163</y>
+         <width>183</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>φ (angolo d'attrito - gradi):</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="chk_c">
+       <property name="geometry">
+        <rect>
+         <x>12</x>
+         <y>194</y>
+         <width>181</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>c' (coesione drenata - kPa)</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="sp_cu">
+       <property name="geometry">
+        <rect>
+         <x>227</x>
+         <y>223</y>
+         <width>61</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="decimals">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <double>1000000.000000000000000</double>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="chk_gamma">
+       <property name="geometry">
+        <rect>
+         <x>300</x>
+         <y>163</y>
+         <width>201</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>γ  (peso vol. naturale - kN/m³)</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="sp_gamma">
+       <property name="geometry">
+        <rect>
+         <x>510</x>
+         <y>161</y>
+         <width>65</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="decimals">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <double>1000.000000000000000</double>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="chk_gammasat">
+       <property name="geometry">
+        <rect>
+         <x>300</x>
+         <y>194</y>
+         <width>201</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>γ ' (peso vol. saturo - kN/m³)</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="sp_gammasat">
+       <property name="geometry">
+        <rect>
+         <x>510</x>
+         <y>190</y>
+         <width>65</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="decimals">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <double>1000.000000000000000</double>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="xy_btn_clip">
+       <property name="geometry">
+        <rect>
+         <x>87</x>
+         <y>51</y>
+         <width>91</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Usa i dati XY copiati negli appunti</string>
+       </property>
+       <property name="text">
+        <string>Input clipboard</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="xy_btn_infile">
+       <property name="geometry">
+        <rect>
+         <x>12</x>
+         <y>51</y>
+         <width>71</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Carica file di testo con coordinate XY del profilo</string>
+       </property>
+       <property name="text">
+        <string>Input file…</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="xy_input">
+       <property name="geometry">
+        <rect>
+         <x>185</x>
+         <y>53</y>
+         <width>361</width>
+         <height>24</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="bd_fld_btn_info">
+       <property name="geometry">
+        <rect>
+         <x>180</x>
+         <y>260</y>
+         <width>21</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>?</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="xy_btn_out">
+       <property name="geometry">
+        <rect>
+         <x>12</x>
+         <y>91</y>
+         <width>99</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Shapefile o GeoPackage di output</string>
+       </property>
+       <property name="text">
+        <string>Output…</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="xy_output">
+       <property name="geometry">
+        <rect>
+         <x>118</x>
+         <y>93</y>
+         <width>451</width>
+         <height>24</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="Line" name="line_3">
+       <property name="geometry">
+        <rect>
+         <x>450</x>
+         <y>260</y>
+         <width>121</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+      <widget class="QLabel" name="xyLbl_3">
+       <property name="geometry">
+        <rect>
+         <x>350</x>
+         <y>260</y>
+         <width>71</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>1000</width>
+         <height>200</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Back analysis</string>
+       </property>
+      </widget>
+      <widget class="Line" name="line_11">
+       <property name="geometry">
+        <rect>
+         <x>325</x>
+         <y>270</y>
+         <width>20</width>
+         <height>71</height>
+        </rect>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="ba_btn_info">
+       <property name="geometry">
+        <rect>
+         <x>422</x>
+         <y>260</y>
+         <width>21</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>?</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="tab_shp">
+      <attribute name="title">
+       <string>Vettoriale → files SSAP</string>
+      </attribute>
+      <widget class="QCheckBox" name="opt_check_topbottom">
+       <property name="geometry">
+        <rect>
+         <x>11</x>
+         <y>300</y>
+         <width>311</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Verifica ordinamento verticale strati prima della conversione</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="chk_simplify_shp">
+       <property name="geometry">
+        <rect>
+         <x>11</x>
+         <y>260</y>
+         <width>191</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Modifica direttamente il layer attivo</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btn_output_base">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>110</y>
+         <width>104</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>125</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Output ssap files</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="shp_output">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>140</y>
+         <width>571</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>16777215</height>
+        </size>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btn_help_2">
+       <property name="geometry">
+        <rect>
+         <x>240</x>
+         <y>400</y>
+         <width>93</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Help</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btn_input_vec">
+       <property name="geometry">
+        <rect>
+         <x>12</x>
+         <y>50</y>
+         <width>106</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Input vettoriale…</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btn_use_active">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>50</y>
+         <width>97</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Usa layer attivo</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="shp_input">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>80</y>
+         <width>571</width>
+         <height>24</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btn_check_shp">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>400</y>
+         <width>121</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Verifica preliminare</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btn_conv_shp">
+       <property name="geometry">
+        <rect>
+         <x>139</x>
+         <y>400</y>
+         <width>93</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Converti</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Lbl_title_2">
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>10</y>
+         <width>431</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>1000</width>
+         <height>1000</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Conversione da vettoriale (shapefile o geopakage) a files SSAP&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btn_trim_shp">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>178</y>
+         <width>61</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Esegui</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>178</y>
+         <width>321</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Regola gli strati del vettoraile ai limiti della superficie topografica </string>
+       </property>
+      </widget>
+      <widget class="Line" name="line_8">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>220</y>
+         <width>571</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="chk_edit_shp">
+       <property name="geometry">
+        <rect>
+         <x>11</x>
+         <y>200</y>
+         <width>241</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Modifica direttamente il layer attivo</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="bt_open_SSAP">
+       <property name="geometry">
+        <rect>
+         <x>510</x>
+         <y>390</y>
+         <width>41</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>60</width>
+         <height>60</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>Open SSAP.exe</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>icons/ssap.jpg</normaloff>icons/ssap.jpg</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="flat">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="Line" name="line_9">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>280</y>
+         <width>571</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btn_simplify_shp">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>238</y>
+         <width>61</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Esegui</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_2">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>238</y>
+         <width>261</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Riduci il numero di nodi per strato - Limite num. nodi</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="trim_btn_info">
+       <property name="geometry">
+        <rect>
+         <x>402</x>
+         <y>180</y>
+         <width>21</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>?</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="simp_btn_info">
+       <property name="geometry">
+        <rect>
+         <x>402</x>
+         <y>238</y>
+         <width>21</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>?</string>
+       </property>
+      </widget>
+      <widget class="QSpinBox" name="sp_max_node_number">
+       <property name="geometry">
+        <rect>
+         <x>350</x>
+         <y>238</y>
+         <width>41</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="minimum">
+        <number>2</number>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="tab_opts">
+      <attribute name="title">
+       <string>Opzioni</string>
+      </attribute>
+      <widget class="QLabel" name="lblFalda_2">
+       <property name="geometry">
+        <rect>
+         <x>12</x>
+         <y>210</y>
+         <width>51</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Bedrock</string>
+       </property>
+      </widget>
+      <widget class="Line" name="line_4">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>210</y>
+         <width>251</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+      <widget class="QLabel" name="lblFalda_3">
+       <property name="geometry">
+        <rect>
+         <x>12</x>
+         <y>120</y>
+         <width>201</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Valori parametri geotecnici primo strato</string>
+       </property>
+      </widget>
+      <widget class="Line" name="line_5">
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>120</y>
+         <width>371</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+      <widget class="Line" name="line_6">
+       <property name="geometry">
+        <rect>
+         <x>380</x>
+         <y>210</y>
+         <width>200</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+      <widget class="Line" name="line_7">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>300</y>
+         <width>571</width>
+         <height>18</height>
+        </rect>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="opt_xy_gammasat">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>180</y>
+         <width>65</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="decimals">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <double>1000.000000000000000</double>
+       </property>
+      </widget>
+      <widget class="QLabel" name="lblFalda">
+       <property name="geometry">
+        <rect>
+         <x>350</x>
+         <y>240</y>
+         <width>191</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Profondità superfice saturazione (m):</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="opt_xy_falda">
+       <property name="geometry">
+        <rect>
+         <x>350</x>
+         <y>270</y>
+         <width>65</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="decimals">
+        <number>2</number>
+       </property>
+       <property name="maximum">
+        <double>10000.000000000000000</double>
+       </property>
+      </widget>
+      <widget class="QLabel" name="lblBed">
+       <property name="geometry">
+        <rect>
+         <x>12</x>
+         <y>240</y>
+         <width>81</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Profondità (m):</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="opt_xy_bedrock">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>240</y>
+         <width>65</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="decimals">
+        <number>2</number>
+       </property>
+       <property name="maximum">
+        <double>10000.000000000000000</double>
+       </property>
+      </widget>
+      <widget class="QLabel" name="lblPhiBr">
+       <property name="geometry">
+        <rect>
+         <x>12</x>
+         <y>270</y>
+         <width>116</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>φ (gradi):</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="opt_xy_phi_br">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>270</y>
+         <width>65</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="decimals">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <double>90.000000000000000</double>
+       </property>
+      </widget>
+      <widget class="QLabel" name="lblCBr">
+       <property name="geometry">
+        <rect>
+         <x>190</x>
+         <y>270</y>
+         <width>51</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>c' (Kpa):</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="opt_xy_c_br">
+       <property name="geometry">
+        <rect>
+         <x>240</x>
+         <y>270</y>
+         <width>65</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="decimals">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <double>1000000.000000000000000</double>
+       </property>
+      </widget>
+      <widget class="QLabel" name="lblDefShp">
+       <property name="geometry">
+        <rect>
+         <x>12</x>
+         <y>52</y>
+         <width>111</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Dir input file vettoriale:</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="opt_def_shp_dir">
+       <property name="geometry">
+        <rect>
+         <x>128</x>
+         <y>52</y>
+         <width>451</width>
+         <height>24</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="lblDefSsap">
+       <property name="geometry">
+        <rect>
+         <x>12</x>
+         <y>83</y>
+         <width>111</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Dir output file SSAP:</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="opt_def_ssap_dir">
+       <property name="geometry">
+        <rect>
+         <x>128</x>
+         <y>83</y>
+         <width>451</width>
+         <height>24</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="lblPhi">
+       <property name="geometry">
+        <rect>
+         <x>12</x>
+         <y>150</y>
+         <width>67</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>φ (default):</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="opt_xy_phi">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>150</y>
+         <width>65</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="decimals">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <double>90.000000000000000</double>
+       </property>
+      </widget>
+      <widget class="QLabel" name="lblC">
+       <property name="geometry">
+        <rect>
+         <x>170</x>
+         <y>150</y>
+         <width>64</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>c' (Kpa):</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="opt_xy_c">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>150</y>
+         <width>65</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="decimals">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <double>1000000.000000000000000</double>
+       </property>
+      </widget>
+      <widget class="QLabel" name="lblCu">
+       <property name="geometry">
+        <rect>
+         <x>340</x>
+         <y>150</y>
+         <width>51</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>cu (Kpa):</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="opt_xy_cu">
+       <property name="geometry">
+        <rect>
+         <x>390</x>
+         <y>150</y>
+         <width>65</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="decimals">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <double>1000000.000000000000000</double>
+       </property>
+      </widget>
+      <widget class="QLabel" name="lblGamma">
+       <property name="geometry">
+        <rect>
+         <x>12</x>
+         <y>180</y>
+         <width>64</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>γ (default):</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="opt_xy_gamma">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>180</y>
+         <width>65</width>
+         <height>24</height>
+        </rect>
+       </property>
+       <property name="decimals">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <double>1000.000000000000000</double>
+       </property>
+      </widget>
+      <widget class="QLabel" name="lblGammasat">
+       <property name="geometry">
+        <rect>
+         <x>170</x>
+         <y>180</y>
+         <width>81</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>γsat ( kN/m³):</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="lblDefSsap_2">
+       <property name="geometry">
+        <rect>
+         <x>12</x>
+         <y>320</y>
+         <width>71</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Dir exe SSAP:</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="opt_def_ssap_path_exe">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>320</y>
+         <width>231</width>
+         <height>24</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="lblFalda_4">
+       <property name="geometry">
+        <rect>
+         <x>350</x>
+         <y>210</y>
+         <width>51</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Falda</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="Lbl_title_3">
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>20</y>
+         <width>131</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>1000</width>
+         <height>1000</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Parametri di default&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="Line" name="line_10">
+       <property name="geometry">
+        <rect>
+         <x>321</x>
+         <y>220</y>
+         <width>20</width>
+         <height>71</height>
+        </rect>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+      </widget>
+      <widget class="Line" name="line_12">
+       <property name="geometry">
+        <rect>
+         <x>321</x>
+         <y>318</y>
+         <width>20</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btn_reload">
+       <property name="geometry">
+        <rect>
+         <x>234</x>
+         <y>411</y>
+         <width>93</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Ricarica</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btn_save">
+       <property name="geometry">
+        <rect>
+         <x>140</x>
+         <y>411</y>
+         <width>93</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Salva</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btn_reset">
+       <property name="geometry">
+        <rect>
+         <x>330</x>
+         <y>411</y>
+         <width>93</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Reset</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>xy_btn_infile</tabstop>
+  <tabstop>xy_btn_clip</tabstop>
+  <tabstop>xy_input</tabstop>
+  <tabstop>xy_btn_info</tabstop>
+  <tabstop>xy_btn_out</tabstop>
+  <tabstop>xy_output</tabstop>
+  <tabstop>chk_phi</tabstop>
+  <tabstop>sp_phi</tabstop>
+  <tabstop>chk_c</tabstop>
+  <tabstop>sp_c</tabstop>
+  <tabstop>chk_cu</tabstop>
+  <tabstop>sp_cu</tabstop>
+  <tabstop>chk_gamma</tabstop>
+  <tabstop>sp_gamma</tabstop>
+  <tabstop>chk_gammasat</tabstop>
+  <tabstop>sp_gammasat</tabstop>
+  <tabstop>chk_falda</tabstop>
+  <tabstop>sp_falda</tabstop>
+  <tabstop>chk_bedrock</tabstop>
+  <tabstop>sp_bedrock</tabstop>
+  <tabstop>chk_back_analysis</tabstop>
+  <tabstop>btn_run_xy</tabstop>
+  <tabstop>btn_help</tabstop>
+  <tabstop>btn_input_vec</tabstop>
+  <tabstop>btn_use_active</tabstop>
+  <tabstop>shp_input</tabstop>
+  <tabstop>btn_output_base</tabstop>
+  <tabstop>shp_output</tabstop>
+  <tabstop>btn_trim_shp</tabstop>
+  <tabstop>chk_edit_shp</tabstop>
+  <tabstop>btn_simplify_shp</tabstop>
+  <tabstop>chk_simplify_shp</tabstop>
+  <tabstop>opt_check_topbottom</tabstop>
+  <tabstop>btn_check_shp</tabstop>
+  <tabstop>btn_conv_shp</tabstop>
+  <tabstop>btn_help_2</tabstop>
+  <tabstop>bt_open_SSAP</tabstop>
+  <tabstop>opt_def_shp_dir</tabstop>
+  <tabstop>opt_def_ssap_dir</tabstop>
+  <tabstop>opt_xy_phi</tabstop>
+  <tabstop>opt_xy_c</tabstop>
+  <tabstop>opt_xy_cu</tabstop>
+  <tabstop>opt_xy_gamma</tabstop>
+  <tabstop>opt_xy_gammasat</tabstop>
+  <tabstop>opt_xy_falda</tabstop>
+  <tabstop>opt_xy_bedrock</tabstop>
+  <tabstop>opt_xy_phi_br</tabstop>
+  <tabstop>opt_xy_c_br</tabstop>
+  <tabstop>opt_def_ssap_path_exe</tabstop>
+  <tabstop>btn_save</tabstop>
+  <tabstop>btn_reload</tabstop>
+  <tabstop>btn_reset</tabstop>
+  <tabstop>tabs</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
