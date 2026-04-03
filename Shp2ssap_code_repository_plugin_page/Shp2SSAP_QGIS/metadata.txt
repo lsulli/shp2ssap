@@ -1,9 +1,9 @@
 [general]
 name=Shp2SSAP
 qgisMinimumVersion=3.22
-version=2.0.7 build 274
+version=2.0.7.274
 description= Qgis plugin to create simple geological model for SSAP software (www.ssap.eu)
-author=Lorenzo Sulli - Autorità di bacino distrettuale Appennino settentrionale + ChaptGPT 5.2
+author=Lorenzo Sulli - Autorità di bacino distrettuale Appennino settentrionale
 email=l.sulli@appenninosettentrionale.it
 category=Vector
 about= Convert XY data profile in Shapefile for SSAP and Shapefile in files SSAP (.dat, .geo, .fld, .svr, .mod). 
