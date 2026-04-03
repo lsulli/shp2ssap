@@ -28,7 +28,7 @@ https://github.com/lsulli/shp2ssap
 
 Guide: https://github.com/lsulli/shp2ssap/blob/master/README.md
 
-Latest plugin file: https://github.com/lsulli/shp2ssap/releases/download/Ver_2_0_7_Build273/Shp2SSAP_QGIS_v207_build273.zip
+Latest plugin file: https://github.com/lsulli/shp2ssap/blob/master/Shp2SSAP_QGIS_v207_build274.zip
 
 **LICENSE**
 
