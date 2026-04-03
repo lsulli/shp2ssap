@@ -1,4 +1,7 @@
 2026.04.03
+v 2.0.8 build 275 - Update metadata e code repository to public in Qgis plugin web portal, minimal GUI update 
+
+2026.04.03
 v 2.0.7 build 274 - Update metadata e code repository to public in Qgis plugin web portal, minimal GUI update 
 
 2026.03.22
