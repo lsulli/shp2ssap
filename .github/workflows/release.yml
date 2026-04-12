@@ -1,0 +1,35 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Leggi versione da metadata.txt
+        id: meta
+        run: |
+          VERSION=$(grep '^version=' Shp2SSAP_QGIS/metadata.txt | cut -d'=' -f2 | tr -d ' ')
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Crea zip plugin
+        run: |
+          zip -r Shp2SSAP_QGIS-${{ steps.meta.outputs.version }}.zip Shp2SSAP_QGIS \
+            --exclude "*.pyc" \
+            --exclude "*/__pycache__/*" \
+            --exclude "*.git*"
+
+      - name: Pubblica release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: Shp2SSAP v${{ steps.meta.outputs.version }}
+          body: |
+            Vedi [change_log.txt](https://github.com/lsulli/shp2ssap/blob/master/change_log.txt) per i dettagli.
+          files: Shp2SSAP_QGIS-${{ steps.meta.outputs.version }}.zip
