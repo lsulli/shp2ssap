@@ -16,12 +16,13 @@ jobs:
       - name: Leggi versione da metadata.txt
         id: meta
         run: |
-          VERSION=$(grep '^version=' Shp2SSAP_QGIS/metadata.txt | cut -d'=' -f2 | tr -d ' ')
+          VERSION=$(grep '^version=' Shp2ssap_code_repository_plugin_page/Shp2SSAP_QGIS/metadata.txt | cut -d'=' -f2 | tr -d ' ')
           echo "version=$VERSION" >> $GITHUB_OUTPUT
 
       - name: Crea zip plugin
         run: |
-          zip -r Shp2SSAP_QGIS-${{ steps.meta.outputs.version }}.zip Shp2SSAP_QGIS \
+          cd Shp2ssap_code_repository_plugin_page
+          zip -r ../Shp2SSAP_QGIS-${{ steps.meta.outputs.version }}.zip Shp2SSAP_QGIS \
             --exclude "*.pyc" \
             --exclude "*/__pycache__/*" \
             --exclude "*.git*"
