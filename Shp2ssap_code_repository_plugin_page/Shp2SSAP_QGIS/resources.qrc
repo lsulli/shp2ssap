@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/plugins/Shp2SSAP_QGIS" >
+        <file>icons/ssap.jpg</file>
+    </qresource>
+</RCC>
